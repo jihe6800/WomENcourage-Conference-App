@@ -24,7 +24,6 @@ angular.module('todoApp', [])
 
             // Push to list
             todoList.todos.push(todo);
-            console.log(todoList.todos);
 
             // Put in PouchDB
             db.put(todo, function callback(err, result) {
@@ -46,7 +45,11 @@ angular.module('todoApp', [])
             var oldTodos = todoList.todos;
             todoList.todos = [];
             angular.forEach(oldTodos, function(todo) {
-                if (!todo.completed) todoList.todos.push(todo);
+                if (!todo.completed) {
+                    todoList.todos.push(todo);
+                } else {
+                    db.remove(todo);
+                }
             });
         };
 
