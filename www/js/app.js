@@ -20,6 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
   });
 })
 
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
