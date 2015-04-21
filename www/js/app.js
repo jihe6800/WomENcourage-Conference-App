@@ -30,42 +30,78 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: "/search",
+  .state('app.info', {
+    url: "/info",
     views: {
       'menuContent': {
-        templateUrl: "templates/search.html"
+        templateUrl: "templates/info.html"
       }
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+  .state('app.schedule', {
+    url: "/schedule",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/schedule.html"
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
+
+    .state('app.my-schedule', {
+      url: "/my-schedule",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/my-schedule.html"
         }
       }
     })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
+  .state('app.speakers', {
+    url: "/speakers",
     views: {
       'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+        templateUrl: "templates/speakers.html"
       }
     }
   })
+
+      .state('app.map', {
+        url: "/map",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/map.html"
+          }
+        }
+      })
+
+      .state('app.news', {
+        url: "/news",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news.html"
+          }
+        }
+      })
+
+      .state('app.sponsors', {
+        url: "/sponsors",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/sponsors.html"
+          }
+        }
+      })
+
+      .state('app.supporters', {
+        url: "/supporters",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/supporters.html"
+          }
+        }
+      })
+
       .state('app.todo', {
         url: "/todo",
         views: {
@@ -76,5 +112,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/schedule');
 });
