@@ -31,12 +31,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
   })
 
   .state('app.info', {
-    url: "/info",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/info.html"
-      }
-    }
+        url: "/info",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/info.html"
+          }
+        }
   })
 
   .state('app.schedule', {
@@ -98,6 +98,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
         views: {
           'menuContent': {
             templateUrl: "templates/supporters.html"
+          }
+        }
+      })
+
+      .state('app.start', {
+        url: "/start",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/start.html",
+            controller: 'AgendaCtrl'
           }
         }
       })
