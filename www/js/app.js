@@ -24,6 +24,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+      .state('start', {
+        url: '/',
+        views: {
+          '': {
+            templateUrl: 'templates/start.html',
+            controller: 'HomeCtrl'
+          }
+        }
+      })
+
   .state('app', {
     url: "/app",
     abstract: true,
@@ -103,16 +113,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
         }
       })
 
-      .state('start', {
-        url: '/start',
-        views: {
-          '': {
-            templateUrl: 'templates/start.html',
-            controller: 'HomeCtrl'
-          }
-        }
-      })
-
       .state('app.todo', {
         url: "/todo",
         views: {
@@ -123,5 +123,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/start');
+  $urlRouterProvider.otherwise('/');
 });
