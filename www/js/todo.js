@@ -46,12 +46,13 @@ angular.module('todoApp', [])
         // Update list to match PouchDB
         function updateTodos() {
             db.allDocs({include_docs: true, descending: true}, function(err, doc) {
-                $scope.todos = [];
+                var updatedTodos = [];
                 angular.forEach(doc.rows, function (row) {
-                    $scope.$apply(function() {
-                        $scope.todos.push((row.doc))
-                    });
+                        updatedTodos.push((row.doc))
                 })
+                $scope.$apply(function() {
+                    $scope.todos = updatedTodos;
+                });
             });
         }
 
