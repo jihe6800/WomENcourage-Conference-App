@@ -103,12 +103,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
         }
       })
 
-      .state('app.start', {
-        url: "/start",
+      .state('start', {
+        url: '/start',
         views: {
-          'menuContent': {
-            templateUrl: "templates/start.html",
-            controller: 'AgendaCtrl'
+          '': {
+            templateUrl: 'templates/start.html',
+            controller: 'HomeCtrl'
           }
         }
       })
@@ -123,5 +123,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/schedule');
+  $urlRouterProvider.otherwise('/start');
 });

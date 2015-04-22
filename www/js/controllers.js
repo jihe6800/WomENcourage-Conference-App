@@ -4,11 +4,5 @@ angular.module('starter.controllers', [])
 
     })
 
-    .controller('AgendaCtrl', function($scope, $ionicSideMenuDelegate){
-        $scope.$on('$ionicView.enter', function(){
-            $ionicSideMenuDelegate.canDragContent(false);
-        });
-        $scope.$on('$ionicView.leave', function(){
-            $ionicSideMenuDelegate.canDragContent(true);
-        });
+    .controller('HomeCtrl', function($scope, $location) {
     });
