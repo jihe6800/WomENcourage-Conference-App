@@ -3139,6 +3139,15 @@ a.subdued {
       color: #fff; }
     .bar.bar-royal.bar-footer {
       background-image: linear-gradient(180deg, #6b46e5, #6b46e5 50%, transparent 50%); }
+  .bar.bar-womencourage {
+    border-color: #520752;
+    background-color: #520752;
+    background-image: linear-gradient(0deg, #520752, #520752 50%, transparent 50%);
+    color: #fff; }
+    .bar.bar-womencourage .title {
+      color: #fff; }
+    .bar.bar-womencourage.bar-footer {
+      background-image: linear-gradient(180deg, #520752, #520752 50%, transparent 50%); }
   .bar.bar-dark {
     border-color: #111;
     background-color: #444444;
