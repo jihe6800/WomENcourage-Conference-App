@@ -68,34 +68,9 @@ ion-side-menu ion-list ion-item.item a {
     background-color: #A268A0 !important;
     color: white;
 }
-.box-blue{
-    background-color: #007aff;
-    width: 100%;
-    height: 500px;
-    text-align: center;
-    margin-right: 0%;
-    margin-left: 0%;
-}
 
-.box-yellow{
-    background-color: #e6b400;
-    width: 100%;
-    height: 500px;
-    text-align: center;
-    margin-left: 0%;
-    margin-right: 0%;
-}
-
-.box-red{
-    background-color: #ff3b30;
-    width: 100%;
-    height: 500px;
-    text-align: center;
-    margin-left: 0%;
-    margin-right: 0%;
-
-}
-
-.text-schedule{
-    color: white;
+/* Schedule pager */
+.slider-pager {
+    top: 10px;
+    bottom: initial;
 }
