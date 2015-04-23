@@ -2,3 +2,35 @@
 button{
     width: 140px;
 }
+
+.box-blue{
+    background-color: #007aff;
+    width: 80%;
+    height: 500px;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.box-yellow{
+    background-color: #e6b400;
+    width: 80%;
+    height: 500px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.box-red{
+    background-color: #ff3b30;
+    width: 80%;
+    height: 500px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.text-schedule{
+    color: white;
+}
