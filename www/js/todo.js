@@ -1,5 +1,5 @@
-angular.module('todoApp', [])
-    .controller('TodoListController', function($scope) {
+angular.module('todo', [])
+    .controller('TodoCtrl', function($scope) {
         var db = new PouchDB('todos');
         var remoteCouch = 'http://130.238.15.131:5984/todos';
 

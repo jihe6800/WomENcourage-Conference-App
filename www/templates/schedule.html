@@ -2,10 +2,10 @@
     <ion-content>
         <ion-slide-box active-slide="myActiveSlide" pager-click="schedule.changeSlide(index)">
             <ion-slide ng-repeat="date in schedule.dates">
-                <h1 class="padding">{{date}}</h1>
                 <ion-list>
+                    <ion-item class="item-divider"><h1>{{date}}</h1></ion-item>
                     <div ng-repeat="group in schedule.groupedItems">
-                        <div class="item item-divider">{{group.start_time}}</div>
+                        <ion-item class="item-divider">{{group.start_time}}</ion-item>
                         <ion-item ng-repeat="session in group.sessions">
                             <h3>{{session.start_time}} - {{session.end_time}}</h3>
                             <h2>{{session.title}}</h2>
