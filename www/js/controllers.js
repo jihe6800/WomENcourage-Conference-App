@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-.controller('ScheduleCtrl', function() {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate) {
     var items = [{
         title: "Session 1: About something cool",
         speaker: "Gustav K",
@@ -47,6 +47,10 @@ angular.module('starter.controllers', [])
             start_time: item.start_time,
             sessions: [item]
         });
+    }
+
+    this.changeSlide = function(index) {
+        $ionicSlideBoxDelegate.slide(index);
     }
 
     this.groupedItems = [];

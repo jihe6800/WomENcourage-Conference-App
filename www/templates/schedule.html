@@ -1,6 +1,6 @@
 <ion-view view-title="Schedule">
     <ion-content>
-        <ion-slide-box active-slide="myActiveSlide">
+        <ion-slide-box active-slide="myActiveSlide" pager-click="schedule.changeSlide(index)">
             <ion-slide ng-repeat="date in schedule.dates">
                 <h1 class="padding">{{date}}</h1>
                 <ion-list>
