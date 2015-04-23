@@ -51,6 +51,11 @@ angular.module('starter.controllers', [])
 
     this.groupedItems = [];
 
+    var d =  new Date();
+    var day = d.getDate();
+    var month = d.getMonth();
+    this.dates = [day + "/" + month, day + 1 + "/" + month, day + 2 + "/" + month, day + 3 + "/" + month, day + 4 + "/" + month];
+
     for (var i = 0; i < items.length; i++) {
         addToGroupedList(this.groupedItems, items[i]);
     }
