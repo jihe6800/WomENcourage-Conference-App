@@ -70,29 +70,29 @@ ion-side-menu ion-list ion-item.item a {
 }
 .box-blue{
     background-color: #007aff;
-    width: 80%;
+    width: 100%;
     height: 500px;
     text-align: center;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 0%;
+    margin-left: 0%;
 }
 
 .box-yellow{
     background-color: #e6b400;
-    width: 80%;
+    width: 100%;
     height: 500px;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 0%;
+    margin-right: 0%;
 }
 
 .box-red{
     background-color: #ff3b30;
-    width: 80%;
+    width: 100%;
     height: 500px;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 0%;
+    margin-right: 0%;
 
 }
 
