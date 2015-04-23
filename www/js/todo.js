@@ -1,31 +1,25 @@
 angular.module('todoApp', [])
-    .controller('TodoListController', function() {
+    .controller('TodoListController', function($scope) {
         var db = new PouchDB('todos');
         var remoteCouch = 'http://130.238.15.131:5984/todos';
 
-        var todoList = this;
-        todoList.todos = [];
+        $scope.todos = [];
 
         db.changes({
             since: 'now',
             live: true
         }).on('change', updateTodos);
 
-        todoList.addTodo = function() {
-            // Create object
+        // Add an item to database
+        $scope.addTodo = function() {
             var todo = {
                 _id: new Date().toISOString(),
-                title: todoList.todoText,
+                title: this.todoText,
                 completed: false
             };
 
-            // Clear text field
-            todoList.todoText = '';
+            this.todoText = '';
 
-            // Push to list
-            todoList.todos.push(todo);
-
-            // Put in PouchDB
             db.put(todo, function callback(err, result) {
                 if (!err) {
                     console.log('Successfully posted a todo!');
@@ -33,34 +27,32 @@ angular.module('todoApp', [])
             });
         };
 
-        todoList.remaining = function() {
+        $scope.remaining = function() {
             var count = 0;
-            angular.forEach(todoList.todos, function(todo) {
+            angular.forEach($scope.todos, function(todo) {
                 count += todo.completed ? 0 : 1;
             });
             return count;
         };
 
-        todoList.archive = function() {
-            var oldTodos = todoList.todos;
-            todoList.todos = [];
-            angular.forEach(oldTodos, function(todo) {
-                if (!todo.completed) {
-                    todoList.todos.push(todo);
-                } else {
+        $scope.archive = function() {
+            angular.forEach($scope.todos, function(todo) {
+                if (todo.completed) {
                     db.remove(todo);
                 }
             });
         };
 
-        // Updates list with database in order to print
+        // Update list to match PouchDB
         function updateTodos() {
             db.allDocs({include_docs: true, descending: true}, function(err, doc) {
-                console.log(JSON.stringify(doc.rows));
-                todoList.todos = [];
-                angular.forEach(doc.rows, function(row) {
-                    todoList.todos.push((row.doc))
+                var updatedTodos = [];
+                angular.forEach(doc.rows, function (row) {
+                        updatedTodos.push((row.doc))
                 })
+                $scope.$apply(function() {
+                    $scope.todos = updatedTodos;
+                });
             });
         }
 
