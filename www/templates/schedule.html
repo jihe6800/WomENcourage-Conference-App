@@ -3,9 +3,9 @@
         <ion-slide-box active-slide="myActiveSlide">
             <ion-slide>
                 <ion-list>
-                    <div ng-repeat="item in items">
-                        <div class="item item-divider">{{item.start_time}}</div>
-                        <ion-item ng-repeat="session in item.sessions">
+                    <div ng-repeat="group in schedule.groupedItems">
+                        <div class="item item-divider">{{group.start_time}}</div>
+                        <ion-item ng-repeat="session in group.sessions">
                             <h3>{{session.start_time}} - {{session.end_time}}</h3>
                             <h2>{{session.title}}</h2>
                             <p>{{session.speaker}}</p>

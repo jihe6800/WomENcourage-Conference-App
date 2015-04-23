@@ -7,8 +7,8 @@ angular.module('starter.controllers', [])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-.controller('ScheduleCtrl', function($scope) {
-    var imported_items = [{
+.controller('ScheduleCtrl', function() {
+    var items = [{
         title: "Session 1: About something cool",
         speaker: "Gustav K",
         start_time: "18:00",
@@ -35,23 +35,23 @@ angular.module('starter.controllers', [])
         end_time: "00:00"
     }];
 
-    function addToList(list, item) {
+    function addToGroupedList(groupedList, item) {
         var i;
-        for (i = 0; i < list.length; i++) {
-            if (list[i].start_time === item.start_time) {
-                list[i].sessions.push(item);
+        for (i = 0; i < groupedList.length; i++) {
+            if (groupedList[i].start_time === item.start_time) {
+                groupedList[i].sessions.push(item);
                 return;
             }
         }
-        list.push({
+        groupedList.push({
             start_time: item.start_time,
             sessions: [item]
         });
     }
 
-    $scope.items = [];
+    this.groupedItems = [];
 
-    for (var i = 0; i < imported_items.length; i++) {
-        addToList($scope.items, imported_items[i]);
+    for (var i = 0; i < items.length; i++) {
+        addToGroupedList(this.groupedItems, items[i]);
     }
 });
