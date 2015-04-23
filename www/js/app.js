@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todoApp'])
     views: {
       'menuContent': {
         templateUrl: "templates/schedule.html",
-        controller: "MainCtrl as main"
+        controller: "ScheduleCtrl"
       }
     }
   })

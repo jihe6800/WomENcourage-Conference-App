@@ -3,7 +3,7 @@
         <ion-slide-box active-slide="myActiveSlide">
             <ion-slide>
                 <ion-list>
-                    <div ng-repeat="item in main.items">
+                    <div ng-repeat="item in items">
                         <div class="item item-divider">{{item.start_time}}</div>
                         <ion-item ng-repeat="session in item.sessions">
                             <h3>{{session.start_time}} - {{session.end_time}}</h3>

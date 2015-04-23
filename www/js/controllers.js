@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-.controller('MainCtrl', function() {
+.controller('ScheduleCtrl', function($scope) {
     var imported_items = [{
         title: "Session 1: About something cool",
         speaker: "Gustav K",
@@ -49,9 +49,9 @@ angular.module('starter.controllers', [])
         });
     }
 
-    this.items = [];
+    $scope.items = [];
 
     for (var i = 0; i < imported_items.length; i++) {
-        addToList(this.items, imported_items[i]);
+        addToList($scope.items, imported_items[i]);
     }
 });
