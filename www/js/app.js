@@ -105,15 +105,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         }
       })
 
-      .state('app.supporters', {
-        url: "/supporters",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/supporters.html"
-          }
-        }
-      })
-
       .state('app.todo', {
         url: "/todo",
         views: {
