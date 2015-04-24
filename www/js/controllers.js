@@ -8,59 +8,94 @@ angular.module('starter.controllers', [])
     })
 
 .controller('ScheduleCtrl', function($ionicSlideBoxDelegate) {
-    var items = [{
-        title: "Session 1: About something cool",
+    var imported_pouchdb_items = [{
+        title: "About something cool",
         speaker: "Gustav K",
         start_time: "18:00",
         end_time: "19:00"
     }, {
-        title: "Session 2: About something cooler",
-        speaker: "Gustav P",
+        title: "About something cooler",
+        speaker: "Anders P",
         start_time: "18:00",
         end_time: "20:00"
     }, {
-        title: "Session 3: About something even cooler",
-        speaker: "Gustav E",
+        title: "Something even cooler",
+        speaker: "Jakob E",
         start_time: "19:30",
         end_time: "19:31"
     }, {
-        title: "Session 4: About something even cooler than cool",
-        speaker: "Gustav D",
+        title: "This is even cooler than cool",
+        speaker: "Göran D",
         start_time: "19:30",
         end_time: "21:00"
     }, {
-        title: "Session 5: About the coolest of cool",
-        speaker: "Gustav X",
+        title: "About the coolest of cool",
+        speaker: "Hans X",
+        start_time: "23:59",
+        end_time: "00:00"
+    }, {
+        title: "So cool",
+        speaker: "Johan T",
         start_time: "23:59",
         end_time: "00:00"
     }];
 
-    function addToGroupedList(groupedList, item) {
-        var i;
-        for (i = 0; i < groupedList.length; i++) {
-            if (groupedList[i].start_time === item.start_time) {
-                groupedList[i].sessions.push(item);
-                return;
-            }
+    function addToGroupedList(groupedList, item, options) {
+        switch (options.sortmode) {
+            case "title":
+                for (var i = 0; i < groupedList.length; i++) {
+                    if (groupedList[i].index === item.title.charAt(0)) {
+                        groupedList[i].sessions.push(item);
+                        return;
+                    }
+                }
+                groupedList.push({
+                    index: item.title.charAt(0),
+                    sessions: [item]
+                });
+                break;
+            case "speaker":
+                for (var i = 0; i < groupedList.length; i++) {
+                    if (groupedList[i].index === item.speaker.charAt(0)) {
+                        groupedList[i].sessions.push(item);
+                        return;
+                    }
+                }
+                groupedList.push({
+                    index: item.speaker.charAt(0),
+                    sessions: [item]
+                });
+                break;
+            default:
+                for (var i = 0; i < groupedList.length; i++) {
+                    if (groupedList[i].index === item.start_time) {
+                        groupedList[i].sessions.push(item);
+                        return;
+                    }
+                }
+                groupedList.push({
+                    index: item.start_time,
+                    sessions: [item]
+                });
         }
-        groupedList.push({
-            start_time: item.start_time,
-            sessions: [item]
-        });
     }
 
     this.changeSlide = function(index) {
         $ionicSlideBoxDelegate.slide(index);
     }
 
-    this.groupedItems = [];
-
     var d =  new Date();
     var day = d.getDate();
     var month = d.getMonth();
     this.dates = [day + "/" + month, day + 1 + "/" + month, day + 2 + "/" + month, day + 3 + "/" + month, day + 4 + "/" + month];
 
-    for (var i = 0; i < items.length; i++) {
-        addToGroupedList(this.groupedItems, items[i]);
+    this.updateItems = function(options) {
+        this.header_title = options.sortmode;
+        this.groupedItems = [];
+        for (var i = 0; i < imported_pouchdb_items.length; i++) {
+            addToGroupedList(this.groupedItems, imported_pouchdb_items[i], options);
+        }
     }
+
+    this.updateItems({sortmode:"time"});
 });

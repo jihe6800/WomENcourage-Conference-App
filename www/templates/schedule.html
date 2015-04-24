@@ -3,9 +3,25 @@
         <ion-slide-box style="padding-left: 10px" active-slide="myActiveSlide" pager-click="schedule.changeSlide(index)">
             <ion-slide ng-repeat="date in schedule.dates">
                 <ion-list>
-                    <ion-item class="item-divider"><h1>{{date}}</h1></ion-item>
+                    <ion-item class="item-divider "><!--item-input item-select-->
+                        <h1>{{date}}</h1>
+                        <!--<select ng-model="sortmode" onchange="schedule.updateItems({sortmode: 'speaker'})">
+                            <option selected>Time</option>
+                            <option>Speaker</option>
+                            <option>Title</option>
+                        </select>-->
+                        <button class="button button-positive" ng-click="schedule.updateItems({sortmode: 'time'})">
+                            Time
+                        </button>
+                        <button class="button button-positive" ng-click="schedule.updateItems({sortmode: 'speaker'})">
+                            Speaker
+                        </button>
+                        <button class="button button-positive" ng-click="schedule.updateItems({sortmode: 'title'})">
+                            Title
+                        </button>
+                    </ion-item>
                     <div ng-repeat="group in schedule.groupedItems">
-                        <ion-item class="item-divider">{{group.start_time}}</ion-item>
+                        <ion-item class="item-divider">{{group.index}}</ion-item>
                         <ion-item ng-repeat="session in group.sessions">
                             <h3>{{session.start_time}} - {{session.end_time}}</h3>
                             <h2>{{session.title}}</h2>
