@@ -10,6 +10,17 @@
     font-size: 40px;
 }
 
+/* Schedule add to my schedule checkbox */
+.item-checkbox-right .checkbox input,
+.item-checkbox-right .checkbox-icon {
+    float: right;
+    margin-right: 10px;
+}
+
+.item-checkbox.item-checkbox-right {
+    padding: 0px;
+}
+
 /* womENcourage-themed button */
 .button.button-womencourage {
     border-color: #300330;
@@ -74,3 +85,8 @@ ion-side-menu ion-list ion-item.item a {
     top: 10px;
     bottom: initial;
 }
+
+.slider-pager .slider-pager-page{
+    color: purple;
+}
+

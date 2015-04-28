@@ -22,11 +22,11 @@
                     </ion-item>
                     <div ng-repeat="group in schedule.groupedItems">
                         <ion-item class="item-divider">{{group.index}}</ion-item>
-                        <ion-item ng-repeat="session in group.sessions">
+                        <ion-checkbox class="item-checkbox-right" ng-model="isChecked" ng-repeat="session in group.sessions">
                             <h3>{{session.start_time}} - {{session.end_time}}</h3>
                             <h2>{{session.title}}</h2>
                             <p>{{session.speaker}}</p>
-                        </ion-item>
+                        </ion-checkbox>
                     </div>
                 </ion-list>
             </ion-slide>
