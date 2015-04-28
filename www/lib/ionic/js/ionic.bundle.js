@@ -8264,7 +8264,7 @@ ionic.views.Slider = ionic.views.View.inherit({
 
           } else {
 
-            delta.x =
+            /*delta.x =
               delta.x /
                 ( (!index && delta.x > 0 ||         // if first slide and sliding left
                   index == slides.length - 1 &&     // or if last slide and sliding right
@@ -8274,6 +8274,8 @@ ionic.views.Slider = ionic.views.View.inherit({
                 : 1 );                                 // no resistance if false
 
             // translate 1:1
+            */
+            delta.x = (!index && delta.x > 0 || (index == slides.length - 1 && delta.x < 0)) ? 0 : delta.x;
             translate(index-1, delta.x + slidePos[index-1], 0);
             translate(index, delta.x + slidePos[index], 0);
             translate(index+1, delta.x + slidePos[index+1], 0);
