@@ -69,6 +69,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
       }
     })
 
+      .state('app.posters', {
+        url: "/posters",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/posters.html"
+          }
+        }
+      })
+
   .state('app.speakers', {
     url: "/speakers",
     views: {
@@ -101,6 +110,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         views: {
           'menuContent': {
             templateUrl: "templates/sponsors.html"
+          }
+        }
+      })
+
+      .state('app.emergency-contact', {
+        url: "/emergency-contact",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/emergency-contact.html"
+          }
+        }
+      })
+
+      .state('app.feedback', {
+        url: "/feedback",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/feedback.html"
           }
         }
       })
