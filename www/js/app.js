@@ -132,6 +132,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         }
       })
 
+      .state('app.single', {
+        url: "/schedule/:sessionTitle",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/session.html",
+            controller: 'SessionCtrl  as session'
+          }
+        }
+      })
+
       .state('app.todo', {
         url: "/todo",
         views: {
