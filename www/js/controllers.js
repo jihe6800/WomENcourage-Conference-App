@@ -7,95 +7,131 @@ angular.module('starter.controllers', [])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate) {
-    var imported_pouchdb_items = [{
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope) {
+    var sessions = [{
         title: "About something cool",
         speaker: "Gustav K",
-        start_time: "18:00",
-        end_time: "19:00"
+        startDate: new Date(2015, 4, 19, 18, 0),
+        endDate: new Date(2015, 4, 19, 19, 0)
     }, {
         title: "About something cooler",
         speaker: "Anders P",
-        start_time: "18:00",
-        end_time: "20:00"
+        startDate: new Date(2016, 4, 20, 18, 0),
+        endDate: new Date(2016, 4, 20, 19, 0)
     }, {
         title: "Something even cooler",
         speaker: "Jakob E",
-        start_time: "19:30",
-        end_time: "19:31"
+        startDate: new Date(2015, 4, 19, 18, 0),
+        endDate: new Date(2015, 4, 19, 19, 0)
     }, {
         title: "This is even cooler than cool",
         speaker: "Göran D",
-        start_time: "19:30",
-        end_time: "21:00"
+        startDate: new Date(2015, 4, 19, 19, 0),
+        endDate: new Date(2015, 4, 19, 20, 0)
     }, {
         title: "About the coolest of cool",
         speaker: "Hans X",
-        start_time: "23:59",
-        end_time: "00:00"
+        startDate: new Date(2014, 4, 21, 18, 0),
+        endDate: new Date(2014, 4, 21, 19, 0)
     }, {
         title: "So cool",
         speaker: "Johan T",
-        start_time: "23:59",
-        end_time: "00:00"
+        startDate: new Date(2015, 4, 21, 20, 0),
+        endDate: new Date(2015, 4, 21, 21, 0)
+    }, {
+        title: "Very muchest cool",
+        speaker: "Johan T",
+        startDate: new Date(2015, 11, 1, 8, 0),
+        endDate: new Date(2015, 11, 1, 9, 0)
+    }, {
+        title: "J - in between",
+        speaker: "Johan T",
+        startDate: new Date(2015, 4, 19, 18, 0),
+        endDate: new Date(2015, 4, 19, 19, 0)
+    }, {
+        title: "J - in between",
+        speaker: "Anders T",
+        startDate: new Date(2015, 4, 19, 10, 0),
+        endDate: new Date(2015, 4, 19, 11, 0)
     }];
 
-    function addToGroupedList(groupedList, item, options) {
-        switch (options.sortmode) {
-            case "title":
-                for (var i = 0; i < groupedList.length; i++) {
-                    if (groupedList[i].index === item.title.charAt(0)) {
-                        groupedList[i].sessions.push(item);
-                        return;
-                    }
-                }
-                groupedList.push({
-                    index: item.title.charAt(0),
-                    sessions: [item]
-                });
-                break;
-            case "speaker":
-                for (var i = 0; i < groupedList.length; i++) {
-                    if (groupedList[i].index === item.speaker.charAt(0)) {
-                        groupedList[i].sessions.push(item);
-                        return;
-                    }
-                }
-                groupedList.push({
-                    index: item.speaker.charAt(0),
-                    sessions: [item]
-                });
-                break;
-            default:
-                for (var i = 0; i < groupedList.length; i++) {
-                    if (groupedList[i].index === item.start_time) {
-                        groupedList[i].sessions.push(item);
-                        return;
-                    }
-                }
-                groupedList.push({
-                    index: item.start_time,
-                    sessions: [item]
-                });
+    /*
+     * 1. Sorts arr by sortAttr.
+     * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
+     * subarrayPropertyName is the name for the subarray property in each group.
+     */
+    function sortAndGroup(arr, sortAttr, groupFunc, subarrayPropertyName) {
+        arr = _.sortBy(arr, sortAttr); // Sort by the given attribute
+
+        var groups = []; // New array that will hold the groups
+        var groupValue = "_INVALID_GROUP_VALUE_";
+
+        for (var i = 0; i < arr.length; i++) {
+            var element = arr[i];
+
+            // Check if new group needs to be created
+            if (groupFunc(element[sortAttr]) !== groupValue) {
+                var group = {};
+                group.name = groupFunc(element[sortAttr]);
+                group[subarrayPropertyName] = [];
+
+                groupValue = group.name;
+                groups.push(group);
+            }
+
+            group[subarrayPropertyName].push(element);
         }
+
+        return groups;
     }
+
+    /* Groups sessions by day */
+    function groupByDay(sessions) {
+        return sortAndGroup(sessions, 'startDate', function(startDate) {
+            return startDate.toDateString();
+        }, 'groups');
+    }
+
+    /* Groups sessions by sortmode */
+    function groupBySortmode(sessions, sortmode) {
+        return sortAndGroup(sessions, sortmode, function(sortAttr) {
+            switch (sortmode) {
+                case 'title':
+                case 'speaker':
+                    return sortAttr.charAt(0);
+                default: // startDate
+                    return sortAttr.toTimeString().substr(0, 5);
+            }
+        }, 'sessions');
+    }
+
+    /* Groups sessions by day and within days by sortmode */
+    function group(sessions, sortmode) {
+        var days = groupByDay(sessions); // Group by day
+
+        // Within each day, group by sortmode
+        for (var i = 0; i < days.length; i++) {
+            days[i].groups = _.sortBy(days[i].groups, 'title'); // Sort inner groups by title
+            days[i].groups = groupBySortmode(days[i].groups, sortmode);
+        }
+
+        return days;
+    }
+
+    /* Creates a grouped list of the sessions based on this.sortmode */
+    this.updateGroups = function() {
+        // Make sure this.sortmode is valid
+        if (this.sortmode != 'title' && this.sortmode != 'speaker') {
+            this.sortmode = 'startDate';
+        }
+        this.days = group(sessions, this.sortmode);
+        $ionicSlideBoxDelegate.update();
+    };
 
     this.changeSlide = function(index) {
         $ionicSlideBoxDelegate.slide(index);
-    }
+    };
 
-    var d =  new Date();
-    var day = d.getDate();
-    var month = d.getMonth();
-    this.dates = [day + "/" + month, day + 1 + "/" + month, day + 2 + "/" + month, day + 3 + "/" + month, day + 4 + "/" + month];
-
-    this.updateItems = function(options) {
-        this.header_title = options.sortmode;
-        this.groupedItems = [];
-        for (var i = 0; i < imported_pouchdb_items.length; i++) {
-            addToGroupedList(this.groupedItems, imported_pouchdb_items[i], options);
-        }
-    }
-
-    this.updateItems({sortmode:"time"});
+    this.sortmode = 'startDate';
+    this.updateGroups();
 });
