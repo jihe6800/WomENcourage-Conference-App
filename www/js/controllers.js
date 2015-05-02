@@ -125,7 +125,9 @@ angular.module('starter.controllers', [])
             this.sortmode = 'startDate';
         }
         this.days = group(sessions, this.sortmode);
-        $ionicSlideBoxDelegate.update();
+        setTimeout(function() {
+            $ionicSlideBoxDelegate.update();
+        }, 1000);
     };
 
     this.changeSlide = function(index) {
