@@ -7,60 +7,11 @@ angular.module('starter.controllers', ['starter.services'])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-.controller('SessionCtrl', function(database){
-    this.getSession = function(){
-        database.getActiveSession();
-    }
-})
+    .controller('SessionCtrl', function(database){
+        this.activeSession = database.getActiveSession();
+    })
     
 .controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, database) {
-    var sessions = [{
-        title: "About something cool",
-        speaker: "Gustav K",
-        startDate: new Date(2015, 4, 19, 18, 0),
-        endDate: new Date(2015, 4, 19, 19, 0)
-    }, {
-        title: "About something cooler",
-        speaker: "Anders P",
-        startDate: new Date(2016, 4, 20, 18, 0),
-        endDate: new Date(2016, 4, 20, 19, 0)
-    }, {
-        title: "Something even cooler",
-        speaker: "Jakob E",
-        startDate: new Date(2015, 4, 19, 18, 0),
-        endDate: new Date(2015, 4, 19, 19, 0)
-    }, {
-        title: "This is even cooler than cool",
-        speaker: "Göran D",
-        startDate: new Date(2015, 4, 19, 19, 0),
-        endDate: new Date(2015, 4, 19, 20, 0)
-    }, {
-        title: "About the coolest of cool",
-        speaker: "Hans X",
-        startDate: new Date(2014, 4, 21, 18, 0),
-        endDate: new Date(2014, 4, 21, 19, 0)
-    }, {
-        title: "So cool",
-        speaker: "Johan T",
-        startDate: new Date(2015, 4, 21, 20, 0),
-        endDate: new Date(2015, 4, 21, 21, 0)
-    }, {
-        title: "Very muchest cool",
-        speaker: "Johan T",
-        startDate: new Date(2015, 11, 1, 8, 0),
-        endDate: new Date(2015, 11, 1, 9, 0)
-    }, {
-        title: "J - in between",
-        speaker: "Johan T",
-        startDate: new Date(2015, 4, 19, 18, 0),
-        endDate: new Date(2015, 4, 19, 19, 0)
-    }, {
-        title: "J - in between",
-        speaker: "Anders T",
-        startDate: new Date(2015, 4, 19, 10, 0),
-        endDate: new Date(2015, 4, 19, 11, 0)
-    }];
-
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -123,14 +74,10 @@ angular.module('starter.controllers', ['starter.services'])
 
         return days;
     }
-        
-    this.setSession = function(session){
-        database.setActiveSession(session);
-    };
 
     /* Creates a grouped list of the sessions based on this.sortmode.value */
-    this.updateGroups = function() {
-        this.days = group(sessions, this.sortmode.value);
+    this.update = function() {
+        this.days = group(database.getAll(), this.sortmode.value);
         setTimeout(function() {
             $ionicSlideBoxDelegate.update();
         }, 1000);
@@ -140,7 +87,11 @@ angular.module('starter.controllers', ['starter.services'])
         $ionicSlideBoxDelegate.slide(index);
     };
 
+    this.setSession = function(session){
+        database.setActiveSession(session);
+    };
+
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Speaker', value: 'speaker'}];
     this.sortmode = this.sortmodes[0];
-    this.updateGroups();
+    this.update();
 });

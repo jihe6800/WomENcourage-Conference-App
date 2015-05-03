@@ -5,12 +5,12 @@
                 <ion-list>
                     <ion-item class="item-divider item-input item-select">
                         <h1>{{day.name}}</h1>
-                        <select ng-model="schedule.sortmode" ng-change="schedule.updateGroups()" ng-options="sortmode.name for sortmode in schedule.sortmodes">
+                        <select ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes">
                         </select>
                     </ion-item>
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider">{{group.name}}</ion-item>
-                        <a class="item" ng-repeat="session in group.sessions" href="#/app/schedule/{{session.title}}">
+                        <a class="item" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session.title}}">
                             <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3>
                             <h2>{{session.title}}</h2>
                             <p>{{session.speaker}}</p>

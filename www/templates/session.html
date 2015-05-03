@@ -1,5 +1,8 @@
-<ion-view view-title="Sessions">
+<ion-view view-title="Session">
     <ion-content>
-        <h1>Sessions</h1>
+        <h1>{{session.activeSession.title}}</h1>
+        <h2>{{session.activeSession.startDate.toDateString()}}</h2>
+        <h3>{{session.activeSession.startDate.toTimeString().substr(0,5)}} - {{session.activeSession.endDate.toTimeString().substr(0,5)}}</h3>
+        <p>{{session.activeSession.speaker}}</p>
     </ion-content>
 </ion-view>

@@ -60,6 +60,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     }
   })
 
+  .state('app.session', {
+    url: "/schedule/:sessionTitle",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/session.html",
+        controller: 'SessionCtrl as session'
+      }
+    }
+  })
+
     .state('app.my-schedule', {
       url: "/my-schedule",
       views: {
@@ -128,16 +138,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         views: {
           'menuContent': {
             templateUrl: "templates/feedback.html"
-          }
-        }
-      })
-
-      .state('app.single', {
-        url: "/schedule/:sessionTitle",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/session.html",
-            controller: 'SessionCtrl  as session'
           }
         }
       })
