@@ -3,22 +3,10 @@
         <ion-slide-box style="padding-left: 10px" active-slide="0" pager-click="schedule.changeSlide(index)">
             <ion-slide ng-repeat="day in schedule.days">
                 <ion-list>
-                    <ion-item class="item-divider "><!--item-input item-select-->
+                    <ion-item class="item-divider item-input item-select">
                         <h1>{{day.name}}</h1>
-                        <!--<select ng-model="sortmode" onchange="schedule.updateItems({sortmode: 'speaker'})">
-                            <option selected>Time</option>
-                            <option>Speaker</option>
-                            <option>Title</option>
-                        </select>-->
-                        <button class="button button-positive" ng-click="schedule.sortmode='startDate'; schedule.updateGroups()">
-                            Time
-                        </button>
-                        <button class="button button-positive" ng-click="schedule.sortmode='speaker'; schedule.updateGroups()">
-                            Speaker
-                        </button>
-                        <button class="button button-positive" ng-click="schedule.sortmode='title'; schedule.updateGroups()">
-                            Title
-                        </button>
+                        <select ng-model="schedule.sortmode" ng-change="schedule.updateGroups()" ng-options="sortmode.name for sortmode in schedule.sortmodes">
+                        </select>
                     </ion-item>
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider">{{group.name}}</ion-item>

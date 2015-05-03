@@ -118,13 +118,9 @@ angular.module('starter.controllers', [])
         return days;
     }
 
-    /* Creates a grouped list of the sessions based on this.sortmode */
+    /* Creates a grouped list of the sessions based on this.sortmode.value */
     this.updateGroups = function() {
-        // Make sure this.sortmode is valid
-        if (this.sortmode != 'title' && this.sortmode != 'speaker') {
-            this.sortmode = 'startDate';
-        }
-        this.days = group(sessions, this.sortmode);
+        this.days = group(sessions, this.sortmode.value);
         setTimeout(function() {
             $ionicSlideBoxDelegate.update();
         }, 1000);
@@ -134,6 +130,7 @@ angular.module('starter.controllers', [])
         $ionicSlideBoxDelegate.slide(index);
     };
 
-    this.sortmode = 'startDate';
+    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Speaker', value: 'speaker'}];
+    this.sortmode = this.sortmodes[0];
     this.updateGroups();
 });
