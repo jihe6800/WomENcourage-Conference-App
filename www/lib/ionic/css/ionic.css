@@ -5444,7 +5444,7 @@ a.item-content {
     display: inline-block;
     margin: 0px 3px;
     width: 15px;
-    color: #000;
+    color: red;
     text-decoration: none;
     opacity: 0.3; }
     .slider-pager .slider-pager-page.active {

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.services'])
 
 .controller('AppCtrl', function($scope){
 
@@ -7,7 +7,13 @@ angular.module('starter.controllers', [])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope) {
+.controller('SessionCtrl', function(database){
+    this.getSession = function(){
+        database.getActiveSession();
+    }
+})
+    
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, database) {
     var sessions = [{
         title: "About something cool",
         speaker: "Gustav K",
@@ -117,6 +123,10 @@ angular.module('starter.controllers', [])
 
         return days;
     }
+        
+    this.setSession = function(session){
+        database.setActiveSession(session);
+    };
 
     /* Creates a grouped list of the sessions based on this.sortmode.value */
     this.updateGroups = function() {
