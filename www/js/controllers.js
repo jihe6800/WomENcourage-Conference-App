@@ -31,6 +31,7 @@ angular.module('starter.controllers', ['starter.services'])
                 var group = {};
                 group.name = groupFunc(element[sortAttr]);
                 group[subarrayPropertyName] = [];
+                group.visible = true;
 
                 groupValue = group.name;
                 groups.push(group);
