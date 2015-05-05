@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
   })
 
   .state('app.session', {
-    url: "/schedule/:sessionTitle",
+    url: "/schedule/:sessionId",
     views: {
       'menuContent': {
         templateUrl: "templates/session.html",
