@@ -11,7 +11,6 @@ angular.module('starter.services', [])
             console.log("Something changed in database!");
         });
 
-        /*
         db.bulkDocs([{
             _id: '1',
             title: "About something cool",
@@ -67,7 +66,6 @@ angular.module('starter.services', [])
             startDate: new Date(2015, 4, 19, 10, 0),
             endDate: new Date(2015, 4, 19, 11, 0)
         }]);
-        */
 
         return {
             get: function(id) {
