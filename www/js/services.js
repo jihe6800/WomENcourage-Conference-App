@@ -76,14 +76,12 @@ angular.module('starter.services', [])
                     include_docs: true,
                     descending: true
                 }).then(function(result) {
-                    var items = [];
-                    angular.forEach(result.rows, function (row) {
+                    return result.rows.map(function (row) {
                         var item = row.doc;
                         item.startDate = new Date(Date.parse(item.startDate));
                         item.endDate = new Date(Date.parse(item.endDate));
-                        items.push(item);
+                        return item;
                     });
-                    return items;
                 });
             },
             setActiveSession: function(session){
