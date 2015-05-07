@@ -11,6 +11,8 @@
     font-size: 45px;
 }
 
+
+
 /* */
 .start-center{
     display: -webkit-box;
@@ -53,15 +55,29 @@
     height: auto;
 }
 
-/* Schedule add to my schedule checkbox */
-.item-checkbox-right .checkbox input,
-.item-checkbox-right .checkbox-icon {
-    float: right;
-    margin-right: 10px;
+/* Item grid in schedule */
+
+
+.info-schedule{
+    display: inline-block;
+    width:auto;
+    padding-right: 20px;
 }
 
-.item-checkbox.item-checkbox-right {
-    /* padding: 16px;*/
+.checkbox-wrapper-schedule{
+    vertical-align:top;
+    display: inline-block;
+    width:60px;
+    height: 32px;
+    margin-top: -16px;
+    position:absolute;
+    right: 20px;
+    top: 50%;
+
+}
+
+.item-wrapper-schedule{
+
 }
 
 /* Schedule item collapse animations */

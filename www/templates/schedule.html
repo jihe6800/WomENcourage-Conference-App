@@ -10,11 +10,32 @@
                     </ion-item>
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
-                        <a class="item item-accordion" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session._id}}" ng-show="group.visible">
-                            <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3>
-                            <h2>{{session.title}}</h2>
-                            <p>{{session.speaker}}</p>
-                        </a>
+                        <ion-item class="item item-accordion" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session._id}}" ng-show="group.visible">
+                            <div class="item-wrapper-schedule">
+                                <div class="info-schedule">
+                                    <div class="row">
+                                        <div class="col"> <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"> <h2>{{session.title}}</h2></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><p>{{session.speaker}}</p></div>
+                                    </div>
+                                </div>
+
+                                <!-- Toggle-button to add for personal schedule -->
+                                <div class="checkbox-wrapper-schedule">
+                                    <label class="toggle">
+                                        <input type="checkbox">
+                                        <div class="track">
+                                            <div class="handle"></div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </ion-item>
                     </div>
                 </ion-list>
             </ion-slide>
