@@ -1,8 +1,14 @@
 <ion-view view-title="Session">
     <ion-content>
-        <h1>{{session.activeSession.title}}</h1>
-        <h2>{{session.activeSession.startDate.toDateString()}}</h2>
-        <h3>{{session.activeSession.startDate.toTimeString().substr(0,5)}} - {{session.activeSession.endDate.toTimeString().substr(0,5)}}</h3>
-        <p>{{session.activeSession.speaker}}</p>
+        <div class="card">
+            <div class="item item-divider">
+                <h1>{{session.activeSession.title}}</h1>
+            </div>
+            <div class="item item-text-wrap">
+                <h2>{{session.activeSession.startDate.toDateString()}}</h2>
+                <h3>{{session.activeSession.startDate.toTimeString().substr(0,5)}} - {{session.activeSession.endDate.toTimeString().substr(0,5)}}</h3>
+                <p>{{session.activeSession.speaker}}</p>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

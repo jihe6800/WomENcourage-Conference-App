@@ -11,7 +11,7 @@ angular.module('starter.controllers', ['starter.services'])
         this.activeSession = database.getActiveSession();
     })
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, database) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -31,6 +31,7 @@ angular.module('starter.controllers', ['starter.services'])
                 var group = {};
                 group.name = groupFunc(element[sortAttr]);
                 group[subarrayPropertyName] = [];
+                group.visible = true;
 
                 groupValue = group.name;
                 groups.push(group);
@@ -77,10 +78,15 @@ angular.module('starter.controllers', ['starter.services'])
 
     /* Creates a grouped list of the sessions based on this.sortmode.value */
     this.update = function() {
-        this.days = group(database.getAll(), this.sortmode.value);
-        setTimeout(function() {
-            $ionicSlideBoxDelegate.update();
-        }, 1000);
+        var sortmode = this.sortmode;
+        $q.when(database.getAll()).then(function(result) {
+            $scope.days = group(result, sortmode.value);
+            setTimeout(function() {
+                $ionicSlideBoxDelegate.update();
+                }, 1000);
+        }).catch(function (error) {
+            console.log("Error when reading from database: " + error);
+        });
     };
 
     this.changeSlide = function(index) {

@@ -1,4 +1,4 @@
-/* Start page button */
+/* Start page buttons */
 .button-start{
     width: 90px;
     font-size: 11px;
@@ -62,6 +62,23 @@
 
 .item-checkbox.item-checkbox-right {
     /* padding: 16px;*/
+}
+
+/* Schedule item collapse animations */
+.list .item.item-divider {
+    transition: 0.09s all linear;
+}
+
+.list .item.item-divider.active {
+    background: #dddddd;
+}
+
+.list .item.item-accordion {
+    transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+    line-height: 0;
 }
 
 /* womENcourage-themed button */
