@@ -97,6 +97,28 @@ angular.module('starter.controllers', ['starter.services'])
         database.setActiveSession(session);
     };
 
+    this.getEntryColor = function(entry) {
+        switch(entry._id.substr(0, 4)) {
+            case 'sssn':
+                return "#DFF69D";
+            case 'note':
+                return "#A5B1C0";
+            default:
+                return "#FFFFFF";
+        }
+    };
+
+    this.getURL = function(entry) {
+        switch(entry._id.substr(0, 4)) {
+            case 'sssn':
+                return "#/app/session";
+            case 'note':
+                return "#/app/keynote";
+            default:
+                return "#/app";
+        }
+    };
+
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Speaker', value: 'speakers'}];
     this.sortmode = this.sortmodes[0];
     this.update();

@@ -175,6 +175,13 @@ angular.module('starter.services', [])
             _id: 'papr0006',
             title: 'Interactively animating crumpling paper',
             authors: ['Camille Schreck', 'Damien Rohmer', 'Stefanie Hahmann', 'Marie-Paule Cani']
+        }, {
+            _id: 'note001',
+            title: 'Keynote (Main Aula)',
+            description: 'Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
+            speakers: ['spkr018'],
+            startDate: new Date(2015, 4, 19, 8, 0),
+            endDate: new Date(2015, 4, 19, 9, 0)
         }]);
 
         function getScheduleEntries() {
@@ -325,7 +332,21 @@ angular.module('starter.services', [])
                     session.speakers = session.speakers.join(', ');
                 }
 
+                // Add speakers to keynotes
+                for (var i = 0; i < keynotes.length; i++) {
+                    var keynote = keynotes[i];
+                    keynote.speakers = replaceIdsWithObjects(keynote.speakers, speakers);
+                    keynote.startDate = new Date(Date.parse(keynote.startDate));
+                    keynote.endDate = new Date(Date.parse(keynote.endDate));
+                    var speakerNames = [];
+                    for(var j = 0; j < keynote.speakers.length; j++) {
+                        speakerNames.push(keynote.speakers[j].firstName + " " + keynote.speakers[j].lastName);
+                    }
+                    keynote.speakers = speakerNames.join(', ');
+                }
+
                 scheduleEntries.push(sessions);
+                scheduleEntries.push(keynotes);
 
                 scheduleEntries = _.flatten(scheduleEntries);
                 // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))

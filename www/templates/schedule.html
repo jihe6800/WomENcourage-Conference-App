@@ -10,7 +10,7 @@
                     </ion-item>
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
-                        <ion-item class="item item-accordion item-text-wrap" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session._id}}" ng-show="group.visible">
+                        <ion-item class="item-accordion item-text-wrap" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" ng-href="{{schedule.getURL(session)}}/{{session._id}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(session)}}">
                             <div class="item-wrapper-schedule">
                                 <div class="info-schedule">
                                     <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3>
@@ -27,7 +27,6 @@
                                         </div>
                                     </label>
                                 </div>
-
                             </div>
                         </ion-item>
                     </div>
