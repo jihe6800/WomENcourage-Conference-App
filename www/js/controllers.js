@@ -127,7 +127,7 @@ angular.module('starter.controllers', ['starter.services'])
         }
     };
 
-    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Speaker', value: 'speakers'}];
+    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}];
     this.sortmode = this.sortmodes[0];
     this.update();
 });
