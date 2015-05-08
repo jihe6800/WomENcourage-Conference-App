@@ -13,15 +13,9 @@
                         <ion-item class="item item-accordion item-text-wrap" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session._id}}" ng-show="group.visible">
                             <div class="item-wrapper-schedule">
                                 <div class="info-schedule">
-                                    <div class="row">
-                                        <div class="col"> <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col"> <h2>{{session.title}}</h2></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col"><p>{{session.speakers}}</p></div>
-                                    </div>
+                                    <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3>
+                                    <h2>{{session.title}}</h2>
+                                    <p>{{session.speakers}}</p>
                                 </div>
 
                                 <!-- Toggle-button to add for personal schedule -->

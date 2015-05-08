@@ -3,7 +3,6 @@
     width: 90px;
     font-size: 11px;
     line-height: 20px;
-
 }
 .button-start::before {
     padding-top: 10px;
@@ -11,9 +10,7 @@
     font-size: 45px;
 }
 
-
-
-/* */
+/* Start page centering */
 .start-center{
     display: -webkit-box;
     display: -moz-box;
@@ -56,8 +53,6 @@
 }
 
 /* Item grid in schedule */
-
-
 .info-schedule{
     display: inline-block;
     width:auto;
@@ -73,7 +68,6 @@
     position:absolute;
     right: 20px;
     top: 50%;
-
 }
 
 .item-wrapper-schedule{
