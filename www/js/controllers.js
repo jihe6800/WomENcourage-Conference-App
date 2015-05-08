@@ -10,7 +10,18 @@ angular.module('starter.controllers', ['starter.services'])
     .controller('EntryCtrl', function(database){
         this.activeEntry = database.getActiveEntry();
     })
-    
+
+    .controller('SpeakerCtrl', function(database){
+        this.activeSpeaker = database.getActiveSpeaker();
+    })
+
+    .controller('SpeakersCtrl', function(database){
+        this.setActiveSpeaker = function(speaker){
+            database.setActiveSpeaker(speaker);
+        };
+    })
+
+
 .controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, database) {
     /*
      * 1. Sorts arr by sortAttr.
