@@ -7,8 +7,8 @@ angular.module('starter.controllers', ['starter.services'])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-    .controller('SessionCtrl', function(database){
-        this.activeSession = database.getActiveSession();
+    .controller('EntryCtrl', function(database){
+        this.activeEntry = database.getActiveEntry();
     })
     
 .controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, database) {
@@ -43,16 +43,16 @@ angular.module('starter.controllers', ['starter.services'])
         return groups;
     }
 
-    /* Groups sessions by day */
-    function groupByDay(sessions) {
-        return sortAndGroup(sessions, 'startDate', function(startDate) {
+    /* Groups entries by day */
+    function groupByDay(entries) {
+        return sortAndGroup(entries, 'startDate', function(startDate) {
             return startDate.toDateString();
         }, 'groups');
     }
 
-    /* Groups sessions by sortmode */
-    function groupBySortmode(sessions, sortmode) {
-        return sortAndGroup(sessions, sortmode, function(sortAttr) {
+    /* Groups entries by sortmode */
+    function groupBySortmode(entries, sortmode) {
+        return sortAndGroup(entries, sortmode, function(sortAttr) {
             switch (sortmode) {
                 case 'title':
                 case 'speakers':
@@ -60,12 +60,12 @@ angular.module('starter.controllers', ['starter.services'])
                 default: // startDate
                     return sortAttr.toTimeString().substr(0, 5);
             }
-        }, 'sessions');
+        }, 'entries');
     }
 
-    /* Groups sessions by day and within days by sortmode */
-    function group(sessions, sortmode) {
-        var days = groupByDay(sessions); // Group by day
+    /* Groups entries by day and within days by sortmode */
+    function group(entries, sortmode) {
+        var days = groupByDay(entries); // Group by day
 
         // Within each day, group by sortmode
         for (var i = 0; i < days.length; i++) {
@@ -76,7 +76,7 @@ angular.module('starter.controllers', ['starter.services'])
         return days;
     }
 
-    /* Creates a grouped list of the sessions based on this.sortmode.value */
+    /* Creates a grouped list of the entries based on this.sortmode.value */
     this.update = function() {
         var that = this;
         $q.when(database.getScheduleEntries()).then(function(result) {
@@ -93,8 +93,8 @@ angular.module('starter.controllers', ['starter.services'])
         $ionicSlideBoxDelegate.slide(index);
     };
 
-    this.setSession = function(session){
-        database.setActiveSession(session);
+    this.setActiveEntry = function(entry){
+        database.setActiveEntry(entry);
     };
 
     this.getEntryColor = function(entry) {
@@ -108,7 +108,7 @@ angular.module('starter.controllers', ['starter.services'])
         }
     };
 
-    this.getURL = function(entry) {
+    this.getEntryURL = function(entry) {
         switch(entry._id.substr(0, 4)) {
             case 'sssn':
                 return "#/app/session";

@@ -65,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     views: {
       'menuContent': {
         templateUrl: "templates/session.html",
-        controller: 'SessionCtrl as session'
+        controller: 'EntryCtrl as entry'
       }
     }
   })
@@ -75,7 +75,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     views: {
       'menuContent': {
         templateUrl: "templates/keynote.html",
-        controller: 'SessionCtrl as session'
+        controller: 'EntryCtrl as entry'
       }
     }
   })

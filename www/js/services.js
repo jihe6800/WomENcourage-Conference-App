@@ -2,7 +2,7 @@ angular.module('starter.services', [])
 
     .factory('database', function() {
         var db = new PouchDB('schedule');
-        var activeSession; // Will contain the currently active session
+        var activeEntry; // Will contain the currently active entry
 
         db.changes({
             since: 'now',
@@ -363,11 +363,11 @@ angular.module('starter.services', [])
             getScheduleEntries: function() {
                 return getScheduleEntries();
             },
-            setActiveSession: function(session){
-                activeSession = session;
+            setActiveEntry: function(entry){
+                activeEntry = entry;
             },
-            getActiveSession: function(){
-                return activeSession;
+            getActiveEntry: function(){
+                return activeEntry;
             }
         };
     });
