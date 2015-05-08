@@ -2,7 +2,7 @@
     <ion-content>
         <div class="card">
             <div class="item item-divider item-text-wrap">
-                {{speaker.activeSpeaker.fristName}} {{speaker.activeSpeaker.lastName}}
+                {{speaker.activeSpeaker.firstName}} {{speaker.activeSpeaker.lastName}}
             </div>
             <div class="item item-text-wrap">
                 <p>{{speaker.activeSpeaker.affiliation}}</p>
@@ -18,7 +18,7 @@
             <div class="padding">
                 <h4>{{paper.title}}</h4>
                 <h5>Authors</h5>
-                <div ng-repeat="authors in paper.authors">{{authors.firstName}} {{authors.lastName}}</div>
+                <div ng-repeat="author in paper.authors">{{author.firstName}} {{author.lastName}}</div>
             </div>
         </div>
     </ion-content>
