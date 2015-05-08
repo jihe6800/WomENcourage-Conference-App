@@ -5,8 +5,10 @@
                 {{entry.activeEntry.title}}
             </div>
             <div class="item item-text-wrap">
-                <h2>{{entry.activeEntry.startDate.toDateString()}}</h2>
-                <h3>{{entry.activeEntry.startDate.toTimeString().substr(0,5)}} - {{entry.activeEntry.endDate.toTimeString().substr(0,5)}}</h3>
+                <h2><i class="ion-calendar"></i> {{entry.activeEntry.startDate.toDateString()}}</h2>
+                <h3><i class="ion-android-time"></i> {{entry.activeEntry.startDate.toTimeString().substr(0,5)}} - {{entry.activeEntry.endDate.toTimeString().substr(0,5)}}</h3>
+                <p><i class="ion-location"></i> {{entry.activeEntry.location}}</p>
+                <p><i class="ion-ios-people"></i> {{entry.activeEntry.speakers}}</p>
                 <h2>Description</h2>
                 <p ng-repeat="paragraph in entry.activeEntry.description">{{paragraph}}</p>
             </div>

@@ -13,9 +13,10 @@
                         <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-click="schedule.setActiveEntry(entry)" ng-href="{{schedule.getEntryURL(entry)}}/{{entry._id}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(entry)}}">
                             <div class="item-wrapper-schedule">
                                 <div class="info-schedule">
-                                    <h3>{{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
                                     <h2>{{entry.title}}</h2>
-                                    <p>{{entry.speakers}}</p>
+                                    <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
+                                    <p ng-if="entry.location"><i class="ion-location"></i> {{entry.location}}</p>
+                                    <p ng-if="entry.speakers"><i class="ion-ios-people"></i> {{entry.speakers}}</p>
                                 </div>
 
                                 <!-- Toggle-button to add for personal schedule -->

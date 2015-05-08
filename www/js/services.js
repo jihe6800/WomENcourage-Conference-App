@@ -112,6 +112,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'talk0001',
             title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
+            location: 'Room 103',
             speakers: ['spkr001', 'spkr002', 'spkr003', 'spkr004'],
             papers: ['papr0001'],
             startDate: new Date(2015, 4, 19, 9, 0),
@@ -119,6 +120,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'talk0002',
             title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
+            location: 'Room 103',
             speakers: ['spkr005', 'spkr006', 'spkr007'],
             papers: ['papr0002'],
             startDate: new Date(2015, 4, 19, 10, 0),
@@ -126,6 +128,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'talk0003',
             title: 'Window to the Outside World: Bringing the outside in to housebound older adults in remote and rural areas',
+            location: 'Room 103',
             speakers: ['spkr008'],
             papers: ['papr0003'],
             startDate: new Date(2015, 4, 19, 11, 0),
@@ -133,6 +136,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'talk0004',
             title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
+            location: 'Room 46',
             speakers: ['spkr009', 'spkr010', 'spkr011'],
             papers: ['papr0004'],
             startDate: new Date(2015, 4, 19, 13, 0),
@@ -140,6 +144,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'talk0005',
             title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
+            location: 'Room 46',
             speakers: ['spkr012', 'spkr013', 'spkr014'],
             papers: ['papr0005'],
             startDate: new Date(2015, 4, 19, 14, 0),
@@ -147,6 +152,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'talk0006',
             title: 'Interactively animating crumpling paper',
+            location: 'Room 46',
             speakers: ['spkr015', 'spkr016', 'spkr017', 'spkr018'],
             papers: ['papr0006'],
             startDate: new Date(2015, 4, 19, 15, 0),
@@ -178,6 +184,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'note001',
             title: 'Keynote (Main Aula)',
+            location: 'Main Aula',
             description: 'Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
             speakers: ['spkr018'],
             startDate: new Date(2015, 4, 19, 8, 0),
@@ -185,6 +192,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'cmmn001',
             title: 'Registration',
+            location: 'Room 1',
             description: 'Please register to the conference.',
             startDate: new Date(2015, 8, 25, 8, 30),
             endDate: new Date(2015, 8, 25, 9, 15),
@@ -192,6 +200,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'cmmn002',
             title: 'Coffee Break',
+            location: '',
             description: 'Please have a cup of coffee.',
             startDate: new Date(2015, 8, 25, 10, 30),
             endDate: new Date(2015, 8, 25, 11, 0),
@@ -199,6 +208,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'cmmn003',
             title: 'Lunch',
+            location: '',
             description: "Please don't forget to eat lunch.",
             startDate: new Date(2015, 8, 25, 12, 0),
             endDate: new Date(2015, 8, 25, 13, 30),
@@ -206,6 +216,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'cmmn004',
             title: 'Coffee Break',
+            location: '',
             description: 'Please have a cup of coffee again.',
             startDate: new Date(2015, 8, 25, 14, 30),
             endDate: new Date(2015, 8, 25, 15, 0),
@@ -213,6 +224,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'wksp001',
             title: 'Workshop 1: Making your ideas into reality',
+            location: 'Room 12',
             description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
@@ -220,6 +232,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'wksp002',
             title: 'Workshop 2: Coding for all: Family friendly endition',
+            location: 'Room 13',
             description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
@@ -227,6 +240,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'wksp003',
             title: 'Workshop 3: Prototyping wearable electronics workshop',
+            location: 'Room 14',
             description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try! This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people. All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
@@ -234,6 +248,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'wksp004',
             title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys.',
+            location: 'Room 15',
             description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.', 'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.', 'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:', '1. Presentation of ACM ICPC organization', '2. Presentation of examples of problems solved in contest from simplest one to the most difficult', '3. Explanation and usage of an automatic judging system', '4. Practical session of solving simple problems under judging system', '5. Final 1 hour contest with few simple problems as example of real programming contest.', 'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
@@ -367,6 +382,9 @@ angular.module('starter.services', [])
                             talkObjects.push(talkObject);
                             talkObject.startDate = new Date(Date.parse(talkObject.startDate));
                             talkObject.endDate = new Date(Date.parse(talkObject.endDate));
+
+                            // Set location of session to that of the talk (Assuming that all talks should have the same location)
+                            session.location = talkObject.location;
 
                             minDate = (talkObject.startDate < minDate || minDate === 0) ? talkObject.startDate : minDate;
                             maxDate = (talkObject.endDate > maxDate) ? talkObject.endDate : maxDate;

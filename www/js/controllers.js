@@ -57,6 +57,8 @@ angular.module('starter.controllers', ['starter.services'])
                 case 'title':
                 case 'speakers':
                     return sortAttr.charAt(0);
+                case 'location':
+                    return sortAttr;
                 default: // startDate
                     return sortAttr.toTimeString().substr(0, 5);
             }
@@ -127,7 +129,7 @@ angular.module('starter.controllers', ['starter.services'])
         }
     };
 
-    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}];
+    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Location', value: 'location'}];
     this.sortmode = this.sortmodes[0];
     this.update();
 });
