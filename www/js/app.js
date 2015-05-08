@@ -122,10 +122,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     url: "/speakers",
     views: {
       'menuContent': {
-        templateUrl: "templates/speakers.html"
+        templateUrl: "templates/speakers.html",
+        controller: 'SpeakersCtrl as speakers'
       }
     }
   })
+
+      .state('app.speaker', {
+        url: "/speaker/:id",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/speaker.html",
+            controller: 'SpeakerCtrl as speaker'
+          }
+        }
+      })
 
       .state('app.map', {
         url: "/map",

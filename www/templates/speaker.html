@@ -1,0 +1,25 @@
+<ion-view view-title="Speaker">
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider item-text-wrap">
+                {{speaker.activeSpeaker.fristName}} {{speaker.activeSpeaker.lastName}}
+            </div>
+            <div class="item item-text-wrap">
+                <p>{{speaker.activeSpeaker.affiliation}}</p>
+            </div>
+        </div>
+        <ion-item class="item-divider">
+            Papers
+        </ion-item>
+        <div class="card" ng-repeat="paper in speaker.activeSpeaker.papers">
+            <ion-item class="item-divider">
+                <h3>{{stuff}}</h3>
+            </ion-item>
+            <div class="padding">
+                <h4>{{paper.title}}</h4>
+                <h5>Authors</h5>
+                <div ng-repeat="authors in paper.authors">{{authors.firstName}} {{authors.lastName}}</div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -3,6 +3,7 @@ angular.module('starter.services', [])
     .factory('database', function() {
         var db = new PouchDB('schedule');
         var activeEntry; // Will contain the currently active entry
+        var activeSpeaker; // Will contain the currently active speaker
 
         db.changes({
             since: 'now',
@@ -440,6 +441,12 @@ angular.module('starter.services', [])
             },
             getActiveEntry: function(){
                 return activeEntry;
+            },
+            setActiveSpeaker: function(speaker){
+                activeSpeaker = speaker;
+            },
+            getActiveSpeaker: function(){
+                return activeSpeaker;
             }
         };
     });
