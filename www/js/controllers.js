@@ -105,6 +105,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#A5B1C0";
             case 'cmmn':
                 return "#FFE4A3";
+            case 'wksp':
+                return "#D3AA47";
             default:
                 return "#FFFFFF";
         }
@@ -118,6 +120,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#/app/keynote";
             case 'cmmn':
                 return "#/app/common";
+            case 'wksp':
+                return "#/app/workshop";
             default:
                 return "#/app";
         }

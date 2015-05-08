@@ -90,6 +90,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     }
   })
 
+  .state('app.workshop', {
+    url: "/workshop/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/workshop.html",
+        controller: 'EntryCtrl as entry'
+      }
+    }
+  })
+
     .state('app.my-schedule', {
       url: "/my-schedule",
       views: {

@@ -210,6 +210,34 @@ angular.module('starter.services', [])
             startDate: new Date(2015, 8, 25, 14, 30),
             endDate: new Date(2015, 8, 25, 15, 0),
             speakers: ""
+        }, {
+            _id: 'wksp001',
+            title: 'Workshop 1: Making your ideas into reality',
+            description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.'],
+            startDate: new Date(2015, 8, 25, 13, 30),
+            endDate: new Date(2015, 8, 25, 14, 30),
+            speakers: ""
+        }, {
+            _id: 'wksp002',
+            title: 'Workshop 2: Coding for all: Family friendly endition',
+            description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.'],
+            startDate: new Date(2015, 8, 25, 13, 30),
+            endDate: new Date(2015, 8, 25, 14, 30),
+            speakers: ""
+        }, {
+            _id: 'wksp003',
+            title: 'Workshop 3: Prototyping wearable electronics workshop',
+            description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try! This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people. All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.'],
+            startDate: new Date(2015, 8, 25, 13, 30),
+            endDate: new Date(2015, 8, 25, 14, 30),
+            speakers: ""
+        }, {
+            _id: 'wksp004',
+            title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys.',
+            description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.', 'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.', 'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:', '1. Presentation of ACM ICPC organization', '2. Presentation of examples of problems solved in contest from simplest one to the most difficult', '3. Explanation and usage of an automatic judging system', '4. Practical session of solving simple problems under judging system', '5. Final 1 hour contest with few simple problems as example of real programming contest.', 'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
+            startDate: new Date(2015, 8, 25, 13, 30),
+            endDate: new Date(2015, 8, 25, 14, 30),
+            speakers: ""
         }]);
 
         function getScheduleEntries() {
@@ -380,9 +408,17 @@ angular.module('starter.services', [])
                     commonEntry.endDate = new Date(Date.parse(commonEntry.endDate));
                 }
 
+                // Fix dates of workshops
+                for (var i = 0; i < workshops.length; i++) {
+                    var workshop = workshops[i];
+                    workshop.startDate = new Date(Date.parse(workshop.startDate));
+                    workshop.endDate = new Date(Date.parse(workshop.endDate));
+                }
+
                 scheduleEntries.push(sessions);
                 scheduleEntries.push(keynotes);
                 scheduleEntries.push(commonEntries);
+                scheduleEntries.push(workshops);
 
                 scheduleEntries = _.flatten(scheduleEntries);
                 // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))
