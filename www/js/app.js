@@ -80,6 +80,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     }
   })
 
+  .state('app.common', {
+    url: "/common/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/common-entry.html",
+        controller: 'EntryCtrl as entry'
+      }
+    }
+  })
+
     .state('app.my-schedule', {
       url: "/my-schedule",
       views: {

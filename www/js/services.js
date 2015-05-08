@@ -182,6 +182,34 @@ angular.module('starter.services', [])
             speakers: ['spkr018'],
             startDate: new Date(2015, 4, 19, 8, 0),
             endDate: new Date(2015, 4, 19, 9, 0)
+        }, {
+            _id: 'cmmn001',
+            title: 'Registration',
+            description: 'Please register to the conference.',
+            startDate: new Date(2015, 8, 25, 8, 30),
+            endDate: new Date(2015, 8, 25, 9, 15),
+            speakers: ""
+        }, {
+            _id: 'cmmn002',
+            title: 'Coffee Break',
+            description: 'Please have a cup of coffee.',
+            startDate: new Date(2015, 8, 25, 10, 30),
+            endDate: new Date(2015, 8, 25, 11, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn003',
+            title: 'Lunch',
+            description: "Please don't forget to eat lunch.",
+            startDate: new Date(2015, 8, 25, 12, 0),
+            endDate: new Date(2015, 8, 25, 13, 30),
+            speakers: ""
+        }, {
+            _id: 'cmmn004',
+            title: 'Coffee Break',
+            description: 'Please have a cup of coffee again.',
+            startDate: new Date(2015, 8, 25, 14, 30),
+            endDate: new Date(2015, 8, 25, 15, 0),
+            speakers: ""
         }]);
 
         function getScheduleEntries() {
@@ -345,8 +373,16 @@ angular.module('starter.services', [])
                     keynote.speakers = speakerNames.join(', ');
                 }
 
+                // Fix dates of common entries
+                for (var i = 0; i < commonEntries.length; i++) {
+                    var commonEntry = commonEntries[i];
+                    commonEntry.startDate = new Date(Date.parse(commonEntry.startDate));
+                    commonEntry.endDate = new Date(Date.parse(commonEntry.endDate));
+                }
+
                 scheduleEntries.push(sessions);
                 scheduleEntries.push(keynotes);
+                scheduleEntries.push(commonEntries);
 
                 scheduleEntries = _.flatten(scheduleEntries);
                 // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))

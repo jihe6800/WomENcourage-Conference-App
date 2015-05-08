@@ -103,6 +103,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#DFF69D";
             case 'note':
                 return "#A5B1C0";
+            case 'cmmn':
+                return "#FFE4A3";
             default:
                 return "#FFFFFF";
         }
@@ -114,6 +116,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#/app/session";
             case 'note':
                 return "#/app/keynote";
+            case 'cmmn':
+                return "#/app/common";
             default:
                 return "#/app";
         }
