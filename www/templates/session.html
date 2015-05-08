@@ -1,13 +1,28 @@
 <ion-view view-title="Session">
     <ion-content>
         <div class="card">
-            <div class="item item-divider">
-                <h1>{{session.activeSession.title}}</h1>
+            <div class="item item-divider item-text-wrap session">
+                {{session.activeSession.title}}
             </div>
             <div class="item item-text-wrap">
                 <h2>{{session.activeSession.startDate.toDateString()}}</h2>
                 <h3>{{session.activeSession.startDate.toTimeString().substr(0,5)}} - {{session.activeSession.endDate.toTimeString().substr(0,5)}}</h3>
-                <p>{{session.activeSession.speaker}}</p>
+                <p>{{session.activeSession.speakers}}</p>
+            </div>
+        </div>
+        <ion-item class="item-divider">
+            Talks in session
+        </ion-item>
+        <div class="card" ng-repeat="talk in session.activeSession.talks">
+            <ion-item class="item-divider">
+                <h3>{{talk.startDate.toTimeString().substr(0,5)}} - {{talk.endDate.toTimeString().substr(0,5)}}</h3>
+            </ion-item>
+            <div class="padding">
+                <h4>{{talk.title}}</h4>
+                <h5>Speakers</h5>
+                <div ng-repeat="speaker in talk.speakers">{{speaker.firstName}} {{speaker.lastName}}</div>
+                <h5>Papers</h5>
+                <p ng-repeat="paper in talk.papers">{{paper.title}}</p>
             </div>
         </div>
     </ion-content>

@@ -11,7 +11,7 @@ angular.module('starter.controllers', ['starter.services'])
         this.activeSession = database.getActiveSession();
     })
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, database) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -55,7 +55,7 @@ angular.module('starter.controllers', ['starter.services'])
         return sortAndGroup(sessions, sortmode, function(sortAttr) {
             switch (sortmode) {
                 case 'title':
-                case 'speaker':
+                case 'speakers':
                     return sortAttr.charAt(0);
                 default: // startDate
                     return sortAttr.toTimeString().substr(0, 5);
@@ -78,10 +78,10 @@ angular.module('starter.controllers', ['starter.services'])
 
     /* Creates a grouped list of the sessions based on this.sortmode.value */
     this.update = function() {
-        var sortmode = this.sortmode;
-        $q.when(database.getAll()).then(function(result) {
-            $scope.days = group(result, sortmode.value);
-            setTimeout(function() {
+        var that = this;
+        $q.when(database.getScheduleEntries()).then(function(result) {
+            that.days = group(result, that.sortmode.value);
+            $timeout(function() {
                 $ionicSlideBoxDelegate.update();
                 }, 1000);
         }).catch(function (error) {
@@ -97,7 +97,7 @@ angular.module('starter.controllers', ['starter.services'])
         database.setActiveSession(session);
     };
 
-    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Speaker', value: 'speaker'}];
+    this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Speaker', value: 'speakers'}];
     this.sortmode = this.sortmodes[0];
     this.update();
 });
