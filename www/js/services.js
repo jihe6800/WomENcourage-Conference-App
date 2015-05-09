@@ -24,16 +24,19 @@ angular.module('starter.services', [])
             _id: 'spkr001',
             firstName: "Camille",
             lastName: "Jeunet",
+            affiliation: '',
             papers: ['papr0001']
         }, {
             _id: 'spkr002',
             firstName: "Bernard",
             lastName: "N'Kaoua",
+            affiliation: '',
             papers: ['papr0001']
         }, {
             _id: 'spkr003',
             firstName: "Martin",
             lastName: "Hachet",
+            affiliation: '',
             papers: ['papr0001']
         }, {
             _id: 'spkr004',
@@ -44,11 +47,13 @@ angular.module('starter.services', [])
             _id: 'spkr005',
             firstName: "Lucile",
             lastName: "Dupuy",
+            affiliation: '',
             papers: ['papr0002']
         }, {
             _id: 'spkr006',
             firstName: "Hélène",
             lastName: "Sauzéon ",
+            affiliation: '',
             papers: ['papr0002']
         }, {
             _id: 'spkr007',
@@ -59,57 +64,74 @@ angular.module('starter.services', [])
             _id: 'spkr008',
             firstName: "Gillian",
             lastName: "Dowds",
+            affiliation: '',
             papers: ['papr0003']
         }, {
             _id: 'spkr009',
             firstName: "Maud",
             lastName: "Gibbons",
+            affiliation: '',
             papers: ['papr0004']
         }, {
             _id: 'spkr010',
             firstName: "Colm",
             lastName: "O'Riordan",
+            affiliation: '',
             papers: ['papr0004']
         }, {
             _id: 'spkr011',
             firstName: "Josephine",
             lastName: "Griffith",
+            affiliation: '',
             papers: ['papr0004']
         }, {
             _id: 'spkr012',
             firstName: "Martina",
             lastName: "Curran",
+            affiliation: '',
             papers: ['papr0005']
         }, {
             _id: 'spkr013',
             firstName: "Enda",
             lastName: "Howley",
+            affiliation: '',
             papers: ['papr0005']
         }, {
             _id: 'spkr014',
             firstName: "Jim",
             lastName: "Duggan",
+            affiliation: '',
             papers: ['papr0005']
         }, {
             _id: 'spkr015',
             firstName: "Camille",
             lastName: "Schreck",
+            affiliation: '',
             papers: ['papr0006']
         }, {
             _id: 'spkr016',
             firstName: "Damien",
             lastName: "Rohmer",
+            affiliation: '',
             papers: ['papr0006']
         }, {
             _id: 'spkr017',
             firstName: "Stefanie",
             lastName: "Hahmann",
+            affiliation: '',
             papers: ['papr0006']
         }, {
             _id: 'spkr018',
             firstName: "Marie-Paule",
             lastName: "Cani",
+            affiliation: 'Grenoble University (Grenoble Institute of Technology & Inria)',
             papers: ['papr0006']
+        }, {
+            _id: 'spkr019',
+            firstName: "Åsa",
+            lastName: "Cajander",
+            affiliation: 'Uppsala University',
+            papers: ''
         }, {
             _id: 'talk0001',
             title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
@@ -183,13 +205,53 @@ angular.module('starter.services', [])
             title: 'Interactively animating crumpling paper',
             authors: ['Camille Schreck', 'Damien Rohmer', 'Stefanie Hahmann', 'Marie-Paule Cani']
         }, {
+            _id: 'papr0007',
+            title: 'A real-time dance visualization framework for the design of mappings that favor user appropriation',
+            authors: ['Carla Griggio', 'Mario Romero']
+        }, {
+            _id: 'papr0008',
+            title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
+            authors: ['Anna Maria Feit', 'Srinath Sridhar', 'Christian Theobalt', 'Antti Oulasvirta']
+        }, {
+            _id: 'papr0009',
+            title: 'Beyond the Limits of Digital Interaction: Should Animals Play with Interactive Environments?',
+            authors: ['Patricia Pons', 'Javier Jaen', 'Alejandro Catala']
+        }, {
+            _id: 'papr0010',
+            title: 'EnGendering Design: Implementing Interdisciplinarity',
+            authors: ['Samantha Breslin', 'Bimlesh Wadhwa']
+        }, {
+            _id: 'papr0011',
+            title: 'Gender Division in Computer Science: Conceptions and Statistics of Uppsala University',
+            authors: ['Noric Couderc', 'Elin Parsjö', 'Nadia Röning']
+        }, {
+            _id: 'papr0012',
+            title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
+            authors: ['Karin Siebenhandl', 'Eva Mayr']
+        }, {
             _id: 'note001',
-            title: 'Keynote (Main Aula)',
+            title: 'Keynote: Towards Expressive 3D Modelling: New challenges in Computer Graphics',
             location: 'Main Aula',
             description: 'Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
             speakers: ['spkr018'],
             startDate: new Date(2015, 4, 19, 8, 0),
             endDate: new Date(2015, 4, 19, 9, 0)
+        }, {
+            _id: 'note002',
+            title: 'Keynote: TBA',
+            location: 'Main Aula',
+            description: 'No description.',
+            speakers: ['spkr019'],
+            startDate: new Date(2015, 8, 26, 9, 30),
+            endDate: new Date(2015, 8, 26, 10, 30)
+        }, {
+            _id: 'note003',
+            title: 'Keynote: Towards Expressive 3D Modelling: New challenges in Computer Graphics',
+            location: 'Main Aula',
+            description: 'No description.',
+            speakers: ['spkr018'],
+            startDate: new Date(2015, 8, 26, 16, 0),
+            endDate: new Date(2015, 8, 26, 17, 0)
         }, {
             _id: 'cmmn001',
             title: 'Registration',
@@ -248,12 +310,40 @@ angular.module('starter.services', [])
             speakers: ""
         }, {
             _id: 'wksp004',
-            title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys.',
+            title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
             location: 'Room 15',
             description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.', 'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.', 'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:', '1. Presentation of ACM ICPC organization', '2. Presentation of examples of problems solved in contest from simplest one to the most difficult', '3. Explanation and usage of an automatic judging system', '4. Practical session of solving simple problems under judging system', '5. Final 1 hour contest with few simple problems as example of real programming contest.', 'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
             speakers: ""
+        }, {
+            _id: 'wksp005',
+            title: 'Workshop 5: Oracle Workshop - Introducing Alice',
+            location: 'Room 12',
+            description: ['No description.'],
+            startDate: new Date(2015, 8, 26, 11, 0),
+            endDate: new Date(2015, 8, 26, 12, 0),
+            speakers: ""
+        }, {
+            _id: 'wksp006',
+            title: 'Workshop 6: Contributing to Open Source',
+            location: 'Room 13',
+            description: ['No description.'],
+            startDate: new Date(2015, 8, 26, 11, 0),
+            endDate: new Date(2015, 8, 26, 12, 0),
+            speakers: ""
+        }, {
+            _id: 'pstr0001',
+            title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
+            authors: ['Karin Siebenhandl', 'Eva Mayr']
+        }, {
+            _id: 'panl0001',
+            title: 'Panel',
+            location: 'Main Aula',
+            speakers: ['Karin Siebenhandl', 'Eva Mayr'],
+            moderator: 'Some One',
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }]);
 
         function getScheduleEntries() {
@@ -315,7 +405,7 @@ angular.module('starter.services', [])
                         case 'spcl':
                             specialEntries.push(item);
                             break;
-                        case 'pnls':
+                        case 'panl':
                             panels.push(item);
                             break;
                         case 'ptre':
@@ -358,6 +448,12 @@ angular.module('starter.services', [])
                     }
 
                     return matchedObjects;
+                }
+
+                // Makes sure the start and end date objects are working properly
+                function fixDates(entry) {
+                    entry.startDate = new Date(Date.parse(entry.startDate));
+                    entry.endDate = new Date(Date.parse(entry.endDate));
                 }
 
                 // Add papers to speakers
@@ -422,22 +518,35 @@ angular.module('starter.services', [])
 
                 // Fix dates of common entries
                 for (var i = 0; i < commonEntries.length; i++) {
-                    var commonEntry = commonEntries[i];
-                    commonEntry.startDate = new Date(Date.parse(commonEntry.startDate));
-                    commonEntry.endDate = new Date(Date.parse(commonEntry.endDate));
+                    fixDates(commonEntries[i]);
                 }
 
                 // Fix dates of workshops
                 for (var i = 0; i < workshops.length; i++) {
-                    var workshop = workshops[i];
-                    workshop.startDate = new Date(Date.parse(workshop.startDate));
-                    workshop.endDate = new Date(Date.parse(workshop.endDate));
+                    fixDates(workshops[i]);
                 }
 
+                // Turn poster authors array into comma separated string
+                for (var i = 0; i < posters.length; i++) {
+                    posters[i].authors = posters[i].authors.join(', ');
+                }
+
+                // Turn panel speakers array into comma separated string
+                for (var i = 0; i < panels.length; i++) {
+                    panels[i].speakers = panels[i].speakers.join(', ');
+                }
+
+                // Fix dates of panels
+                for (var i = 0; i < panels.length; i++) {
+                    fixDates(panels[i]);
+                }
+
+                // Add entries to be showed in schedule to an array
                 scheduleEntries.push(sessions);
                 scheduleEntries.push(keynotes);
                 scheduleEntries.push(commonEntries);
                 scheduleEntries.push(workshops);
+                scheduleEntries.push(panels);
 
                 scheduleEntries = _.flatten(scheduleEntries);
                 // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))

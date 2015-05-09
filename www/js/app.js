@@ -100,6 +100,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     }
   })
 
+  .state('app.panel', {
+    url: "/panel/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/panel.html",
+        controller: 'EntryCtrl as entry'
+      }
+    }
+  })
+
     .state('app.my-schedule', {
       url: "/my-schedule",
       views: {

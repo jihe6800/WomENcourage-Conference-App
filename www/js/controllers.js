@@ -120,6 +120,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#FFE4A3";
             case 'wksp':
                 return "#D3AA47";
+            case 'panl':
+                return "#A6C843";
             default:
                 return "#FFFFFF";
         }
@@ -135,6 +137,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#/app/common";
             case 'wksp':
                 return "#/app/workshop";
+            case 'panl':
+                return "#/app/panel";
             default:
                 return "#/app";
         }
