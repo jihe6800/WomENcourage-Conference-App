@@ -110,6 +110,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     }
   })
 
+  .state('app.unconference', {
+    url: "/unconference/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/unconference.html",
+        controller: 'EntryCtrl as entry'
+      }
+    }
+  })
+
     .state('app.my-schedule', {
       url: "/my-schedule",
       views: {

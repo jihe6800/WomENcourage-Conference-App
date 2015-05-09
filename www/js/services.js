@@ -344,6 +344,41 @@ angular.module('starter.services', [])
             moderator: 'Some One',
             startDate: new Date(2015, 8, 25, 11, 0),
             endDate: new Date(2015, 8, 25, 12, 0)
+        }, {
+            _id: 'uncf0001',
+            title: 'Case Studies',
+            location: 'Multiple',
+            speakers: '',
+            startDate: new Date(2015, 8, 25, 15, 0),
+            endDate: new Date(2015, 8, 25, 17, 0)
+        }, {
+            _id: 'uncf0002',
+            title: 'Case Studies',
+            location: 'Multiple',
+            speakers: '',
+            startDate: new Date(2015, 8, 26, 13, 30),
+            endDate: new Date(2015, 8, 26, 15, 30)
+        }, {
+            _id: 'uncf0003',
+            title: 'Unconference',
+            location: 'Multiple',
+            speakers: '',
+            startDate: new Date(2015, 8, 26, 13, 30),
+            endDate: new Date(2015, 8, 26, 14, 30)
+        }, {
+            _id: 'uncf0004',
+            title: 'Unconference',
+            location: 'Multiple',
+            speakers: '',
+            startDate: new Date(2015, 8, 26, 14, 30),
+            endDate: new Date(2015, 8, 26, 15, 30)
+        }, {
+            _id: 'uncf0005',
+            title: 'Unconference Wrap-up',
+            location: 'Main Aula',
+            speakers: '',
+            startDate: new Date(2015, 8, 26, 15, 30),
+            endDate: new Date(2015, 8, 26, 15, 45)
         }]);
 
         function getScheduleEntries() {
@@ -541,12 +576,18 @@ angular.module('starter.services', [])
                     fixDates(panels[i]);
                 }
 
-                // Add entries to be showed in schedule to an array
+                // Fix dates of unconferences
+                for (var i = 0; i < unconferences.length; i++) {
+                    fixDates(unconferences[i]);
+                }
+
+                // Add entries to be shown in schedule to an array
                 scheduleEntries.push(sessions);
                 scheduleEntries.push(keynotes);
                 scheduleEntries.push(commonEntries);
                 scheduleEntries.push(workshops);
                 scheduleEntries.push(panels);
+                scheduleEntries.push(unconferences);
 
                 scheduleEntries = _.flatten(scheduleEntries);
                 // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))
