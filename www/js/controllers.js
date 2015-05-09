@@ -124,6 +124,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#A6C843";
             case 'uncf':
                 return "#316B85";
+            case 'inds':
+                return "#7CAABD";
             default:
                 return "#FFFFFF";
         }
@@ -143,6 +145,8 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#/app/panel";
             case 'uncf':
                 return "#/app/unconference";
+            case 'inds':
+                return "#/app/industry-talks";
             default:
                 return "#/app";
         }

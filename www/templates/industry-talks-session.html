@@ -1,0 +1,29 @@
+<ion-view view-title="Industry Talks">
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider item-text-wrap">
+                {{entry.activeEntry.title}}
+            </div>
+            <div class="item item-text-wrap">
+                <h2><i class="ion-calendar"></i> {{entry.activeEntry.startDate.toDateString()}}</h2>
+                <h3><i class="ion-android-time"></i> {{entry.activeEntry.startDate.toTimeString().substr(0,5)}} - {{entry.activeEntry.endDate.toTimeString().substr(0,5)}}</h3>
+                <p><i class="ion-location"></i> {{entry.activeEntry.location}}</p>
+                <p><i class="ion-ios-people"></i> {{entry.activeEntry.speakers}}</p>
+            </div>
+        </div>
+        <ion-item class="item-divider">
+            Industry talks in session
+        </ion-item>
+        <div class="card" ng-repeat="talk in entry.activeEntry.talks">
+            <ion-item class="item-divider">
+                <h3>{{talk.startDate.toTimeString().substr(0,5)}} - {{talk.endDate.toTimeString().substr(0,5)}}</h3>
+            </ion-item>
+            <div class="padding">
+                <h4>{{talk.title}}</h4>
+                <h5><b>{{talk.company}}</b></h5>
+                <h5>Speakers</h5>
+                <div ng-repeat="speaker in talk.speakers">{{speaker.firstName}} {{speaker.lastName}}</div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

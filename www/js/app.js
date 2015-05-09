@@ -120,6 +120,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
     }
   })
 
+  .state('app.industry-talks', {
+    url: "/industry-talks/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/industry-talks-session.html",
+        controller: 'EntryCtrl as entry'
+      }
+    }
+  })
+
     .state('app.my-schedule', {
       url: "/my-schedule",
       views: {

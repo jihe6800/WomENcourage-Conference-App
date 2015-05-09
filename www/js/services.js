@@ -451,6 +451,26 @@ angular.module('starter.services', [])
             speakers: '',
             startDate: new Date(2015, 8, 26, 15, 30),
             endDate: new Date(2015, 8, 26, 15, 45)
+        }, {
+            _id: 'indt0001',
+            title: 'An industry talk',
+            location: 'Room IV',
+            speakers: ['spkr005'],
+            company: 'Example Company',
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 11, 30)
+        }, {
+            _id: 'indt0002',
+            title: 'Another industry talk',
+            location: 'Room IV',
+            speakers: ['spkr001'],
+            company: 'Example Company',
+            startDate: new Date(2015, 8, 25, 11, 30),
+            endDate: new Date(2015, 8, 25, 12, 0)
+        }, {
+            _id: 'inds0001',
+            title: 'Industry Talks',
+            talks: ['indt0001', 'indt0002']
         }]);
 
         function getScheduleEntries() {
@@ -462,23 +482,28 @@ angular.module('starter.services', [])
                 });
             }).then(function(result) {
                 // Declare arrays to store entry types
-                var scheduleEntries = [];
                 var plainText = [];
                 var sessions = [];
                 var speakers = [];
                 var talks = [];
                 var papers = [];
                 var posters = [];
-                var carreerFair = [];
                 var keynotes = [];
                 var commonEntries = [];
-                var specialEntries = [];
                 var panels = [];
-                var posterEvents = [];
-                var industryTalks = [];
                 var workshops = [];
-                var caseStudies = [];
                 var unconferences = [];
+                var industryTalks = [];
+                var industryTalksSessions = [];
+
+                // Array for all entries to be displayed in the schedule
+                var scheduleEntries = [];
+
+                // Uncertain
+                var carreerFair = [];
+                var specialEntries = [];
+                var posterEvents = [];
+                var caseStudies = [];
 
                 // Add items to the correct arrays
                 for (var i = 0; i < result.length; i++) {
@@ -518,8 +543,11 @@ angular.module('starter.services', [])
                         case 'ptre':
                             posterEvents.push(item);
                             break;
-                        case 'inds':
+                        case 'indt':
                             industryTalks.push(item);
+                            break;
+                        case 'inds':
+                            industryTalksSessions.push(item);
                             break;
                         case 'wksp':
                             workshops.push(item);
@@ -610,6 +638,47 @@ angular.module('starter.services', [])
                     session.speakers = session.speakers.join(', ');
                 }
 
+                // Add speakers to industryTalks and industryTalks to industryTalksSessions
+                for (var i = 0; i < industryTalksSessions.length; i++) {
+                    var industryTalksSession = industryTalksSessions[i];
+                    var minDate = 0;
+                    var maxDate = 0;
+                    var industryTalkObjects = [];
+                    var industryTalksSessionSpeakers = []; // Speakers for all the industryTalks in a industryTalksSession
+
+                    for (var j = 0; j < industryTalksSession.talks.length; j++) {
+                        var industryTalkObject = _.find(industryTalks, _.matchesProperty('_id', industryTalksSession.talks[j]));
+
+                        if (industryTalkObject === undefined) {
+                            console.log("Failed to find id " + industryTalksSession.talks[j] + "!");
+                        } else {
+                            console.log("Found an industryTalkObject " + industryTalksSession.talks[j] + "!");
+                            industryTalkObjects.push(industryTalkObject);
+                            industryTalkObject.startDate = new Date(Date.parse(industryTalkObject.startDate));
+                            industryTalkObject.endDate = new Date(Date.parse(industryTalkObject.endDate));
+
+                            // Set location of industryTalksSession to that of the industryTalk (Assuming that all industryTalks should have the same location)
+                            industryTalksSession.location = industryTalkObject.location;
+
+                            minDate = (industryTalkObject.startDate < minDate || minDate === 0) ? industryTalkObject.startDate : minDate;
+                            maxDate = (industryTalkObject.endDate > maxDate) ? industryTalkObject.endDate : maxDate;
+
+                            industryTalkObject.speakers = replaceIdsWithObjects(industryTalkObject.speakers, speakers);
+                            industryTalksSessionSpeakers.push(industryTalkObject.speakers);
+                        }
+                    }
+                    industryTalksSession.talks = industryTalkObjects;
+                    industryTalksSession.startDate = new Date(minDate);
+                    industryTalksSession.endDate = new Date(maxDate);
+                    industryTalksSession.speakers = [];
+
+                    industryTalksSessionSpeakers = _.unique(_.flatten(industryTalksSessionSpeakers, true)); // Put all unique speakers from all talks in a session
+                    for(var j = 0; j < industryTalksSessionSpeakers.length; j++) {
+                        industryTalksSession.speakers.push(industryTalksSessionSpeakers[j].firstName + " " + industryTalksSessionSpeakers[j].lastName);
+                    }
+                    industryTalksSession.speakers = industryTalksSession.speakers.join(', ');
+                }
+
                 // Add speakers to keynotes
                 for (var i = 0; i < keynotes.length; i++) {
                     var keynote = keynotes[i];
@@ -653,13 +722,14 @@ angular.module('starter.services', [])
                     fixDates(unconferences[i]);
                 }
 
-                // Add entries to be shown in schedule to an array
+                // Add entries to be shown in schedule to the array
                 scheduleEntries.push(sessions);
                 scheduleEntries.push(keynotes);
                 scheduleEntries.push(commonEntries);
                 scheduleEntries.push(workshops);
                 scheduleEntries.push(panels);
                 scheduleEntries.push(unconferences);
+                scheduleEntries.push(industryTalksSessions);
 
                 scheduleEntries = _.flatten(scheduleEntries);
                 // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))
