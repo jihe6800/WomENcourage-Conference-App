@@ -138,48 +138,48 @@ angular.module('starter.services', [])
             location: 'Room 103',
             speakers: ['spkr001', 'spkr002', 'spkr003', 'spkr004'],
             papers: ['papr0001'],
-            startDate: new Date(2015, 4, 19, 9, 0),
-            endDate: new Date(2015, 4, 19, 10, 0)
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'talk0002',
             title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
             location: 'Room 103',
             speakers: ['spkr005', 'spkr006', 'spkr007'],
             papers: ['papr0002'],
-            startDate: new Date(2015, 4, 19, 10, 0),
-            endDate: new Date(2015, 4, 19, 11, 0)
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'talk0003',
             title: 'Window to the Outside World: Bringing the outside in to housebound older adults in remote and rural areas',
             location: 'Room 103',
             speakers: ['spkr008'],
             papers: ['papr0003'],
-            startDate: new Date(2015, 4, 19, 11, 0),
-            endDate: new Date(2015, 4, 19, 12, 0)
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'talk0004',
             title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
             location: 'Room 46',
             speakers: ['spkr009', 'spkr010', 'spkr011'],
             papers: ['papr0004'],
-            startDate: new Date(2015, 4, 19, 13, 0),
-            endDate: new Date(2015, 4, 19, 14, 0)
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'talk0005',
             title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
             location: 'Room 46',
             speakers: ['spkr012', 'spkr013', 'spkr014'],
             papers: ['papr0005'],
-            startDate: new Date(2015, 4, 19, 14, 0),
-            endDate: new Date(2015, 4, 19, 15, 0)
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'talk0006',
             title: 'Interactively animating crumpling paper',
             location: 'Room 46',
             speakers: ['spkr015', 'spkr016', 'spkr017', 'spkr018'],
             papers: ['papr0006'],
-            startDate: new Date(2015, 4, 19, 15, 0),
-            endDate: new Date(2015, 4, 19, 16, 0)
+            startDate: new Date(2015, 8, 25, 11, 0),
+            endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'papr0001',
             title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
@@ -230,16 +230,16 @@ angular.module('starter.services', [])
             authors: ['Karin Siebenhandl', 'Eva Mayr']
         }, {
             _id: 'note001',
-            title: 'Keynote: Towards Expressive 3D Modelling: New challenges in Computer Graphics',
-            location: 'Main Aula',
-            description: 'Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
-            speakers: ['spkr018'],
-            startDate: new Date(2015, 4, 19, 8, 0),
-            endDate: new Date(2015, 4, 19, 9, 0)
+            title: 'Keynote: Title to come',
+            location: 'Main aula',
+            description: 'No description.',
+            speakers: [],
+            startDate: new Date(2015, 8, 25, 9, 30),
+            endDate: new Date(2015, 8, 25, 10, 30)
         }, {
             _id: 'note002',
             title: 'Keynote: TBA',
-            location: 'Main Aula',
+            location: 'Main aula',
             description: 'No description.',
             speakers: ['spkr019'],
             startDate: new Date(2015, 8, 26, 9, 30),
@@ -248,28 +248,60 @@ angular.module('starter.services', [])
             _id: 'note003',
             title: 'Keynote: Towards Expressive 3D Modelling: New challenges in Computer Graphics',
             location: 'Main Aula',
-            description: 'No description.',
+            description: 'Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
             speakers: ['spkr018'],
             startDate: new Date(2015, 8, 26, 16, 0),
             endDate: new Date(2015, 8, 26, 17, 0)
         }, {
             _id: 'cmmn001',
+            title: 'Poster session',
+            location: 'Norrlands Nation',
+            description: 'Poster session.',
+            startDate: new Date(2015, 8, 24, 16, 15),
+            endDate: new Date(2015, 8, 24, 20, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn002',
             title: 'Registration',
-            location: 'Room 1',
+            location: 'Norrlands Nation',
+            description: 'Registration.',
+            startDate: new Date(2015, 8, 24, 16, 15),
+            endDate: new Date(2015, 8, 24, 20, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn003',
+            title: 'Career fair',
+            location: 'Norrlands Nation',
+            description: 'Career fair.',
+            startDate: new Date(2015, 8, 24, 16, 15),
+            endDate: new Date(2015, 8, 24, 20, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn004',
+            title: 'Registration',
+            location: 'Conference Venue (Main University building)',
             description: 'Please register to the conference.',
             startDate: new Date(2015, 8, 25, 8, 30),
             endDate: new Date(2015, 8, 25, 9, 15),
             speakers: ""
         }, {
-            _id: 'cmmn002',
-            title: 'Coffee Break',
-            location: '',
+            _id: 'cmmn005',
+            title: 'Welcome',
+            location: 'Main aula',
+            description: 'Coffee break.',
+            startDate: new Date(2015, 8, 25, 9, 15),
+            endDate: new Date(2015, 8, 25, 9, 30),
+            speakers: ""
+        }, {
+            _id: 'cmmn006',
+            title: 'Coffee break',
+            location: 'Hallway',
             description: 'Please have a cup of coffee.',
             startDate: new Date(2015, 8, 25, 10, 30),
             endDate: new Date(2015, 8, 25, 11, 0),
             speakers: ""
         }, {
-            _id: 'cmmn003',
+            _id: 'cmmn007',
             title: 'Lunch',
             location: '',
             description: "Please don't forget to eat lunch.",
@@ -277,12 +309,52 @@ angular.module('starter.services', [])
             endDate: new Date(2015, 8, 25, 13, 30),
             speakers: ""
         }, {
-            _id: 'cmmn004',
-            title: 'Coffee Break',
-            location: '',
+            _id: 'cmmn008',
+            title: 'Coffee break',
+            location: 'Hallway',
             description: 'Please have a cup of coffee again.',
             startDate: new Date(2015, 8, 25, 14, 30),
             endDate: new Date(2015, 8, 25, 15, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn009',
+            title: 'Registration',
+            location: 'Conference Venue (Main University building)',
+            description: 'Registration.',
+            startDate: new Date(2015, 8, 26, 8, 30),
+            endDate: new Date(2015, 8, 26, 9, 15),
+            speakers: ""
+        }, {
+            _id: 'cmmn010',
+            title: 'Coffee break',
+            location: 'Hallway',
+            description: 'Coffee break.',
+            startDate: new Date(2015, 8, 26, 10, 30),
+            endDate: new Date(2015, 8, 26, 11, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn011',
+            title: 'Lunch',
+            location: '',
+            description: 'Lunch.',
+            startDate: new Date(2015, 8, 26, 12, 0),
+            endDate: new Date(2015, 8, 26, 13, 30),
+            speakers: ""
+        }, {
+            _id: 'cmmn012',
+            title: 'Coffee break',
+            location: 'Hallway',
+            description: 'Coffee break.',
+            startDate: new Date(2015, 8, 26, 14, 30),
+            endDate: new Date(2015, 8, 26, 15, 0),
+            speakers: ""
+        }, {
+            _id: 'cmmn013',
+            title: 'Closing',
+            location: 'Main aula',
+            description: 'Coffee break.',
+            startDate: new Date(2015, 8, 26, 17, 0),
+            endDate: new Date(2015, 8, 26, 17, 15),
             speakers: ""
         }, {
             _id: 'wksp001',
@@ -339,7 +411,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'panl0001',
             title: 'Panel',
-            location: 'Main Aula',
+            location: 'Main aula',
             speakers: ['Karin Siebenhandl', 'Eva Mayr'],
             moderator: 'Some One',
             startDate: new Date(2015, 8, 25, 11, 0),
@@ -375,7 +447,7 @@ angular.module('starter.services', [])
         }, {
             _id: 'uncf0005',
             title: 'Unconference Wrap-up',
-            location: 'Main Aula',
+            location: 'Main aula',
             speakers: '',
             startDate: new Date(2015, 8, 26, 15, 30),
             endDate: new Date(2015, 8, 26, 15, 45)
