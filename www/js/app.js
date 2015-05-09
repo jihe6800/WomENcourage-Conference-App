@@ -211,16 +211,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
             templateUrl: "templates/feedback.html"
           }
         }
-      })
-
-      .state('app.todo', {
-        url: "/todo",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/todo.html",
-            controller:  'TodoCtrl'
-          }
-        }
       });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
