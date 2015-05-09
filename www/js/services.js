@@ -2,6 +2,25 @@ angular.module('starter.services', [])
 
     .factory('database', function() {
         var db = new PouchDB('schedule');
+
+        // Declare arrays to store data types
+        var plainText = [];
+        var sessions = [];
+        var speakers = [];
+        var talks = [];
+        var papers = [];
+        var posters = [];
+        var keynotes = [];
+        var commonEntries = [];
+        var panels = [];
+        var workshops = [];
+        var unconferences = [];
+        var industryTalks = [];
+        var industryTalksSessions = [];
+
+        // Array for all entries to be displayed in the schedule
+        var scheduleEntries = [];
+
         var activeEntry; // Will contain the currently active entry
         var activeSpeaker; // Will contain the currently active speaker
 
@@ -473,7 +492,7 @@ angular.module('starter.services', [])
             talks: ['indt0001', 'indt0002']
         }]);
 
-        function getScheduleEntries() {
+        function constructFromDB() {
             return db.allDocs({
                 include_docs: true
             }).then(function(result) {
@@ -481,23 +500,22 @@ angular.module('starter.services', [])
                     return row.doc;
                 });
             }).then(function(result) {
-                // Declare arrays to store entry types
-                var plainText = [];
-                var sessions = [];
-                var speakers = [];
-                var talks = [];
-                var papers = [];
-                var posters = [];
-                var keynotes = [];
-                var commonEntries = [];
-                var panels = [];
-                var workshops = [];
-                var unconferences = [];
-                var industryTalks = [];
-                var industryTalksSessions = [];
+                // Reset arrays that store data types
+                plainText = [];
+                sessions = [];
+                speakers = [];
+                talks = [];
+                papers = [];
+                posters = [];
+                keynotes = [];
+                commonEntries = [];
+                panels = [];
+                workshops = [];
+                unconferences = [];
+                industryTalks = [];
+                industryTalksSessions = [];
 
-                // Array for all entries to be displayed in the schedule
-                var scheduleEntries = [];
+                scheduleEntries = [];
 
                 // Uncertain
                 var carreerFair = [];
@@ -744,13 +762,20 @@ angular.module('starter.services', [])
                 return db.get(id);
             },
             getScheduleEntries: function() {
-                return getScheduleEntries();
+                return constructFromDB().then(function(result) {
+                    return scheduleEntries;
+                });
             },
             setActiveEntry: function(entry){
                 activeEntry = entry;
             },
             getActiveEntry: function(){
                 return activeEntry;
+            },
+            getSpeakers: function() {
+                return constructFromDB().then(function(result) {
+                    return speakers;
+                });
             },
             setActiveSpeaker: function(speaker){
                 activeSpeaker = speaker;

@@ -15,10 +15,22 @@ angular.module('starter.controllers', ['starter.services'])
         this.activeSpeaker = database.getActiveSpeaker();
     })
 
-    .controller('SpeakersCtrl', function(database){
+    .controller('SpeakersCtrl', function(database, $q){
         this.setActiveSpeaker = function(speaker){
             database.setActiveSpeaker(speaker);
         };
+
+        /* Reads speakers from database and sorts their last names alphabetically */
+        this.update = function() {
+            var that = this;
+            $q.when(database.getSpeakers()).then(function(result) {
+                that.speakers = _.sortBy(result, 'lastName');
+            }).catch(function (error) {
+                console.log("Error when reading from database: " + error);
+            });
+        };
+
+        this.update();
     })
 
 
@@ -89,7 +101,7 @@ angular.module('starter.controllers', ['starter.services'])
         return days;
     }
 
-    /* Creates a grouped list of the entries based on this.sortmode.value */
+    /* Reads schedule entries from database and sorts and groups them according to this.sortmode.value */
     this.update = function() {
         var that = this;
         $q.when(database.getScheduleEntries()).then(function(result) {
