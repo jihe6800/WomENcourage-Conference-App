@@ -762,7 +762,8 @@ angular.module('starter.services', [])
                     promises.push(promise);
                 });
 
-                $q.all(promises).then(function() { // Try without this to see performance boost?
+                // Remove the $q.all() wrapping to speed up schedule loading time
+                $q.all(promises).then(function() {
                     console.log("Returning schedule entries!");
                     return scheduleEntries;
                 });
@@ -815,7 +816,7 @@ angular.module('starter.services', [])
             },
             addToMySchedule: function(entry){
                 console.log("Adding " + entry._id + " to My Schedule...");
-                return mydb.put({_id: entry._id}).then(function(result) {
+                $q.when(mydb.put({_id: entry._id})).then(function(result) {
                     console.log("put() result: " + JSON.stringify(result));
                     if(result.ok) {
                         entry.isInMySchedule = true;
@@ -826,7 +827,7 @@ angular.module('starter.services', [])
             },
             removeFromMySchedule: function(entry){
                 console.log("Removing " + entry._id + " from My Schedule...");
-                return mydb.get(entry._id).then(function(doc) {
+                $q.when(mydb.get(entry._id)).then(function(doc) {
                     return mydb.remove(doc);
                 }).then(function (result) {
                     console.log("remove() result: " + JSON.stringify(result));

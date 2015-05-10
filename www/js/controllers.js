@@ -166,12 +166,12 @@ angular.module('starter.controllers', ['starter.services'])
 
     this.addToMySchedule = function(entry) {
         console.log("addToMySchedule called!");
-        $q.when(database.addToMySchedule(entry));
+        database.addToMySchedule(entry);
     };
 
     this.removeFromMySchedule = function(entry) {
         console.log("removeFromMySchedule called!");
-        $q.when(database.removeFromMySchedule(entry));
+        database.removeFromMySchedule(entry);
     };
 
     this.toggleInMySchedule = function(entry) {
@@ -188,7 +188,7 @@ angular.module('starter.controllers', ['starter.services'])
         });
     };
 
-    this.mySchedule = true;
+    this.mySchedule = false;
 
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Location', value: 'location'}];
     this.sortmode = this.sortmodes[0];
