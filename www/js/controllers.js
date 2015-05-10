@@ -25,6 +25,20 @@ angular.module('starter.controllers', ['starter.services'])
         this.update();
     })
 
+    .controller('PostersCtrl', function(database, $q) {
+        /* Reads posters from database and sorts them alphabetically */
+        this.update = function() {
+            var that = this;
+            $q.when(database.getPosters()).then(function(result) {
+                that.posters = _.sortBy(result, 'title');
+            }).catch(function (error) {
+                console.log("Error when reading from database: " + error);
+            });
+        };
+
+        this.update();
+    })
+
     .controller('SpeakerCtrl', function(database){
         this.activeSpeaker = database.getActiveSpeaker();
     })

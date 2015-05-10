@@ -852,6 +852,11 @@ angular.module('starter.services', [])
                     return papers;
                 });
             },
+            getPosters: function() {
+                return constructFromDB().then(function(result) {
+                    return posters;
+                });
+            },
             getSpeakers: function() {
                 return constructFromDB().then(function(result) {
                     return speakers;

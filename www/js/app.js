@@ -154,7 +154,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         url: "/posters",
         views: {
           'menuContent': {
-            templateUrl: "templates/posters.html"
+            templateUrl: "templates/posters.html",
+            controller: 'PostersCtrl as posters'
           }
         }
       })
