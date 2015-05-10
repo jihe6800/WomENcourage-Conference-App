@@ -22,7 +22,7 @@
                                 <!-- Toggle-button to add for personal schedule -->
                                 <div class="checkbox-wrapper-schedule">
                                     <label class="toggle">
-                                        <input type="checkbox">
+                                        <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry)">
                                         <div class="track">
                                             <div class="handle"></div>
                                         </div>

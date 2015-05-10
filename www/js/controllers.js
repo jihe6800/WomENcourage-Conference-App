@@ -104,7 +104,7 @@ angular.module('starter.controllers', ['starter.services'])
     /* Reads schedule entries from database and sorts and groups them according to this.sortmode.value */
     this.update = function() {
         var that = this;
-        $q.when(database.getScheduleEntries()).then(function(result) {
+        $q.when((that.mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
             that.days = group(result, that.sortmode.value);
             $timeout(function() {
                 $ionicSlideBoxDelegate.update();
@@ -163,6 +163,32 @@ angular.module('starter.controllers', ['starter.services'])
                 return "#/app";
         }
     };
+
+    this.addToMySchedule = function(entry) {
+        console.log("addToMySchedule called!");
+        $q.when(database.addToMySchedule(entry));
+    };
+
+    this.removeFromMySchedule = function(entry) {
+        console.log("removeFromMySchedule called!");
+        $q.when(database.removeFromMySchedule(entry));
+    };
+
+    this.toggleInMySchedule = function(entry) {
+        var that = this;
+        database.isInMySchedule(entry).then(function(isInMySchedule) {
+            console.log("isInMySchedule return value in controller: " + JSON.stringify(isInMySchedule));
+            if(isInMySchedule) {
+                that.removeFromMySchedule(entry);
+            } else {
+                that.addToMySchedule(entry);
+            }
+        }).catch(function (error) {
+            console.log("isInMySchedule error in controller: " + error);
+        });
+    };
+
+    this.mySchedule = true;
 
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Location', value: 'location'}];
     this.sortmode = this.sortmodes[0];

@@ -1,7 +1,8 @@
 angular.module('starter.services', [])
 
-    .factory('database', function() {
+    .factory('database', function($q) {
         var db = new PouchDB('schedule');
+        var mydb = new PouchDB('my-schedule');
 
         // Declare arrays to store data types
         var plainText = [];
@@ -750,10 +751,31 @@ angular.module('starter.services', [])
                 scheduleEntries.push(industryTalksSessions);
 
                 scheduleEntries = _.flatten(scheduleEntries);
-                // console.log("\n\nA list of schedule entries has been constructed: " + JSON.stringify(scheduleEntries, null, 2))
-                return scheduleEntries;
+
+                // Add booleans to keep track of whether entries are in "My Schedule" too
+                var promises = [];
+                angular.forEach(scheduleEntries, function(scheduleEntry) {
+                    var promise = isInMyShedule(scheduleEntry).then(function (result) {
+                        scheduleEntry.isInMySchedule = result;
+                        console.log(scheduleEntry._id + ".isInMySchedule: " + result);
+                    });
+                    promises.push(promise);
+                });
+
+                $q.all(promises).then(function() { // Try without this to see performance boost?
+                    console.log("Returning schedule entries!");
+                    return scheduleEntries;
+                });
             }).catch(function(error) {
                 console.log("constructFromDB failed! Error message: " + error);
+            });
+        }
+
+        function isInMyShedule(entry) {
+            return mydb.get(entry._id).then(function(doc) {
+                return true;
+            }).catch(function (error) {
+                return false;
             });
         }
 
@@ -764,7 +786,59 @@ angular.module('starter.services', [])
             getScheduleEntries: function() {
                 return constructFromDB().then(function(result) {
                     return scheduleEntries;
+                }).catch(function(error) {
+                    console.log("getScheduleEntries error: " + error);
                 });
+            },
+            getMyScheduleEntries: function() {
+                return constructFromDB().then(function(result) {
+                    return mydb.allDocs().then(function(result) {
+                        return result.rows.map(function (row) {
+                            return row.id;
+                        });
+                    }).then(function(ids) {
+                        var myScheduleEntries = [];
+                        for (var i = 0; i < ids.length; i++) {
+                            var matchedEntry = _.find(scheduleEntries, _.matchesProperty('_id', ids[i]));
+
+                            if (matchedEntry === undefined) { // if(matchedEntry) ?
+                                console.log("ERROR: My schedule id '" + ids[i] + "' could not be found in schedule entries!")
+                            } else {
+                                myScheduleEntries.push(matchedEntry);
+                            }
+                        }
+                        return myScheduleEntries;
+                    })
+                }).catch(function(error) {
+                    console.log("getMyScheduleEntries error: " + error);
+                });
+            },
+            addToMySchedule: function(entry){
+                console.log("Adding " + entry._id + " to My Schedule...");
+                return mydb.put({_id: entry._id}).then(function(result) {
+                    console.log("put() result: " + JSON.stringify(result));
+                    if(result.ok) {
+                        entry.isInMySchedule = true;
+                    }
+                }).catch(function(error) {
+                    console.log("addToMySchedule error: " + error);
+                });
+            },
+            removeFromMySchedule: function(entry){
+                console.log("Removing " + entry._id + " from My Schedule...");
+                return mydb.get(entry._id).then(function(doc) {
+                    return mydb.remove(doc);
+                }).then(function (result) {
+                    console.log("remove() result: " + JSON.stringify(result));
+                    if(result.ok) {
+                        entry.isInMySchedule = false;
+                    }
+                }).catch(function (error) {
+                    console.log("removeFromMySchedule error: " + error);
+                });
+            },
+            isInMySchedule: function(entry) {
+                return isInMyShedule(entry);
             },
             setActiveEntry: function(entry){
                 activeEntry = entry;
