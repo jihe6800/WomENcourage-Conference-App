@@ -11,6 +11,20 @@ angular.module('starter.controllers', ['starter.services'])
         this.activeEntry = database.getActiveEntry();
     })
 
+    .controller('PapersCtrl', function(database, $q) {
+        /* Reads papers from database and sorts them alphabetically */
+        this.update = function() {
+            var that = this;
+            $q.when(database.getPapers()).then(function(result) {
+                that.papers = _.sortBy(result, 'title');
+            }).catch(function (error) {
+                console.log("Error when reading from database: " + error);
+            });
+        };
+
+        this.update();
+    })
+
     .controller('SpeakerCtrl', function(database){
         this.activeSpeaker = database.getActiveSpeaker();
     })

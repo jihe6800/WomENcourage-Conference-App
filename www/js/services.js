@@ -847,6 +847,11 @@ angular.module('starter.services', [])
             getActiveEntry: function(){
                 return activeEntry;
             },
+            getPapers: function() {
+                return constructFromDB().then(function(result) {
+                    return papers;
+                });
+            },
             getSpeakers: function() {
                 return constructFromDB().then(function(result) {
                     return speakers;
