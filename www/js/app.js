@@ -134,7 +134,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
       url: "/my-schedule",
       views: {
         'menuContent': {
-          templateUrl: "templates/my-schedule.html"
+          templateUrl: "templates/schedule.html",
+          controller: "ScheduleCtrl as schedule"
         }
       }
     })

@@ -34,7 +34,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
 
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, database) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -188,7 +188,7 @@ angular.module('starter.controllers', ['starter.services'])
         });
     };
 
-    this.mySchedule = false;
+    this.mySchedule = $location.path() === '/app/my-schedule';
 
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Location', value: 'location'}];
     this.sortmode = this.sortmodes[0];
