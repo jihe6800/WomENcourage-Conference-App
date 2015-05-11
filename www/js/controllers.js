@@ -62,7 +62,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
 
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, database) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -133,6 +133,20 @@ angular.module('starter.controllers', ['starter.services'])
     this.update = function() {
         var that = this;
         $q.when((that.mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
+            if (!result.length) {
+                if (that.mySchedule) {
+                    $ionicPopup.alert({
+                        title: 'Empty!',
+                        template: 'You have not yet added anything to your schedule.'
+                    });
+                } else {
+                    $ionicPopup.alert({
+                        title: 'Empty!',
+                        template: 'No entries were found.'
+                    });
+                }
+            }
+
             that.days = group(result, that.sortmode.value);
             $timeout(function() {
                 $ionicSlideBoxDelegate.update();
