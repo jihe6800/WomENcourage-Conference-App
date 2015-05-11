@@ -1,16 +1,14 @@
 <ion-view view-title="{{schedule.mySchedule ? 'My Schedule' : 'Schedule'}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-light icon ion-refresh" ng-click="schedule.update()">
+        </button>
+    </ion-nav-buttons>
     <ion-content has-bouncing="false">
         <ion-slide-box active-slide="0" pager-click="schedule.changeSlide(index)">
             <ion-slide ng-repeat="day in schedule.days">
                 <ion-list>
                     <ion-item class="item-divider item-input item-select">
                         <h1>{{day.name}}</h1>
-                        <button class="button button-positive" ng-click="schedule.mySchedule = false; schedule.update()">
-                            Schedule
-                        </button>
-                        <button class="button button-positive" ng-click="schedule.mySchedule = true; schedule.update()">
-                            My Schedule
-                        </button>
                         <select ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes">
                         </select>
                     </ion-item>
