@@ -272,27 +272,50 @@ angular.module('starter.controllers', ['starter.services'])
         });
     };
 
+    /* Formats date to a string that's compatible with the .ics export library */
+    function toStringFormat(date) {
+        function formatDate(date) {
+            var month = date.getMonth();
+            var day = date.getDay();
+            var year = date.getFullYear();
+            return month + '/' + day + '/' + year;
+        }
+
+        function formatAMPM(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            return hours + ':' + minutes + ' ' + ampm;
+        }
+
+        return formatDate(date) + ' ' + formatAMPM(date);
+    }
+
+    /* Exports my schedule to .ics format */
     this.exportMySchedule = function() {
-
-        //cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
-        //cal.addEvent('Demo Event', 'This is thirty minut event', 'Nome, AK', '8/7/2013 5:30 pm', '8/9/2013 6:00 pm');
-
         $ionicPopup.confirm({
             title: 'Export to .ics',
             template: 'Are you sure you want to export your schedule?'
-        }).then(function(res) {
-            if(res) {
+        }).then(function(response) {
+            if(response) {
                 database.getMyScheduleEntries().then(function(entries) {
                     var cal = ics();
-                    for(var i = 0;i<entries.length;i++) {
+                    for(var i = 0; i < entries.length; i++) {
                         var entry = entries[i];
-                        cal.addEvent(entry.title, entry.description ? entry.description : '', entry.location ? entry.location : '', entry.startDate, entry.endDate);
+                        cal.addEvent(
+                            entry.title,
+                            entry.description ? entry.description : '',
+                            entry.location ? entry.location : '',
+                            toStringFormat(entry.startDate),
+                            toStringFormat(entry.endDate)
+                        );
                     }
                     cal.download();
+                    console.log('Schedule exported!');
                 });
-                console.log('You are sure');
-            } else {
-                console.log('You are not sure');
             }
         });
     };
