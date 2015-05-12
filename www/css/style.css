@@ -10,7 +10,7 @@
     font-size: 45px;
 }
 
-/* The drop-down with sorting alternatives in schedule*/
+/* The drop-down with sorting alternatives in schedule */
 .drop-down-schedule{
     height: 20px;
     right:5px;
@@ -18,7 +18,7 @@
     position: absolute;
 }
 
-/* Font for top month text in schedule*/
+/* Font for top month text in schedule */
 .month-schedule{
     font-size: 1em;
     width: 150px;
@@ -47,7 +47,7 @@
     padding-top:8px;
 }
 
-/*Font for numbers inside pager buttons*/
+/* Font for numbers inside pager buttons */
 .day-num{
     font-size: 1.1em;
     color: white;
@@ -83,7 +83,6 @@
     -ms-flex-align: center;
     align-items: center;
 }
-
 
 /* Start page banner */
 .banner-start{
@@ -204,6 +203,7 @@ ion-side-menu ion-list ion-item.item a {
     color: purple;
 }
 
+/* Speaker list avatar formatting */
 .item-avatar i:first-child, .item-avatar .item-img {
     position: absolute;
     top: 15px;
