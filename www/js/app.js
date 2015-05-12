@@ -200,15 +200,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         }
       })
 
-      .state('app.news', {
-        url: "/news",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/news.html"
-          }
-        }
-      })
-
       .state('app.sponsors', {
         url: "/sponsors",
         views: {
