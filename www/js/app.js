@@ -160,6 +160,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         }
       })
 
+  .state('app.poster', {
+    url: "/poster/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/poster.html",
+        controller: 'PosterCtrl as poster'
+      }
+    }
+  })
+
   .state('app.speakers', {
     url: "/speakers",
     views: {

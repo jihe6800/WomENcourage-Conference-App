@@ -24,6 +24,7 @@ angular.module('starter.services', [])
 
         var activeEntry; // Will contain the currently active entry
         var activeSpeaker; // Will contain the currently active speaker
+        var activePoster; // Will contain the currently active poster
 
         db.changes({
             since: 'now',
@@ -427,7 +428,8 @@ angular.module('starter.services', [])
         }, {
             _id: 'pstr0001',
             title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
-            authors: ['Karin Siebenhandl', 'Eva Mayr']
+            authors: ['Karin Siebenhandl', 'Eva Mayr'],
+            description: 'No description.'
         }, {
             _id: 'panl0001',
             title: 'Panel',
@@ -867,6 +869,12 @@ angular.module('starter.services', [])
             },
             getActiveSpeaker: function(){
                 return activeSpeaker;
+            },
+            setActivePoster: function(poster) {
+                activePoster = poster;
+            },
+            getActivePoster: function() {
+                return activePoster;
             }
         };
     });
