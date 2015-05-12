@@ -90,7 +90,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, database) {
 
         $scope.myActiveSlide=0;
 
