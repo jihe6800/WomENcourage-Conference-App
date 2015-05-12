@@ -273,10 +273,28 @@ angular.module('starter.controllers', ['starter.services'])
     };
 
     this.exportMySchedule = function() {
-        var cal = ics();
-        cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
-        cal.addEvent('Demo Event', 'This is thirty minut event', 'Nome, AK', '8/7/2013 5:30 pm', '8/9/2013 6:00 pm');
-        cal.download();
+
+        //cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
+        //cal.addEvent('Demo Event', 'This is thirty minut event', 'Nome, AK', '8/7/2013 5:30 pm', '8/9/2013 6:00 pm');
+
+        $ionicPopup.confirm({
+            title: 'Export to .ics',
+            template: 'Are you sure you want to export your schedule?'
+        }).then(function(res) {
+            if(res) {
+                database.getMyScheduleEntries().then(function(entries) {
+                    var cal = ics();
+                    for(var i = 0;i<entries.length;i++) {
+                        var entry = entries[i];
+                        cal.addEvent(entry.title, entry.description ? entry.description : '', entry.location ? entry.location : '', entry.startDate, entry.endDate);
+                    }
+                    cal.download();
+                });
+                console.log('You are sure');
+            } else {
+                console.log('You are not sure');
+            }
+        });
     };
 
     this.mySchedule = $location.path() === '/app/my-schedule';
