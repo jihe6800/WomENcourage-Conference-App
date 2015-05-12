@@ -49,6 +49,7 @@
 
 .banner-start img{
     width: 100%;
+    max-width: 591px;
     height: auto;
 }
 

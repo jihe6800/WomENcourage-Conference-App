@@ -3,6 +3,7 @@ angular.module('starter.services', [])
     .factory('database', function($q) {
         var db = new PouchDB('schedule');
         var mydb = new PouchDB('my-schedule');
+        var odb = new PouchDB('other');
 
         // Declare arrays to store data types
         var plainText = [];
@@ -31,6 +32,22 @@ angular.module('starter.services', [])
         }).on('change', function() {
             console.log("Something changed in database!");
         });
+
+        odb.bulkDocs([{
+            _id: 'info',
+            title1: 'Venue',
+            text1: "The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population.",
+            title2: 'Currency',
+            text2: 'The Swedish monetary unit is the Swedish krona (SEK), divided into 100 öre. In August 2014: Euro 1=SEK 9, USD 1=SEK 7, GBP 1=SEK 11,5. Major credit cards are accepted almost everywhere. There are several currency exchange offices and cash dispensers at Stockholm Arlanda International Airport and in Uppsala. Exchange rates may vary. To see current exchange rates, please visit oanda.com. or x-rates.com.'
+        }, {
+            _id: 'emergency',
+            title1: 'Emergency Phone Numbers',
+            title2: 'Medical Information',
+            title3: 'Conference Staff',
+            text1: 'If you need to call an ambulance, the police, or the fire brigade, use the central emergency number 112 from any fixed line or mobile phone. For non-emergency police calls, use 114 14.',
+            text2: 'For 24 hour medical advice, call 1177 or visit www.1177.se. For non-emergency medical issues there is a drop-in clinic: Närakuten, Dragarbrunnsgatan 70, daily 07:00-23:00 (expect at least a 2-hour wait to see a doctor). Pharmacies: For opening hours and locations check Apoteksinfo Apoteksamariten (Kålsängsgränd 10 C, across from the Närakuten clinic) has extended hours (daily 08:00-22:00) 24-hour pharmacy: Apoteket C W Scheele, Klarabergsgatan 64, Stockholm Many non-prescription drugs (e.g., aspirin, paracetamol) are available over the counter at most grocery stores',
+            text3: 'Important_person_of_conference_001'
+        }]);
 
         db.bulkDocs([{
             _id: 'sssn0001',
@@ -867,6 +884,11 @@ angular.module('starter.services', [])
             },
             getActiveSpeaker: function(){
                 return activeSpeaker;
+            },
+            getOther: function(id){
+                return $q.when(odb.get(id)).then(function(result) {
+                    return result;
+                });
             }
         };
     });
