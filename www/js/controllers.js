@@ -90,12 +90,15 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, database) {
 
         $scope.myActiveSlide=0;
 
-        this.isDisable = function(ind){
-            console.log("isDiable");
+        this.setMyActiveSlide = function(ind){
+            $scope.myActiveSlide = ind;
+        }
+
+        this.isDisabled = function(ind){
             if(ind === $scope.myActiveSlide){
                 return true;
             }else{
