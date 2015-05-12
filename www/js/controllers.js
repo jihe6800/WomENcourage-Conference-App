@@ -89,6 +89,20 @@ angular.module('starter.controllers', ['starter.services'])
         this.update();
     })
 
+    .controller('SupportersCtrl', function(database, $q) {
+        this.update = function() {
+            var that = this;
+            $q.when(database.getSponsors()).then(function(result) {
+                that.sponsors = _.sortBy(result, 'name');
+            });
+            $q.when(database.getSupporters()).then(function(result) {
+                that.supporters = _.sortBy(result, 'name');
+            })
+        };
+
+        this.update();
+    })
+
     
 .controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, database) {
     /*
@@ -267,8 +281,8 @@ angular.module('starter.controllers', ['starter.services'])
     /* Formats date to a string that's compatible with the .ics export library */
     function toStringFormat(date) {
         function formatDate(date) {
-            var month = date.getMonth();
-            var day = date.getDay();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
             var year = date.getFullYear();
             return month + '/' + day + '/' + year;
         }
