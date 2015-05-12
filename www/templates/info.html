@@ -1,21 +1,22 @@
 <ion-view view-title="Information">
     <ion-content>
-        <img src="img/banner-small.png"/>
+        <div style="width:100%; text-align: center" class="banner-start img" >
+            <img src="img/banner-small.png" />
+        </div>
         <div class="card">
             <div class="item item-divider">
-                Information
+                {{information.information.title1}}
             </div>
         <div class="item item-text-wrap">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id sem a justo viverra tristique a sit amet mauris. Donec pharetra posuere justo quis elementum. Integer eu mauris vitae sem convallis tristique vitae vitae metus. Ut laoreet diam quis commodo condimentum. Mauris vitae lorem nec leo euismod fringilla. Cras varius justo quis egestas hendrerit. Sed vulputate purus sed tortor porttitor placerat. Integer a libero blandit, sagittis nunc a, fringilla dolor. Ut imperdiet dictum tortor vitae tincidunt.</p>
-        <p>Vestibulum dictum nulla nibh, in pretium ligula porta eu. Mauris ipsum turpis, volutpat sollicitudin ante efficitur, efficitur congue lectus. Suspendisse tempus dictum pulvinar. Nulla sodales iaculis tempus. Maecenas fringilla gravida lorem in varius. Ut id interdum lacus, non elementum nulla. Integer nec lobortis lectus. Quisque quis diam feugiat, placerat augue et, molestie lectus. Maecenas dictum pulvinar tortor, in congue justo sagittis sed. Curabitur non mattis mi. Fusce pulvinar lorem sed tincidunt mattis.</p>
+            {{information.information.text1}}
         </div>
         </div>
         <div class="card">
             <div class="item item-divider">
-                Venue
+                {{information.information.title2}}
             </div>
         <div class="item item-text-wrap">
-        <p>The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population.</p>
+            {{information.information.text2}}
         </div>
         </div>
     </ion-content>

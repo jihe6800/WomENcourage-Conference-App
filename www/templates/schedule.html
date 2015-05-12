@@ -1,5 +1,10 @@
-<ion-view view-title="Schedule">
+<ion-view view-title="{{schedule.mySchedule ? 'My Schedule' : 'Schedule'}}">
 
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-light icon ion-refresh" ng-click="schedule.update()">
+        </button>
+    </ion-nav-buttons>
+    
     <div class="bar bar-header complete-center" style="height:20px; margin-top:50px">
         <h3 class="month-schedule">September 2015</h3>
         <select class="drop-down-schedule" ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes"></select>
@@ -13,31 +18,34 @@
         </div>
     </div>
 
-        <ion-content has-bouncing="false" style="margin-top: 110px">
+    <ion-content has-bouncing="false" style="margin-top: 110px">
         <ion-slide-box style="padding-left: 10px" active-slide="myActiveSlide" show-pager="false">
-            <ion-slide ng-repeat="day in schedule.days">
-                <ion-list>
+            
+    
+            <ion-content has-bouncing="false">
+                <ion-slide ng-repeat="day in schedule.days">
+                    <ion-list>
 
-                    <div ng-repeat="group in day.groups">
-                        <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
-                        <ion-item class="item item-accordion item-text-wrap" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session._id}}" ng-show="group.visible">
-                            <div class="item-wrapper-schedule">
+                        <div ng-repeat="group in day.groups">
+                            <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
+                            <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-click="schedule.setActiveEntry(entry)" ng-href="{{schedule.getEntryURL(entry)}}/{{entry._id}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(entry)}}">
+                             <div class="item-wrapper-schedule">
                                 <div class="info-schedule">
-                                    <h3>{{session.startDate.toTimeString().substr(0,5)}} - {{session.endDate.toTimeString().substr(0,5)}}</h3>
-                                    <h2>{{session.title}}</h2>
-                                    <p>{{session.speakers}}</p>
+                                    <h2>{{entry.title}}</h2>
+                                    <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
+                                    <p ng-if="entry.location"><i class="ion-location"></i> {{entry.location}}</p>
+                                    <p ng-if="entry.speakers"><i class="ion-ios-people"></i> {{entry.speakers}}</p>
                                 </div>
 
                                 <!-- Toggle-button to add for personal schedule -->
                                 <div class="checkbox-wrapper-schedule">
                                     <label class="toggle">
-                                        <input type="checkbox">
+                                        <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry)">
                                         <div class="track">
                                             <div class="handle"></div>
                                         </div>
                                     </label>
                                 </div>
-
                             </div>
                         </ion-item>
                     </div>

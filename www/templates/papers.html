@@ -1,0 +1,10 @@
+<ion-view view-title="Papers">
+    <ion-content has-bouncing="false">
+        <ion-list>
+            <ion-item class="item-text-wrap" ng-repeat="paper in papers.papers">
+                {{paper.title}}
+                <p><span ng-repeat="author in paper.authors">{{author}}, </span></p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

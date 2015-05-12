@@ -1,4 +1,4 @@
-<ion-view view-title="Papers Session">
+<ion-view view-title="Industry Talks">
     <ion-content>
         <div class="card">
             <div class="item item-divider item-text-wrap">
@@ -12,7 +12,7 @@
             </div>
         </div>
         <ion-item class="item-divider">
-            Talks in session
+            Industry talks in session
         </ion-item>
         <div class="card" ng-repeat="talk in entry.activeEntry.talks">
             <ion-item class="item-divider">
@@ -20,10 +20,9 @@
             </ion-item>
             <div class="padding">
                 <h4>{{talk.title}}</h4>
+                <h5><b>{{talk.company}}</b></h5>
                 <h5>Speakers</h5>
                 <div ng-repeat="speaker in talk.speakers">{{speaker.firstName}} {{speaker.lastName}}</div>
-                <h5>Papers</h5>
-                <p ng-repeat="paper in talk.papers">{{paper.title}}</p>
             </div>
         </div>
     </ion-content>
