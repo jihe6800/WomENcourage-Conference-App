@@ -1,5 +1,10 @@
 angular.module('starter.controllers', ['starter.services'])
 
+    /*
+.controller('SlideCtrl', function($scope){
+      $scope.myActiveSlide = 1;
+    })
+*/
 .controller('AppCtrl', function($scope){
 
     })
@@ -12,6 +17,17 @@ angular.module('starter.controllers', ['starter.services'])
     })
     
 .controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, database) {
+
+        $scope.myActiveSlide=0;
+
+        this.isDisable = function(ind){
+            console.log("isDiable");
+            if(ind === $scope.myActiveSlide){
+                return true;
+            }else{
+                return false;
+            }
+        }
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -90,7 +106,8 @@ angular.module('starter.controllers', ['starter.services'])
     };
 
     this.changeSlide = function(index) {
-        $ionicSlideBoxDelegate.slide(index);
+        $scope.myActiveSlide = index;
+
     };
 
     this.setSession = function(session){

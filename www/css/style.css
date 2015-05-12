@@ -10,8 +10,58 @@
     font-size: 45px;
 }
 
-/* Start page centering */
-.start-center{
+.test1{
+
+}
+
+.test2{
+
+}
+/* The drop-down with sorting alternatives in schedule*/
+.drop-down-schedule{
+    height: 20px;
+    right:5px;
+    display: inline-block;
+    position: absolute;
+}
+
+/* Font for top month text in schedule*/
+.month-schedule{
+    font-size: 1em;
+    width: 150px;
+    text-align: center;
+}
+
+/* Margin between buttons pager schedule */
+.margin-pager{
+    display: inline-block;
+    width: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.wrapper-pager{
+    width: 100%;
+    text-align: center;
+}
+
+/* Font for the characters inside pager buttons */
+.day-char{
+    font-size: 0.8em;
+    color: white;
+    padding-top:8px;
+}
+
+/*Font for numbers inside pager buttons*/
+.day-num{
+    font-size: 1.1em;
+    color: white;
+}
+
+/* Used for centering */
+.complete-center{
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -40,6 +90,7 @@
     -ms-flex-align: center;
     align-items: center;
 }
+
 
 /* Start page banner */
 .banner-start{

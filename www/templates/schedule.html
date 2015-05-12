@@ -1,13 +1,23 @@
 <ion-view view-title="Schedule">
-    <ion-content has-bouncing="false">
-        <ion-slide-box style="padding-left: 10px" active-slide="0" pager-click="schedule.changeSlide(index)">
+
+    <div class="bar bar-header complete-center" style="height:20px; margin-top:50px">
+        <h3 class="month-schedule">September 2015</h3>
+        <select class="drop-down-schedule" ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes"></select>
+    </div>
+    <div class="bar bar-subheader" style="height:80px;margin-top:35px">
+        <div class="wrapper-pager">
+            <button class="button button-womencourage margin-pager" ng-click="schedule.changeSlide($index)" ng-repeat="day in schedule.days" ng-class="{'disabled': schedule.isDisable($index)}">
+                <h3 class="day-char">{{day.name.substr(0,3)}}</h3>
+                <h3 class="day-num">{{day.name.substr(7,3)}}</h3>
+            </button>
+        </div>
+    </div>
+
+        <ion-content has-bouncing="false" style="margin-top: 110px">
+        <ion-slide-box style="padding-left: 10px" active-slide="myActiveSlide" show-pager="false">
             <ion-slide ng-repeat="day in schedule.days">
                 <ion-list>
-                    <ion-item class="item-divider item-input item-select">
-                        <h1>{{day.name}}</h1>
-                        <select ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes">
-                        </select>
-                    </ion-item>
+
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
                         <ion-item class="item item-accordion item-text-wrap" ng-repeat="session in group.sessions" ng-click="schedule.setSession(session)" href="#/app/schedule/{{session._id}}" ng-show="group.visible">
@@ -34,5 +44,6 @@
                 </ion-list>
             </ion-slide>
         </ion-slide-box>
+            </ion-content>
     </ion-content>
 </ion-view>
