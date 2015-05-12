@@ -11,6 +11,26 @@ angular.module('starter.controllers', ['starter.services'])
         this.activeEntry = database.getActiveEntry();
     })
 
+    .controller('InformationCtrl', function(database){
+        var that = this;
+        database.getOther('info').then(function (result) {
+            that.information = result;
+        }).catch(function (error) {
+            console.log("other2 error: " + error);
+            that.information = {title1: 'error' , title2: 'error' ,text1: 'error', text2: 'error'}
+        });
+    })
+
+    .controller('EmergencyCtrl', function(database){
+        var that = this;
+        database.getOther('emergency').then(function (result) {
+            that.emergency = result;
+        }).catch(function (error) {
+            console.log("other2 error: " + error);
+            that.information = {title1: 'error' , title2: 'error', title3: 'error' ,text1: 'error', text2: 'error', text3: 'error'}
+        });
+    })
+
     .controller('PapersCtrl', function(database, $q) {
         /* Reads papers from database and sorts them alphabetically */
         this.update = function() {

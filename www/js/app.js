@@ -45,7 +45,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         url: "/info",
         views: {
           'menuContent': {
-            templateUrl: "templates/info.html"
+            templateUrl: "templates/info.html",
+            controller: "InformationCtrl as information"
           }
         }
   })
@@ -221,7 +222,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         url: "/emergency-contact",
         views: {
           'menuContent': {
-            templateUrl: "templates/emergency-contact.html"
+            templateUrl: "templates/emergency-contact.html",
+            controller: 'EmergencyCtrl as emergency'
           }
         }
       })
