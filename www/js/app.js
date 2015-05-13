@@ -200,11 +200,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         }
       })
 
-      .state('app.sponsors', {
-        url: "/sponsors",
+      .state('app.supporters', {
+        url: "/supporters",
         views: {
           'menuContent': {
-            templateUrl: "templates/sponsors.html"
+            templateUrl: "templates/sponsors.html",
+            controller: 'SupportersCtrl as supporters'
           }
         }
       })

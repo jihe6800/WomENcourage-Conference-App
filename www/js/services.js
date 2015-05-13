@@ -19,6 +19,8 @@ angular.module('starter.services', [])
         var unconferences = [];
         var industryTalks = [];
         var industryTalksSessions = [];
+        var sponsors = [];
+        var supporters = [];
 
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
@@ -510,6 +512,34 @@ angular.module('starter.services', [])
             _id: 'inds0001',
             title: 'Industry Talks',
             talks: ['indt0001', 'indt0002']
+        }, {
+            _id: 'supp0001',
+            name: 'Google',
+            logo: 'google.jpg'
+        }, {
+            _id: 'supp0002',
+            name: 'Oracle Academy',
+            logo: 'oracle-academy.jpg'
+        }, {
+            _id: 'supp0003',
+            name: 'Bloomberg',
+            logo: 'bloomberg.jpg'
+        }, {
+            _id: 'supp0004',
+            name: 'Cisco',
+            logo: 'cisco.jpg'
+        }, {
+            _id: 'supp0005',
+            name: 'Facebook',
+            logo: 'facebook.jpg'
+        }, {
+            _id: 'supp0006',
+            name: 'Informatics Europe',
+            logo: 'informatics-europe.jpg'
+        }, {
+            _id: 'supp0007',
+            name: 'Microsoft Research Connections',
+            logo: 'microsoft-research-connections.jpg'
         }]);
 
         function constructFromDB() {
@@ -534,6 +564,8 @@ angular.module('starter.services', [])
                 unconferences = [];
                 industryTalks = [];
                 industryTalksSessions = [];
+                sponsors = [];
+                supporters = [];
 
                 scheduleEntries = [];
 
@@ -598,6 +630,12 @@ angular.module('starter.services', [])
                             break;
                         case 'plan':
                             plainText.push(item);
+                            break;
+                        case 'supp':
+                            supporters.push(item);
+                            break;
+                        case 'spsr':
+                            sponsors.push(item);
                             break;
                         default:
                             console.log("Unknown ID: " + item._id);
@@ -879,6 +917,16 @@ angular.module('starter.services', [])
             getSpeakers: function() {
                 return constructFromDB().then(function(result) {
                     return speakers;
+                });
+            },
+            getSponsors: function() {
+                return constructFromDB().then(function(result) {
+                    return sponsors;
+                });
+            },
+            getSupporters: function() {
+                return constructFromDB().then(function(result) {
+                    return supporters;
                 });
             },
             setActiveSpeaker: function(speaker){
