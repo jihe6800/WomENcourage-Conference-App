@@ -33,7 +33,7 @@
                                     <h2>{{entry.title}}</h2>
                                     <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
                                     <p ng-if="entry.location"><i class="ion-location"></i> {{entry.location}}</p>
-                                    <p ng-if="entry.speakers"><i class="ion-ios-people"></i> {{entry.speakers}}</p>
+                                    <p ng-if="entry.speakers.length > 0"><i class="ion-ios-people"></i> <span ng-repeat="speaker in entry.speakers">{{speaker.firstName}} {{speaker.lastName}}<span ng-if="!$last">, </span></span></p>
                                 </div>
 
                                 <!-- Toggle-button to add for personal schedule -->
