@@ -814,19 +814,21 @@ angular.module('starter.services', [])
             });
         }
 
+        var constructPromise = constructFromDB();
+
         return {
             get: function(id) {
                 return db.get(id);
             },
             getScheduleEntries: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return scheduleEntries;
                 }).catch(function(error) {
                     console.log("getScheduleEntries error: " + error);
                 });
             },
             getMyScheduleEntries: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return mydb.allDocs().then(function(result) {
                         return result.rows.map(function (row) {
                             return row.id;
