@@ -19,34 +19,34 @@
     </div>
 
     <ion-content has-bouncing="false" style="margin-top: 110px">
-        <ion-slide-box on-slide-changed="schedule.setMyActiveSlide($index)" active-slide="myActiveSlide" show-pager="false">
-                    <ion-slide ng-repeat="day in schedule.days">
-                        <ion-list>
-                            <div ng-repeat="group in day.groups">
-                                <ion-item class="item-divider" style="background-color: #f2f2f2; color: #A268A0" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
-                                <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-click="schedule.setActiveEntry(entry)" ng-href="{{schedule.getEntryURL(entry)}}/{{entry._id}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(entry)}}">
-                                    <div class="item-wrapper-schedule">
-                                        <div class="info-schedule">
-                                            <h2>{{entry.title}}</h2>
-                                            <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
-                                            <p ng-if="entry.location"><i class="ion-location"></i> {{entry.location}}</p>
-                                            <p ng-if="entry.speakers"><i class="ion-ios-people"></i> {{entry.speakers}}</p>
-                                        </div>
+        <ion-slide-box on-slide-changed="schedule.changeSlide($index)" active-slide="myActiveSlide" show-pager="false">
+            <ion-slide ng-repeat="day in schedule.days">
+                <ion-list>
+                    <div ng-repeat="group in day.groups">
+                        <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
+                        <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-click="schedule.setActiveEntry(entry)" ng-href="{{schedule.getEntryURL(entry)}}/{{entry._id}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(entry)}}">
+                            <div class="item-wrapper-schedule">
+                                <div class="info-schedule">
+                                    <h2>{{entry.title}}</h2>
+                                    <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
+                                    <p ng-if="entry.location"><i class="ion-location"></i> {{entry.location}}</p>
+                                    <p ng-if="entry.speakers"><i class="ion-ios-people"></i> {{entry.speakers}}</p>
+                                </div>
 
-                                        <!-- Toggle-button to add for personal schedule -->
-                                        <div class="checkbox-wrapper-schedule">
-                                            <label class="toggle">
-                                                <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry)">
-                                                <div class="track">
-                                                    <div class="handle"></div>
-                                                </div>
-                                            </label>
+                                <!-- Toggle-button to add for personal schedule -->
+                                <div class="checkbox-wrapper-schedule">
+                                    <label class="toggle">
+                                        <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry)">
+                                        <div class="track">
+                                            <div class="handle"></div>
                                         </div>
-                                    </div>
-                                </ion-item>
+                                    </label>
+                                </div>
                             </div>
-                        </ion-list>
-                    </ion-slide>
-                </ion-slide-box>
-            </ion-content>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
 </ion-view>

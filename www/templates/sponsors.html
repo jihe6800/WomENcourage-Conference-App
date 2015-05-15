@@ -1,5 +1,18 @@
-<ion-view view-title="Sponsors and supporters">
-    <ion-content>
-        <h1>Sponsors and supporters</h1>
+<ion-view view-title="Sponsors and Supporters">
+    <ion-content has-bouncing="false">
+        <ion-list>
+            <ion-item class="item-divider">
+                Sponsors
+            </ion-item>
+            <ion-item class="item-text-wrap" ng-repeat="sponsor in sponsors.sponsors">
+                {{sponsor.logo}}
+            </ion-item>
+            <ion-item class="item-divider">
+                Supporters
+            </ion-item>
+            <ion-item class="item-text-wrap" ng-repeat="supporters in sponsors.supporters">
+                {{supporter.logo}}
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

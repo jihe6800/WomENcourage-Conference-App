@@ -89,22 +89,22 @@ angular.module('starter.controllers', ['starter.services'])
         this.update();
     })
 
+    .controller('SupportersCtrl', function(database, $q) {
+        this.update = function() {
+            var that = this;
+            $q.when(database.getSponsors()).then(function(result) {
+                that.sponsors = _.sortBy(result, 'name');
+            });
+            $q.when(database.getSupporters()).then(function(result) {
+                that.supporters = _.sortBy(result, 'name');
+            })
+        };
+
+        this.update();
+    })
+
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, database) {
-
-        $scope.myActiveSlide=0;
-
-        this.setMyActiveSlide = function(ind){
-            $scope.myActiveSlide = ind;
-        }
-
-        this.isDisabled = function(ind){
-            if(ind === $scope.myActiveSlide){
-                return true;
-            }else{
-                return false;
-            }
-        }
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, database) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -202,6 +202,12 @@ angular.module('starter.controllers', ['starter.services'])
         $scope.myActiveSlide = index;
     };
 
+    $scope.myActiveSlide = 0;
+
+    this.isDisabled = function(ind){
+        return ind === $scope.myActiveSlide;
+    };
+
     this.setActiveEntry = function(entry){
         database.setActiveEntry(entry);
     };
@@ -269,6 +275,54 @@ angular.module('starter.controllers', ['starter.services'])
             }
         }).catch(function (error) {
             console.log("isInMySchedule error in controller: " + error);
+        });
+    };
+
+    /* Formats date to a string that's compatible with the .ics export library */
+    function toStringFormat(date) {
+        function formatDate(date) {
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var year = date.getFullYear();
+            return month + '/' + day + '/' + year;
+        }
+
+        function formatAMPM(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            return hours + ':' + minutes + ' ' + ampm;
+        }
+
+        return formatDate(date) + ' ' + formatAMPM(date);
+    }
+
+    /* Exports my schedule to .ics format */
+    this.exportMySchedule = function() {
+        $ionicPopup.confirm({
+            title: 'Export to .ics',
+            template: 'Are you sure you want to export your schedule?'
+        }).then(function(response) {
+            if(response) {
+                database.getMyScheduleEntries().then(function(entries) {
+                    var cal = ics();
+                    for(var i = 0; i < entries.length; i++) {
+                        var entry = entries[i];
+                        cal.addEvent(
+                            entry.title,
+                            entry.description ? entry.description : '',
+                            entry.location ? entry.location : '',
+                            toStringFormat(entry.startDate),
+                            toStringFormat(entry.endDate)
+                        );
+                    }
+                    cal.download();
+                    console.log('Schedule exported!');
+                });
+            }
         });
     };
 
