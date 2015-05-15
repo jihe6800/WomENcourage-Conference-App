@@ -292,7 +292,7 @@ angular.module('starter.controllers', ['starter.services'])
         }
 
         function formatAMPM(date) {
-            var hours = date.getHours();
+            var hours = (date.getHours() + (date.getTimezoneOffset()/60)) % 24;
             var minutes = date.getMinutes();
             var ampm = hours >= 12 ? 'pm' : 'am';
             hours = hours % 12;

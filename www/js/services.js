@@ -19,6 +19,8 @@ angular.module('starter.services', [])
         var unconferences = [];
         var industryTalks = [];
         var industryTalksSessions = [];
+        var sponsors = [];
+        var supporters = [];
 
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
@@ -297,7 +299,7 @@ angular.module('starter.services', [])
             description: 'Poster session.',
             startDate: new Date(2015, 8, 24, 16, 15),
             endDate: new Date(2015, 8, 24, 20, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn002',
             title: 'Registration',
@@ -305,7 +307,7 @@ angular.module('starter.services', [])
             description: 'Registration.',
             startDate: new Date(2015, 8, 24, 16, 15),
             endDate: new Date(2015, 8, 24, 20, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn003',
             title: 'Career fair',
@@ -313,7 +315,7 @@ angular.module('starter.services', [])
             description: 'Career fair.',
             startDate: new Date(2015, 8, 24, 16, 15),
             endDate: new Date(2015, 8, 24, 20, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn004',
             title: 'Registration',
@@ -321,7 +323,7 @@ angular.module('starter.services', [])
             description: 'Please register to the conference.',
             startDate: new Date(2015, 8, 25, 8, 30),
             endDate: new Date(2015, 8, 25, 9, 15),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn005',
             title: 'Welcome',
@@ -329,7 +331,7 @@ angular.module('starter.services', [])
             description: 'Coffee break.',
             startDate: new Date(2015, 8, 25, 9, 15),
             endDate: new Date(2015, 8, 25, 9, 30),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn006',
             title: 'Coffee break',
@@ -337,7 +339,7 @@ angular.module('starter.services', [])
             description: 'Please have a cup of coffee.',
             startDate: new Date(2015, 8, 25, 10, 30),
             endDate: new Date(2015, 8, 25, 11, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn007',
             title: 'Lunch',
@@ -345,7 +347,7 @@ angular.module('starter.services', [])
             description: "Please don't forget to eat lunch.",
             startDate: new Date(2015, 8, 25, 12, 0),
             endDate: new Date(2015, 8, 25, 13, 30),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn008',
             title: 'Coffee break',
@@ -353,7 +355,7 @@ angular.module('starter.services', [])
             description: 'Please have a cup of coffee again.',
             startDate: new Date(2015, 8, 25, 14, 30),
             endDate: new Date(2015, 8, 25, 15, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn009',
             title: 'Registration',
@@ -361,7 +363,7 @@ angular.module('starter.services', [])
             description: 'Registration.',
             startDate: new Date(2015, 8, 26, 8, 30),
             endDate: new Date(2015, 8, 26, 9, 15),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn010',
             title: 'Coffee break',
@@ -369,7 +371,7 @@ angular.module('starter.services', [])
             description: 'Coffee break.',
             startDate: new Date(2015, 8, 26, 10, 30),
             endDate: new Date(2015, 8, 26, 11, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn011',
             title: 'Lunch',
@@ -377,7 +379,7 @@ angular.module('starter.services', [])
             description: 'Lunch.',
             startDate: new Date(2015, 8, 26, 12, 0),
             endDate: new Date(2015, 8, 26, 13, 30),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn012',
             title: 'Coffee break',
@@ -385,7 +387,7 @@ angular.module('starter.services', [])
             description: 'Coffee break.',
             startDate: new Date(2015, 8, 26, 14, 30),
             endDate: new Date(2015, 8, 26, 15, 0),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'cmmn013',
             title: 'Closing',
@@ -393,7 +395,7 @@ angular.module('starter.services', [])
             description: 'Coffee break.',
             startDate: new Date(2015, 8, 26, 17, 0),
             endDate: new Date(2015, 8, 26, 17, 15),
-            speakers: ""
+            speakers: []
         }, {
             _id: 'wksp001',
             title: 'Workshop 1: Making your ideas into reality',
@@ -401,7 +403,7 @@ angular.module('starter.services', [])
             description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
-            speakers: ""
+            speakers: ['spkr008', 'spkr011']
         }, {
             _id: 'wksp002',
             title: 'Workshop 2: Coding for all: Family friendly endition',
@@ -409,7 +411,7 @@ angular.module('starter.services', [])
             description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
-            speakers: ""
+            speakers: ['spkr002']
         }, {
             _id: 'wksp003',
             title: 'Workshop 3: Prototyping wearable electronics workshop',
@@ -417,7 +419,7 @@ angular.module('starter.services', [])
             description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try! This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people. All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
-            speakers: ""
+            speakers: ['spkr011']
         }, {
             _id: 'wksp004',
             title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
@@ -425,7 +427,7 @@ angular.module('starter.services', [])
             description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.', 'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.', 'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:', '1. Presentation of ACM ICPC organization', '2. Presentation of examples of problems solved in contest from simplest one to the most difficult', '3. Explanation and usage of an automatic judging system', '4. Practical session of solving simple problems under judging system', '5. Final 1 hour contest with few simple problems as example of real programming contest.', 'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
             startDate: new Date(2015, 8, 25, 13, 30),
             endDate: new Date(2015, 8, 25, 14, 30),
-            speakers: ""
+            speakers: ['spkr003']
         }, {
             _id: 'wksp005',
             title: 'Workshop 5: Oracle Workshop - Introducing Alice',
@@ -433,7 +435,7 @@ angular.module('starter.services', [])
             description: ['No description.'],
             startDate: new Date(2015, 8, 26, 11, 0),
             endDate: new Date(2015, 8, 26, 12, 0),
-            speakers: ""
+            speakers: ['spkr004']
         }, {
             _id: 'wksp006',
             title: 'Workshop 6: Contributing to Open Source',
@@ -441,7 +443,7 @@ angular.module('starter.services', [])
             description: ['No description.'],
             startDate: new Date(2015, 8, 26, 11, 0),
             endDate: new Date(2015, 8, 26, 12, 0),
-            speakers: ""
+            speakers: ['spkr005']
         }, {
             _id: 'pstr0001',
             title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
@@ -451,43 +453,43 @@ angular.module('starter.services', [])
             _id: 'panl0001',
             title: 'Panel',
             location: 'Main aula',
-            speakers: ['Karin Siebenhandl', 'Eva Mayr'],
-            moderator: 'Some One',
+            speakers: ['spkr012', 'spkr013'],
+            moderators: ['spkr009'],
             startDate: new Date(2015, 8, 25, 11, 0),
             endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'uncf0001',
             title: 'Case Studies',
             location: 'Multiple',
-            speakers: '',
+            speakers: [],
             startDate: new Date(2015, 8, 25, 15, 0),
             endDate: new Date(2015, 8, 25, 17, 0)
         }, {
             _id: 'uncf0002',
             title: 'Case Studies',
             location: 'Multiple',
-            speakers: '',
+            speakers: [],
             startDate: new Date(2015, 8, 26, 13, 30),
             endDate: new Date(2015, 8, 26, 15, 30)
         }, {
             _id: 'uncf0003',
             title: 'Unconference',
             location: 'Multiple',
-            speakers: '',
+            speakers: [],
             startDate: new Date(2015, 8, 26, 13, 30),
             endDate: new Date(2015, 8, 26, 14, 30)
         }, {
             _id: 'uncf0004',
             title: 'Unconference',
             location: 'Multiple',
-            speakers: '',
+            speakers: [],
             startDate: new Date(2015, 8, 26, 14, 30),
             endDate: new Date(2015, 8, 26, 15, 30)
         }, {
             _id: 'uncf0005',
             title: 'Unconference Wrap-up',
             location: 'Main aula',
-            speakers: '',
+            speakers: [],
             startDate: new Date(2015, 8, 26, 15, 30),
             endDate: new Date(2015, 8, 26, 15, 45)
         }, {
@@ -503,13 +505,41 @@ angular.module('starter.services', [])
             title: 'Another industry talk',
             location: 'Room IV',
             speakers: ['spkr001'],
-            company: 'Example Company',
+            company: 'Example Company 2',
             startDate: new Date(2015, 8, 25, 11, 30),
             endDate: new Date(2015, 8, 25, 12, 0)
         }, {
             _id: 'inds0001',
             title: 'Industry Talks',
             talks: ['indt0001', 'indt0002']
+        }, {
+            _id: 'supp0001',
+            name: 'Google',
+            logo: 'google.jpg'
+        }, {
+            _id: 'supp0002',
+            name: 'Oracle Academy',
+            logo: 'oracle-academy.jpg'
+        }, {
+            _id: 'supp0003',
+            name: 'Bloomberg',
+            logo: 'bloomberg.jpg'
+        }, {
+            _id: 'supp0004',
+            name: 'Cisco',
+            logo: 'cisco.jpg'
+        }, {
+            _id: 'supp0005',
+            name: 'Facebook',
+            logo: 'facebook.jpg'
+        }, {
+            _id: 'supp0006',
+            name: 'Informatics Europe',
+            logo: 'informatics-europe.jpg'
+        }, {
+            _id: 'supp0007',
+            name: 'Microsoft Research Connections',
+            logo: 'microsoft-research-connections.jpg'
         }]);
 
         function constructFromDB() {
@@ -534,6 +564,8 @@ angular.module('starter.services', [])
                 unconferences = [];
                 industryTalks = [];
                 industryTalksSessions = [];
+                sponsors = [];
+                supporters = [];
 
                 scheduleEntries = [];
 
@@ -598,6 +630,12 @@ angular.module('starter.services', [])
                             break;
                         case 'plan':
                             plainText.push(item);
+                            break;
+                        case 'supp':
+                            supporters.push(item);
+                            break;
+                        case 'spsr':
+                            sponsors.push(item);
                             break;
                         default:
                             console.log("Unknown ID: " + item._id);
@@ -667,13 +705,7 @@ angular.module('starter.services', [])
                     session.talks = talkObjects;
                     session.startDate = new Date(minDate);
                     session.endDate = new Date(maxDate);
-                    session.speakers = [];
-
-                    sessionSpeakers = _.unique(_.flatten(sessionSpeakers, true)); // Put all unique speakers from all talks in a session
-                    for(var j = 0; j < sessionSpeakers.length; j++) {
-                        session.speakers.push(sessionSpeakers[j].firstName + " " + sessionSpeakers[j].lastName);
-                    }
-                    session.speakers = session.speakers.join(', ');
+                    session.speakers = _.unique(_.flatten(sessionSpeakers, true)); // Put all unique speakers from all talks in a session
                 }
 
                 // Add speakers to industryTalks and industryTalks to industryTalksSessions
@@ -708,51 +740,34 @@ angular.module('starter.services', [])
                     industryTalksSession.talks = industryTalkObjects;
                     industryTalksSession.startDate = new Date(minDate);
                     industryTalksSession.endDate = new Date(maxDate);
-                    industryTalksSession.speakers = [];
-
-                    industryTalksSessionSpeakers = _.unique(_.flatten(industryTalksSessionSpeakers, true)); // Put all unique speakers from all talks in a session
-                    for(var j = 0; j < industryTalksSessionSpeakers.length; j++) {
-                        industryTalksSession.speakers.push(industryTalksSessionSpeakers[j].firstName + " " + industryTalksSessionSpeakers[j].lastName);
-                    }
-                    industryTalksSession.speakers = industryTalksSession.speakers.join(', ');
+                    industryTalksSession.speakers = _.unique(_.flatten(industryTalksSessionSpeakers, true)); // Put all unique speakers from all talks in a session
                 }
 
-                // Add speakers to keynotes
+                // Fix dates and add speakers to keynotes
                 for (var i = 0; i < keynotes.length; i++) {
                     var keynote = keynotes[i];
                     keynote.speakers = replaceIdsWithObjects(keynote.speakers, speakers);
-                    keynote.startDate = new Date(Date.parse(keynote.startDate));
-                    keynote.endDate = new Date(Date.parse(keynote.endDate));
-                    var speakerNames = [];
-                    for(var j = 0; j < keynote.speakers.length; j++) {
-                        speakerNames.push(keynote.speakers[j].firstName + " " + keynote.speakers[j].lastName);
-                    }
-                    keynote.speakers = speakerNames.join(', ');
+                    fixDates(keynote)
+                }
+
+                // Fix dates and add speakers/organizers to workshops
+                for (var i = 0; i < workshops.length; i++) {
+                    var workshop = workshops[i];
+                    workshop.speakers = replaceIdsWithObjects(workshop.speakers, speakers);
+                    fixDates(workshop);
+                }
+
+                // Fix dates and add speakers/panelists and moderators to panels
+                for (var i = 0; i < panels.length; i++) {
+                    var panel = panels[i];
+                    panel.speakers = replaceIdsWithObjects(panel.speakers, speakers);
+                    panel.moderators = replaceIdsWithObjects(panel.moderators, speakers);
+                    fixDates(panel);
                 }
 
                 // Fix dates of common entries
                 for (var i = 0; i < commonEntries.length; i++) {
                     fixDates(commonEntries[i]);
-                }
-
-                // Fix dates of workshops
-                for (var i = 0; i < workshops.length; i++) {
-                    fixDates(workshops[i]);
-                }
-
-                // Turn poster authors array into comma separated string
-                for (var i = 0; i < posters.length; i++) {
-                    posters[i].authors = posters[i].authors.join(', ');
-                }
-
-                // Turn panel speakers array into comma separated string
-                for (var i = 0; i < panels.length; i++) {
-                    panels[i].speakers = panels[i].speakers.join(', ');
-                }
-
-                // Fix dates of panels
-                for (var i = 0; i < panels.length; i++) {
-                    fixDates(panels[i]);
                 }
 
                 // Fix dates of unconferences
@@ -879,6 +894,16 @@ angular.module('starter.services', [])
             getSpeakers: function() {
                 return constructFromDB().then(function(result) {
                     return speakers;
+                });
+            },
+            getSponsors: function() {
+                return constructFromDB().then(function(result) {
+                    return sponsors;
+                });
+            },
+            getSupporters: function() {
+                return constructFromDB().then(function(result) {
+                    return supporters;
                 });
             },
             setActiveSpeaker: function(speaker){

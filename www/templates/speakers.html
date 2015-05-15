@@ -1,11 +1,11 @@
 <ion-view view-title="Speakers">
     <ion-content has-bouncing="false">
-        <div class="list" >
-            <a class="item item-avatar" ng-href="#/app/speaker/{{speaker._id}}" ng-click="speakers.setActiveSpeaker(speaker)" ng-repeat="speaker in speakers.speakers">
-                <i class="ion-android-person" style="font-size: 40px"></i>
+        <ion-list>
+            <ion-item class="item-avatar" ng-href="#/app/speaker/{{speaker._id}}" ng-click="speakers.setActiveSpeaker(speaker)" ng-repeat="speaker in speakers.speakers">
+                <i class="ion-android-person"></i>
                 <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>
                 <p>{{speaker.affiliation}}</p>
-            </a>
-        </div>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

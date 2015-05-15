@@ -210,8 +210,9 @@ ion-side-menu ion-list ion-item.item a {
     position: absolute;
     top: 15px;
     left: 15px;
-    font-size: 36px;
+    font-size: 40px;
     max-width: 40px;
     max-height: 40px;
     width: 100%;
-    border-radius: 4px; }
+    border-radius: 4px;
+}
