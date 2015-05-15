@@ -104,7 +104,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, database) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -173,17 +173,23 @@ angular.module('starter.controllers', ['starter.services'])
 
     /* Reads schedule entries from database and sorts and groups them according to this.sortmode.value */
     this.update = function() {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+
         var that = this;
         $q.when((that.mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
             if (!result.length) {
                 if (that.mySchedule) {
                     $ionicPopup.alert({
                         title: 'Empty!',
+                        okType: 'button-womencourage',
                         template: 'You have not yet added anything to your schedule.'
                     });
                 } else {
                     $ionicPopup.alert({
                         title: 'Empty!',
+                        okType: 'button-womencourage',
                         template: 'No entries were found.'
                     });
                 }
@@ -192,6 +198,7 @@ angular.module('starter.controllers', ['starter.services'])
             that.days = group(result, that.sortmode.value);
             $timeout(function() {
                 $ionicSlideBoxDelegate.update();
+                $ionicLoading.hide();
                 }, 1000);
         }).catch(function (error) {
             console.log("Error when reading from database: " + error);
@@ -308,6 +315,7 @@ angular.module('starter.controllers', ['starter.services'])
     this.exportMySchedule = function() {
         $ionicPopup.confirm({
             title: 'Export to .ics',
+            okType: 'button-womencourage',
             template: 'Are you sure you want to export your schedule?'
         }).then(function(response) {
             if(response) {
