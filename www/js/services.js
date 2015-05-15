@@ -884,27 +884,27 @@ angular.module('starter.services', [])
                 return activeEntry;
             },
             getPapers: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return papers;
                 });
             },
             getPosters: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return posters;
                 });
             },
             getSpeakers: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return speakers;
                 });
             },
             getSponsors: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return sponsors;
                 });
             },
             getSupporters: function() {
-                return constructFromDB().then(function(result) {
+                return constructPromise.then(function(result) {
                     return supporters;
                 });
             },
