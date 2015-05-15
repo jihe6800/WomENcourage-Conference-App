@@ -116,13 +116,13 @@
     transition: 0.09s all linear;
     background-color: #520752;
     color: white;
-    border-color: #520752;
+    border-color: #300330;
 }
 
 .list .item.item-divider.active {
     color: white;
     background-color: #A268A0;
-    border-color: #A268A0;
+    border-color: #300330;
 }
 
 .list .item.item-accordion {
