@@ -14,13 +14,12 @@
 .drop-down-schedule{
     height: 20px;
     right:5px;
-    display: inline-block;
     position: absolute;
 }
 
 /* Font for top month text in schedule */
 .month-schedule{
-    font-size: 1em;
+    font-size: 1.3em;
     width: 150px;
     text-align: center;
 }
@@ -28,9 +27,9 @@
 /* Margin between buttons pager schedule */
 .margin-pager{
     display: inline-block;
-    width: 40px;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    width: 80px;
+    height: 35px;
+    margin-top: -5px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -42,15 +41,10 @@
 
 /* Font for the characters inside pager buttons */
 .day-char{
-    font-size: 0.8em;
+    /*font-size: 0.8em;*/
+    font-size: 1.3em;
     color: white;
     padding-top:8px;
-}
-
-/* Font for numbers inside pager buttons */
-.day-num{
-    font-size: 1.1em;
-    color: white;
 }
 
 /* Used for centering */
@@ -120,10 +114,15 @@
 /* Schedule item collapse animations */
 .list .item.item-divider {
     transition: 0.09s all linear;
+    background-color: #520752;
+    color: white;
+    border-color: #520752;
 }
 
 .list .item.item-divider.active {
-    background: #dddddd;
+    color: white;
+    background-color: #A268A0;
+    border-color: #A268A0;
 }
 
 .list .item.item-accordion {
@@ -139,6 +138,9 @@
     border-color: #300330;
     background-color: #520752;
     color: #fff; }
+.button.button-womencourage.inactive{
+    opacity: 0.5;
+}
 .button.button-womencourage:hover {
     color: #fff;
     text-decoration: none; }

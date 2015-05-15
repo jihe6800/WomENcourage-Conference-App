@@ -5,20 +5,27 @@
         </button>
     </ion-nav-buttons>
 
-    <div class="bar bar-header complete-center" style="height:20px; margin-top:50px">
-        <h3 class="month-schedule">September 2015</h3>
-        <select class="drop-down-schedule" ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes"></select>
-    </div>
-    <div class="bar bar-subheader" style="height:80px;margin-top:35px">
-        <div class="wrapper-pager">
-            <button class="button button-womencourage margin-pager" ng-click="schedule.changeSlide($index)" ng-repeat="day in schedule.days" ng-class="{'disabled': schedule.isDisabled($index)}">
-                <h3 class="day-char">{{day.name.substr(0,3)}}</h3>
-                <h3 class="day-num">{{day.name.substr(7,3)}}</h3>
-            </button>
-        </div>
-    </div>
 
-    <ion-content has-bouncing="false" style="margin-top: 110px">
+    <ion-content has-bouncing="false">
+        <div class="bar bar-stable complete-center" style="height: 30px;";>
+            <h3 class="month-schedule" style="margin-top: 5px">September 2015</h3>
+            <select class="drop-down-schedule" ng-model="schedule.sortmode" ng-change="schedule.update()" ng-options="sortmode.name for sortmode in schedule.sortmodes"></select>
+        </div>
+
+
+        <div class="bar bar-subheader bar-stable" style="margin-top:-15px ;height:40px; border-color: #f8f8f8">
+            <div class="wrapper-pager">
+                <button class="button margin-pager" ng-click="schedule.changeSlide($index)" ng-repeat="day in schedule.days" ng-class="schedule.isActive($index)">
+                    <h3 class="day-char"> {{day.name.substr(0,3)}}, {{day.name.substr(7,3)}} </h3>
+                </button>
+            </div>
+        </div>
+
+        <div class="bar bar-subheader" style="height: 10px; background-color: #520752; margin-top:20px;"></div>
+    </ion-content>
+
+
+    <ion-content has-header="true" has-subheader="true" has-bouncing="false" style="margin-top: 71px">
         <ion-slide-box on-slide-changed="schedule.changeSlide($index)" active-slide="myActiveSlide" show-pager="false">
             <ion-slide ng-repeat="day in schedule.days">
                 <ion-list>

@@ -204,8 +204,12 @@ angular.module('starter.controllers', ['starter.services'])
 
     $scope.myActiveSlide = 0;
 
-    this.isDisabled = function(ind){
-        return ind === $scope.myActiveSlide;
+    this.isActive = function(ind){
+        if(ind === $scope.myActiveSlide){
+            return "button-womencourage";
+        }else{
+            return "button-womencourage inactive"
+        }
     };
 
     this.setActiveEntry = function(entry){
