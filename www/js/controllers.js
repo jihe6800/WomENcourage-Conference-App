@@ -96,7 +96,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, database, mySchedule) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -170,9 +170,9 @@ angular.module('starter.controllers', ['starter.services'])
         });
 
         var that = this;
-        $q.when((that.mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
+        $q.when((mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
             if (!result.length) {
-                if (that.mySchedule) {
+                if (mySchedule) {
                     $ionicPopup.alert({
                         title: 'Empty!',
                         okType: 'button-womencourage',
@@ -326,7 +326,7 @@ angular.module('starter.controllers', ['starter.services'])
         });
     };
 
-    this.mySchedule = $location.path() === '/app/my-schedule';
+    this.mySchedule = mySchedule;
 
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Location', value: 'location'}];
     this.sortmode = this.sortmodes[0];

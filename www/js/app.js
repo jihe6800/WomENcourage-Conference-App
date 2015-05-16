@@ -58,6 +58,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl: "templates/schedule.html",
         controller: "ScheduleCtrl as schedule"
       }
+    },
+    resolve: {
+      mySchedule: function() {
+        return false;
+      }
     }
   })
 
@@ -172,6 +177,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'menuContent': {
           templateUrl: "templates/schedule.html",
           controller: "ScheduleCtrl as schedule"
+        }
+      },
+      resolve: {
+        mySchedule: function() {
+          return true;
         }
       }
     })
