@@ -23,7 +23,7 @@
                 <p ng-repeat="paper in talk.papers">{{paper.title}}</p>
             </div>
             <ion-item class="item-divider"><p>Speakers</p></ion-item>
-            <ion-item class="item-avatar" ng-repeat="speaker in talk.speakers">
+            <ion-item class="item-avatar" ng-repeat="speaker in talk.speakers" ng-href="#/app/speaker/{{speaker.id}}">
                 <i class="ion-android-person"></i>
                 <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>
                 <p>{{speaker.affiliation}}</p>
