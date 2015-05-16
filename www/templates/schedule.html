@@ -34,7 +34,7 @@
                 <ion-list>
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
-                        <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-click="schedule.setActiveEntry(entry)" ng-href="{{schedule.getEntryURL(entry)}}/{{entry._id}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(entry)}}">
+                        <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-href="{{schedule.getEntryURL(entry)}}" ng-show="group.visible" style="background-color: {{schedule.getEntryColor(entry)}}">
                             <div class="item-wrapper-schedule">
                                 <div class="color-stripe-schedule" style="background-color: {{schedule.getEntryColor(entry)}}"></div>
                                 <div class="info-schedule">

@@ -7,8 +7,8 @@ angular.module('starter.controllers', ['starter.services'])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-    .controller('EntryCtrl', function(database){
-        this.activeEntry = database.getActiveEntry();
+    .controller('EntryCtrl', function(entry){
+        this.activeEntry = entry;
     })
 
     .controller('InformationCtrl', function(database){
@@ -45,8 +45,8 @@ angular.module('starter.controllers', ['starter.services'])
         this.update();
     })
 
-    .controller('PosterCtrl', function(database) {
-        this.activePoster = database.getActivePoster();
+    .controller('PosterCtrl', function(poster) {
+        this.activePoster = poster;
     })
 
     .controller('PostersCtrl', function(database, $q) {
@@ -60,22 +60,14 @@ angular.module('starter.controllers', ['starter.services'])
             });
         };
 
-        this.setActivePoster = function(poster) {
-            database.setActivePoster(poster);
-        };
-
         this.update();
     })
 
-    .controller('SpeakerCtrl', function(database){
-        this.activeSpeaker = database.getActiveSpeaker();
+    .controller('SpeakerCtrl', function(speaker){
+        this.activeSpeaker = speaker;
     })
 
     .controller('SpeakersCtrl', function(database, $q){
-        this.setActiveSpeaker = function(speaker){
-            database.setActiveSpeaker(speaker);
-        };
-
         /* Reads speakers from database and sorts their last names alphabetically */
         this.update = function() {
             var that = this;
@@ -219,10 +211,6 @@ angular.module('starter.controllers', ['starter.services'])
         }
     };
 
-    this.setActiveEntry = function(entry){
-        database.setActiveEntry(entry);
-    };
-
     this.getEntryColor = function(entry) {
         switch(entry._id.substr(0, 4)) {
             case 'sssn':
@@ -247,19 +235,19 @@ angular.module('starter.controllers', ['starter.services'])
     this.getEntryURL = function(entry) {
         switch(entry._id.substr(0, 4)) {
             case 'sssn':
-                return "#/app/session";
+                return "#/app/session/" + entry.id;
             case 'note':
-                return "#/app/keynote";
+                return "#/app/keynote/" + entry.id;
             case 'cmmn':
-                return "#/app/common";
+                return "#/app/common/" + entry.id;
             case 'wksp':
-                return "#/app/workshop";
+                return "#/app/workshop/" + entry.id;
             case 'panl':
-                return "#/app/panel";
+                return "#/app/panel/" + entry.id;
             case 'uncf':
-                return "#/app/unconference";
+                return "#/app/unconference/" + entry.id;
             case 'inds':
-                return "#/app/industry-talks";
+                return "#/app/industry-talks/" + entry.id;
             default:
                 return "#/app";
         }

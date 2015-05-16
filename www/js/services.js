@@ -25,10 +25,6 @@ angular.module('starter.services', [])
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
 
-        var activeEntry; // Will contain the currently active entry
-        var activeSpeaker; // Will contain the currently active speaker
-        var activePoster; // Will contain the currently active poster
-
         db.changes({
             since: 'now',
             live: true
@@ -579,6 +575,9 @@ angular.module('starter.services', [])
                 for (var i = 0; i < result.length; i++) {
                     var item = result[i];
 
+                    // Copy the id number to a new property for pretty url printing etc
+                    item.id = _.trimLeft(item._id.substr(4), '0');
+
                     switch(item._id.substr(0, 4)) {
                         case 'sssn':
                             sessions.push(item);
@@ -817,9 +816,6 @@ angular.module('starter.services', [])
         var constructPromise = constructFromDB();
 
         return {
-            get: function(id) {
-                return db.get(id);
-            },
             getScheduleEntries: function() {
                 return constructPromise.then(function(result) {
                     return scheduleEntries;
@@ -877,11 +873,40 @@ angular.module('starter.services', [])
             isInMySchedule: function(entry) {
                 return isInMyShedule(entry);
             },
-            setActiveEntry: function(entry){
-                activeEntry = entry;
+            getSession: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(sessions, _.matchesProperty('id', id));
+                });
             },
-            getActiveEntry: function(){
-                return activeEntry;
+            getKeynote: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(keynotes, _.matchesProperty('id', id));
+                });
+            },
+            getCommonEntry: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(commonEntries, _.matchesProperty('id', id));
+                });
+            },
+            getWorkshop: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(workshops, _.matchesProperty('id', id));
+                });
+            },
+            getPanel: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(panels, _.matchesProperty('id', id));
+                });
+            },
+            getUnconference: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(unconferences, _.matchesProperty('id', id));
+                });
+            },
+            getIndustryTalksSession: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(industryTalksSessions, _.matchesProperty('id', id));
+                });
             },
             getPapers: function() {
                 return constructPromise.then(function(result) {
@@ -893,9 +918,19 @@ angular.module('starter.services', [])
                     return posters;
                 });
             },
+            getPoster: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(posters, _.matchesProperty('id', id));
+                });
+            },
             getSpeakers: function() {
                 return constructPromise.then(function(result) {
                     return speakers;
+                });
+            },
+            getSpeaker: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(speakers, _.matchesProperty('id', id));
                 });
             },
             getSponsors: function() {
@@ -907,18 +942,6 @@ angular.module('starter.services', [])
                 return constructPromise.then(function(result) {
                     return supporters;
                 });
-            },
-            setActiveSpeaker: function(speaker){
-                activeSpeaker = speaker;
-            },
-            getActiveSpeaker: function(){
-                return activeSpeaker;
-            },
-            setActivePoster: function(poster) {
-                activePoster = poster;
-            },
-            getActivePoster: function() {
-                return activePoster;
             },
             getOther: function(id){
                 return $q.when(odb.get(id)).then(function(result) {
