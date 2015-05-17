@@ -176,7 +176,7 @@ angular.module('starter.controllers', ['starter.services'])
                     $ionicPopup.alert({
                         title: 'Empty!',
                         okType: 'button-womencourage',
-                        template: 'You have not yet added anything to your schedule.'
+                        template: 'You have not yet added anything to your schedule. You can do that by switching the toggle on a schedule entry.'
                     });
                 } else {
                     $ionicPopup.alert({
