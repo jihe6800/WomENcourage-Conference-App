@@ -1,21 +1,21 @@
 angular.module('starter.services', [])
 
     .factory('database', function($q) {
+        // Declare local databases
         var db = new PouchDB('schedule');
-        var replicationHandlerDB = db.replicate.from('http://130.238.15.131:5984/schedule');
-
         var odb = new PouchDB('other');
-        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other');
-
         var mydb = new PouchDB('my-schedule');
 
-        var constructPromise = replicationHandlerDB.on('complete', function() {
+        // Used to verify that everything is downloaded and constructed before returning data from the service
+        var constructPromise = db.replicate.from('http://130.238.15.131:5984/schedule').then(function(result) {
             console.log("Everything loaded from server database! Now constructing schedule...");
-        }).on('error', function(error) {
-            console.log("Database download error: " + error);
-        }).then(function() {
             return constructFromDB();
+        }).catch(function(error) {
+            console.log("Database download error: " + error);
         });
+
+        // Used to verify that everything is downloaded before returning data from the service
+        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other');
 
         // Declare arrays to store data types
         var plainText = [];
@@ -37,6 +37,7 @@ angular.module('starter.services', [])
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
 
+        // Constructs the data from the database into convenient arrays of objects
         function constructFromDB() {
             return db.allDocs({
                 include_docs: true
@@ -182,9 +183,9 @@ angular.module('starter.services', [])
                         var talkObject = _.find(talks, _.matchesProperty('_id', session.talks[j]));
 
                         if (talkObject === undefined) {
-                            console.log("Failed to find id " + session.talks[j] + "!");
+                            console.log("ERROR: Failed to find id " + session.talks[j] + "!");
                         } else {
-                            console.log("Found a talkObject " + session.talks[j] + "!");
+                            console.log("Found id " + session.talks[j] + "!");
                             talkObjects.push(talkObject);
                             talkObject.startDate = new Date(Date.parse(talkObject.startDate));
                             talkObject.endDate = new Date(Date.parse(talkObject.endDate));
@@ -218,9 +219,9 @@ angular.module('starter.services', [])
                         var industryTalkObject = _.find(industryTalks, _.matchesProperty('_id', industryTalksSession.talks[j]));
 
                         if (industryTalkObject === undefined) {
-                            console.log("Failed to find id " + industryTalksSession.talks[j] + "!");
+                            console.log("ERROR: Failed to find id " + industryTalksSession.talks[j] + "!");
                         } else {
-                            console.log("Found an industryTalkObject " + industryTalksSession.talks[j] + "!");
+                            console.log("Found id " + industryTalksSession.talks[j] + "!");
                             industryTalkObjects.push(industryTalkObject);
                             industryTalkObject.startDate = new Date(Date.parse(industryTalkObject.startDate));
                             industryTalkObject.endDate = new Date(Date.parse(industryTalkObject.endDate));
@@ -289,18 +290,18 @@ angular.module('starter.services', [])
                 angular.forEach(scheduleEntries, function(scheduleEntry) {
                     var promise = isInMyShedule(scheduleEntry).then(function (result) {
                         scheduleEntry.isInMySchedule = result;
-                        console.log(scheduleEntry._id + ".isInMySchedule: " + result);
                     });
                     promises.push(promise);
                 });
 
-                // Remove the $q.all() wrapping to speed up schedule loading time
-                $q.all(promises).then(function() {
-                    console.log("Returning schedule entries!");
+                // Wait for all the isInMySchedule properties to be set
+                // Remove this to speed up schedule loading time (not sure whether the DOM will always get updated though)
+                return $q.all(promises).then(function() {
+                    console.log("Schedule construction complete!");
                     return scheduleEntries;
                 });
             }).catch(function(error) {
-                console.log("constructFromDB failed! Error message: " + error);
+                console.log("Schedule construction failed! Error message: " + error);
             });
         }
 
@@ -315,7 +316,6 @@ angular.module('starter.services', [])
         return {
             getScheduleEntries: function() {
                 return constructPromise.then(function(result) {
-                    console.log("Returning from getScheduleEntries()! Result received from promise: " + JSON.stringify(result));
                     return scheduleEntries;
                 }).catch(function(error) {
                     console.log("getScheduleEntries error: " + error);
@@ -442,8 +442,10 @@ angular.module('starter.services', [])
                 });
             },
             getOther: function(id){
-                return $q.when(odb.get(id)).then(function(result) {
-                    return result;
+                return replicationHandlerODB.then(function() {
+                    return $q.when(odb.get(id)).then(function(result) {
+                        return result;
+                    });
                 });
             }
         };
