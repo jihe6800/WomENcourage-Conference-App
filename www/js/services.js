@@ -2,14 +2,20 @@ angular.module('starter.services', [])
 
     .factory('database', function($q) {
         var db = new PouchDB('schedule');
-        var remoteDB = 'http://130.238.15.131:5984/schedule';
+        var replicationHandlerDB = db.replicate.from('http://130.238.15.131:5984/schedule');
+
         var odb = new PouchDB('other');
-        var remoteODB = 'http://130.238.15.131:5984/other';
+        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other');
 
         var mydb = new PouchDB('my-schedule');
 
-        db.replicate.from(remoteDB, {live: true}, function() {});
-        odb.replicate.from(remoteODB, {live: true}, function() {});
+        var constructPromise = replicationHandlerDB.on('complete', function() {
+            console.log("Everything loaded from server database! Now constructing schedule...");
+        }).on('error', function(error) {
+            console.log("Database download error: " + error);
+        }).then(function() {
+            return constructFromDB();
+        });
 
         // Declare arrays to store data types
         var plainText = [];
@@ -30,20 +36,6 @@ angular.module('starter.services', [])
 
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
-
-        db.changes({
-            since: 'now',
-            live: true
-        }).on('change', function() {
-            console.log("Something changed in schedule database!");
-        });
-
-        odb.changes({
-            since: 'now',
-            live: true
-        }).on('change', function() {
-            console.log("Something changed in other database!");
-        });
 
         function constructFromDB() {
             return db.allDocs({
@@ -320,11 +312,10 @@ angular.module('starter.services', [])
             });
         }
 
-        var constructPromise = constructFromDB();
-
         return {
             getScheduleEntries: function() {
                 return constructPromise.then(function(result) {
+                    console.log("Returning from getScheduleEntries()! Result received from promise: " + JSON.stringify(result));
                     return scheduleEntries;
                 }).catch(function(error) {
                     console.log("getScheduleEntries error: " + error);
