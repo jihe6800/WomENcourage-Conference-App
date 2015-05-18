@@ -198,6 +198,9 @@ angular.module('starter.services', [])
 
                             talkObject.speakers = replaceIdsWithObjects(talkObject.speakers, speakers);
                             talkObject.papers = replaceIdsWithObjects(talkObject.papers, papers); // This should check that all these papers exist in the speakers paper arrays and give warning if not
+                            for (var k = 0; k < talkObject.papers.length; k++) {
+                                talkObject.papers[k].sessionID = sessions[i].id; // Add id of the papers session in which this paper will be presented in order to be able to link back to it
+                            }
                             sessionSpeakers.push(talkObject.speakers);
                         }
                     }

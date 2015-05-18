@@ -8,18 +8,14 @@
                 <p>{{speaker.activeSpeaker.affiliation}}</p>
             </div>
         </div>
-        <ion-item class="item-divider" ng-if="speaker.activeSpeaker.papers.length > 0">
-            Papers
-        </ion-item>
-        <div class="card" ng-repeat="paper in speaker.activeSpeaker.papers">
+        <div class="card" ng-if="speaker.activeSpeaker.papers.length > 0">
             <ion-item class="item-divider">
-                {{paper.title}}
+                Papers
             </ion-item>
-            <div class="padding">
-                <h4></h4>
-                <h5>Authors</h5>
-                <div ng-repeat="author in paper.authors">{{author}}</div>
-            </div>
+            <ion-item class="item-text-wrap" ng-repeat="paper in speaker.activeSpeaker.papers" ng-href="#/app/schedule/session/{{paper.sessionID}}">
+                {{paper.title}}
+                <p><span ng-repeat="author in paper.authors">{{author}}<span ng-if="!$last">, </span></span></p>
+            </ion-item>
         </div>
     </ion-content>
 </ion-view>
