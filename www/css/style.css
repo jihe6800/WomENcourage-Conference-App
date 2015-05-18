@@ -118,15 +118,10 @@
     top: -1px;
 }
 
-.checkbox-wrapper-schedule{
-    vertical-align:top;
-    display: inline-block;
-    width:60px;
-    height: 32px;
-    margin-top: -16px;
+.checkbox-wrapper-schedule {
     position:absolute;
     right: 20px;
-    top: 50%;
+    top: 20px;
 }
 
 .item-wrapper-schedule{

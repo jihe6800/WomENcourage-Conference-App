@@ -10,6 +10,14 @@
                 <p><i class="ion-location"></i> {{entry.activeEntry.location}}</p>
                 <h2>Description</h2>
                 <p>{{entry.activeEntry.description}}</p>
+                <div class="checkbox-wrapper-schedule">
+                    <label class="toggle">
+                        <input type="checkbox" ng-model="entry.activeEntry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry.activeEntry)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
     </ion-content>

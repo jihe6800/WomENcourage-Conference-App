@@ -235,21 +235,21 @@ angular.module('starter.controllers', ['starter.services'])
     this.getEntryURL = function(entry) {
         switch(entry._id.substr(0, 4)) {
             case 'sssn':
-                return "#/app/session/" + entry.id;
+                return "#/app/schedule/session/" + entry.id;
             case 'note':
-                return "#/app/keynote/" + entry.id;
+                return "#/app/schedule/keynote/" + entry.id;
             case 'cmmn':
-                return "#/app/common/" + entry.id;
+                return "#/app/schedule/common/" + entry.id;
             case 'wksp':
-                return "#/app/workshop/" + entry.id;
+                return "#/app/schedule/workshop/" + entry.id;
             case 'panl':
-                return "#/app/panel/" + entry.id;
+                return "#/app/schedule/panel/" + entry.id;
             case 'uncf':
-                return "#/app/unconference/" + entry.id;
+                return "#/app/schedule/unconference/" + entry.id;
             case 'inds':
-                return "#/app/industry-talks/" + entry.id;
+                return "#/app/schedule/industry-talks/" + entry.id;
             default:
-                return "#/app";
+                return "#/app/schedule";
         }
     };
 
