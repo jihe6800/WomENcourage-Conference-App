@@ -204,7 +204,7 @@ angular.module('starter.services', [])
                             sessionSpeakers.push(talkObject.speakers);
                         }
                     }
-                    session.talks = talkObjects;
+                    session.talks = _.sortBy(talkObjects, "startDate");;
                     session.startDate = new Date(minDate);
                     session.endDate = new Date(maxDate);
                     session.speakers = _.unique(_.flatten(sessionSpeakers, true)); // Put all unique speakers from all talks in a session
@@ -239,7 +239,7 @@ angular.module('starter.services', [])
                             industryTalksSessionSpeakers.push(industryTalkObject.speakers);
                         }
                     }
-                    industryTalksSession.talks = industryTalkObjects;
+                    industryTalksSession.talks = _.sortBy(industryTalkObjects, "startDate");
                     industryTalksSession.startDate = new Date(minDate);
                     industryTalksSession.endDate = new Date(maxDate);
                     industryTalksSession.speakers = _.unique(_.flatten(industryTalksSessionSpeakers, true)); // Put all unique speakers from all talks in a session
