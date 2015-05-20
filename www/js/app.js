@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -53,80 +53,98 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
 
   .state('app.schedule', {
     url: "/schedule",
+    abstract: true,
     views: {
       'menuContent': {
-        templateUrl: "templates/schedule.html",
+        template: "<ion-nav-view></ion-nav-view>",
         controller: "ScheduleCtrl as schedule"
       }
+    },
+    resolve: {
+      mySchedule: function() {
+        return false;
+      }
     }
   })
 
-  .state('app.session', {
+  .state('app.schedule.index', {
+    url: "",
+    templateUrl: "templates/schedule.html"
+  })
+
+  .state('app.schedule.session', {
     url: "/session/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/session.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/session.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getSession($stateParams.id);
       }
     }
   })
 
-  .state('app.keynote', {
+  .state('app.schedule.keynote', {
     url: "/keynote/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/keynote.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/keynote.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getKeynote($stateParams.id);
       }
     }
   })
 
-  .state('app.common', {
+  .state('app.schedule.common', {
     url: "/common/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/common-entry.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/common-entry.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getCommonEntry($stateParams.id);
       }
     }
   })
 
-  .state('app.workshop', {
+  .state('app.schedule.workshop', {
     url: "/workshop/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/workshop.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/workshop.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getWorkshop($stateParams.id);
       }
     }
   })
 
-  .state('app.panel', {
+  .state('app.schedule.panel', {
     url: "/panel/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/panel.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/panel.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getPanel($stateParams.id);
       }
     }
   })
 
-  .state('app.unconference', {
+  .state('app.schedule.unconference', {
     url: "/unconference/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/unconference.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/unconference.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getUnconference($stateParams.id);
       }
     }
   })
 
-  .state('app.industry-talks', {
+  .state('app.schedule.industry-talks', {
     url: "/industry-talks/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/industry-talks-session.html",
-        controller: 'EntryCtrl as entry'
+    templateUrl: "templates/industry-talks-session.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getIndustryTalksSession($stateParams.id);
       }
     }
   })
@@ -137,6 +155,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         'menuContent': {
           templateUrl: "templates/schedule.html",
           controller: "ScheduleCtrl as schedule"
+        }
+      },
+      resolve: {
+        mySchedule: function() {
+          return true;
         }
       }
     })
@@ -168,6 +191,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         templateUrl: "templates/poster.html",
         controller: 'PosterCtrl as poster'
       }
+    },
+    resolve: {
+      poster: function($stateParams, database) {
+        return database.getPoster($stateParams.id);
+      }
     }
   })
 
@@ -188,6 +216,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
             templateUrl: "templates/speaker.html",
             controller: 'SpeakerCtrl as speaker'
           }
+        },
+        resolve: {
+          speaker: function($stateParams, database) {
+            return database.getSpeaker($stateParams.id);
+          }
         }
       })
 
@@ -200,11 +233,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'todo'])
         }
       })
 
-      .state('app.sponsors', {
-        url: "/sponsors",
+      .state('app.supporters', {
+        url: "/supporters",
         views: {
           'menuContent': {
-            templateUrl: "templates/sponsors.html"
+            templateUrl: "templates/sponsors.html",
+            controller: 'SupportersCtrl as supporters'
           }
         }
       })

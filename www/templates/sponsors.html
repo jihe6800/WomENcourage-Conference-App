@@ -10,8 +10,8 @@
             <ion-item class="item-divider">
                 Supporters
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="supporters in sponsors.supporters">
-                {{supporter.logo}}
+            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters">
+                <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
             </ion-item>
         </ion-list>
     </ion-content>

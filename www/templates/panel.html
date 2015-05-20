@@ -8,21 +8,31 @@
                 <h2><i class="ion-calendar"></i> {{entry.activeEntry.startDate.toDateString()}}</h2>
                 <h3><i class="ion-android-time"></i> {{entry.activeEntry.startDate.toTimeString().substr(0,5)}} - {{entry.activeEntry.endDate.toTimeString().substr(0,5)}}</h3>
                 <p><i class="ion-location"></i> {{entry.activeEntry.location}}</p>
-                <p><i class="ion-ios-people"></i> {{entry.activeEntry.speakers}}</p>
-                <p><i class="ion-star"></i> <b>Moderator:</b> {{entry.activeEntry.moderator}}</p>
+                <div class="checkbox-wrapper-schedule">
+                    <label class="toggle">
+                        <input type="checkbox" ng-model="entry.activeEntry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry.activeEntry)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
-        <ion-item class="item-divider">
-            Panelists
-        </ion-item>
-        <div class="card" >
-            <div class="list">
-                <a class="item item-avatar" ng-href="#/app/speaker/{{speaker._id}}" ng-click="speakers.setActiveSpeaker(speaker)" ng-repeat="speaker in entry.activeEntry.speakers">
-                    <i class="ion-android-person" style="font-size: 40px"></i>
-                    <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>
-                    <p>{{speaker.affiliation}}</p>
-                </a>
-            </div>
+        <div class="card list" ng-if="entry.activeEntry.moderators.length > 0">
+            <ion-item class="item-divider">Moderators</ion-item>
+            <ion-item class="item-avatar" ng-repeat="moderator in entry.activeEntry.moderators" ng-href="#/app/speaker/{{moderator.id}}">
+                <i class="ion-android-person"></i>
+                <h2>{{moderator.firstName}} {{moderator.lastName}}</h2>
+                <p>{{moderator.affiliation}}</p>
+            </ion-item>
+        </div>
+        <div class="card list" ng-if="entry.activeEntry.speakers.length > 0">
+            <ion-item class="item-divider">Panelists</ion-item>
+            <ion-item class="item-avatar" ng-repeat="speaker in entry.activeEntry.speakers" ng-href="#/app/speaker/{{speaker.id}}">
+                <i class="ion-android-person"></i>
+                <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>
+                <p>{{speaker.affiliation}}</p>
+            </ion-item>
         </div>
     </ion-content>
 </ion-view>

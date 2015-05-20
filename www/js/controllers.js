@@ -7,8 +7,8 @@ angular.module('starter.controllers', ['starter.services'])
     .controller('HomeCtrl', function($scope, $location) {
     })
 
-    .controller('EntryCtrl', function(database){
-        this.activeEntry = database.getActiveEntry();
+    .controller('EntryCtrl', function(entry){
+        this.activeEntry = entry;
     })
 
     .controller('InformationCtrl', function(database){
@@ -45,8 +45,8 @@ angular.module('starter.controllers', ['starter.services'])
         this.update();
     })
 
-    .controller('PosterCtrl', function(database) {
-        this.activePoster = database.getActivePoster();
+    .controller('PosterCtrl', function(poster) {
+        this.activePoster = poster;
     })
 
     .controller('PostersCtrl', function(database, $q) {
@@ -60,22 +60,14 @@ angular.module('starter.controllers', ['starter.services'])
             });
         };
 
-        this.setActivePoster = function(poster) {
-            database.setActivePoster(poster);
-        };
-
         this.update();
     })
 
-    .controller('SpeakerCtrl', function(database){
-        this.activeSpeaker = database.getActiveSpeaker();
+    .controller('SpeakerCtrl', function(speaker){
+        this.activeSpeaker = speaker;
     })
 
     .controller('SpeakersCtrl', function(database, $q){
-        this.setActiveSpeaker = function(speaker){
-            database.setActiveSpeaker(speaker);
-        };
-
         /* Reads speakers from database and sorts their last names alphabetically */
         this.update = function() {
             var that = this;
@@ -104,7 +96,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, database) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, database, mySchedule) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -173,17 +165,23 @@ angular.module('starter.controllers', ['starter.services'])
 
     /* Reads schedule entries from database and sorts and groups them according to this.sortmode.value */
     this.update = function() {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+
         var that = this;
-        $q.when((that.mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
+        $q.when((mySchedule ? database.getMyScheduleEntries() : database.getScheduleEntries())).then(function(result) {
             if (!result.length) {
-                if (that.mySchedule) {
+                if (mySchedule) {
                     $ionicPopup.alert({
                         title: 'Empty!',
-                        template: 'You have not yet added anything to your schedule.'
+                        okType: 'button-womencourage',
+                        template: 'You have not yet added anything to your schedule. You can do that by switching the toggle on a schedule entry.'
                     });
                 } else {
                     $ionicPopup.alert({
                         title: 'Empty!',
+                        okType: 'button-womencourage',
                         template: 'No entries were found.'
                     });
                 }
@@ -192,6 +190,7 @@ angular.module('starter.controllers', ['starter.services'])
             that.days = group(result, that.sortmode.value);
             $timeout(function() {
                 $ionicSlideBoxDelegate.update();
+                $ionicLoading.hide();
                 }, 1000);
         }).catch(function (error) {
             console.log("Error when reading from database: " + error);
@@ -204,12 +203,12 @@ angular.module('starter.controllers', ['starter.services'])
 
     $scope.myActiveSlide = 0;
 
-    this.isDisabled = function(ind){
-        return ind === $scope.myActiveSlide;
-    };
-
-    this.setActiveEntry = function(entry){
-        database.setActiveEntry(entry);
+    this.isActive = function(ind){
+        if(ind === $scope.myActiveSlide){
+            return "button-womencourage";
+        }else{
+            return "button-womencourage inactive"
+        }
     };
 
     this.getEntryColor = function(entry) {
@@ -236,21 +235,21 @@ angular.module('starter.controllers', ['starter.services'])
     this.getEntryURL = function(entry) {
         switch(entry._id.substr(0, 4)) {
             case 'sssn':
-                return "#/app/session";
+                return "#/app/schedule/session/" + entry.id;
             case 'note':
-                return "#/app/keynote";
+                return "#/app/schedule/keynote/" + entry.id;
             case 'cmmn':
-                return "#/app/common";
+                return "#/app/schedule/common/" + entry.id;
             case 'wksp':
-                return "#/app/workshop";
+                return "#/app/schedule/workshop/" + entry.id;
             case 'panl':
-                return "#/app/panel";
+                return "#/app/schedule/panel/" + entry.id;
             case 'uncf':
-                return "#/app/unconference";
+                return "#/app/schedule/unconference/" + entry.id;
             case 'inds':
-                return "#/app/industry-talks";
+                return "#/app/schedule/industry-talks/" + entry.id;
             default:
-                return "#/app";
+                return "#/app/schedule";
         }
     };
 
@@ -304,6 +303,7 @@ angular.module('starter.controllers', ['starter.services'])
     this.exportMySchedule = function() {
         $ionicPopup.confirm({
             title: 'Export to .ics',
+            okType: 'button-womencourage',
             template: 'Are you sure you want to export your schedule?'
         }).then(function(response) {
             if(response) {
@@ -326,7 +326,7 @@ angular.module('starter.controllers', ['starter.services'])
         });
     };
 
-    this.mySchedule = $location.path() === '/app/my-schedule';
+    this.mySchedule = mySchedule;
 
     this.sortmodes = [{name: 'Time', value: 'startDate'}, {name: 'Title', value: 'title'}, {name: 'Location', value: 'location'}];
     this.sortmode = this.sortmodes[0];
