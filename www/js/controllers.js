@@ -14,27 +14,27 @@ angular.module('starter.controllers', ['starter.services'])
     .controller('InformationCtrl', function(database){
         var that = this;
         database.getOther('info').then(function (result) {
-            that.information = result;
+            that.sections = result.sections;
         }).catch(function (error) {
-            that.information = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
+            that.sections = [{title: 'Error', content: 'Something went wrong.'}];
         });
     })
 
     .controller('EmergencyCtrl', function(database){
         var that = this;
         database.getOther('emergency').then(function (result) {
-            that.emergency = result;
+            that.sections = result.sections;
         }).catch(function (error) {
-            that.emergency = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
+            that.sections = [{title: 'Error', content: 'Something went wrong.'}];
         });
     })
 
     .controller('FeedbackCtrl', function(database){
         var that = this;
         database.getOther('feedback').then(function (result) {
-            that.feedback = result;
+            that.sections = result.sections;
         }).catch(function (error) {
-            that.feedback = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
+            that.sections = [{title: 'Error', content: 'Something went wrong.'}];
         });
     })
 

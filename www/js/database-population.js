@@ -1,25 +1,41 @@
 odb.bulkDocs([{
     _id: 'info',
-    texts: [{title: "Venue", content: "The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population. The primary venue will be the historic Main University Building (Universitetshuset), dating from the 1880s. It is located in central Uppsala, near the cathedral, and in easy walking distance to many hotels and restaurants."},
-            {title: "News", content: "Updates and news will be posted at the womENcourage Twitter @acmwomencourage"},
-            {title: "Smoking", content: "Smoking is prohibited in any public indoor establishment. This includes restaurants and bars as well as the conference venue."},
-            {title: "Uppsala", content: "Uppsala is Sweden’s fourth largest city with a population of 200 000 inhabitants. Unique cultural treasures and an exciting history are to be found in the city of knowledge and inspiration. Uppsala has retained its small-town charm while offering a big city’s selection of shops, restaurants and other entertainment. Uppsala has many historical attractions. Among the most famous are: Uppsala cathedral, the largest cathedral in Scandinavia. One of Sweden’s oldest botanical gardens A unique anatomical theatre built in the 1600’s The Linnaeus Garden Uppsala Castle from the mid-1500's. However, Uppsala is not only known for its traditions. Today Uppsala is a dynamic industrial and commercial city where knowledge, ideas and entrepreneurship are at the centre. The city’s geographical location with only 20 minutes to Stockholm-Arlanda international airport and 40 minutes to Stockholm has made Uppsala an attractive place for meetings. "},
-            {title: "Currency", content: "The Swedish monetary unit is the Swedish krona (SEK), divided into 100 öre. In August 2014: Euro 1=SEK 9, USD 1=SEK 7, GBP 1=SEK 11,5. Major credit cards are accepted almost everywhere. There are several currency exchange offices and cash dispensers at Stockholm Arlanda International Airport and in Uppsala."}]
+    sections: [{
+        title: "Venue",
+        content: "The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population. The primary venue will be the historic Main University Building (Universitetshuset), dating from the 1880s. It is located in central Uppsala, near the cathedral, and in easy walking distance to many hotels and restaurants."
+    }, {
+        title: "News",
+        content: "Updates and news will be posted at the womENcourage Twitter @acmwomencourage"
+    }, {
+        title: "Smoking",
+        content: "Smoking is prohibited in any public indoor establishment. This includes restaurants and bars as well as the conference venue."
+    }, {
+        title: "Uppsala",
+        content: "Uppsala is Sweden's fourth largest city with a population of 200 000 inhabitants. Unique cultural treasures and an exciting history are to be found in the city of knowledge and inspiration. Uppsala has retained its small-town charm while offering a big city's selection of shops, restaurants and other entertainment. Uppsala has many historical attractions. Among the most famous are: Uppsala cathedral, the largest cathedral in Scandinavia. One of Sweden's oldest botanical gardens A unique anatomical theatre built in the 1600's The Linnaeus Garden Uppsala Castle from the mid-1500's. However, Uppsala is not only known for its traditions. Today Uppsala is a dynamic industrial and commercial city where knowledge, ideas and entrepreneurship are at the centre. The city's geographical location with only 20 minutes to Stockholm-Arlanda international airport and 40 minutes to Stockholm has made Uppsala an attractive place for meetings. "
+    }, {
+        title: "Currency",
+        content: "The Swedish monetary unit is the Swedish krona (SEK), divided into 100 öre. In August 2014: Euro 1=SEK 9, USD 1=SEK 7, GBP 1=SEK 11,5. Major credit cards are accepted almost everywhere. There are several currency exchange offices and cash dispensers at Stockholm Arlanda International Airport and in Uppsala."
+    }]
 }, {
     _id: 'emergency',
-        texts:  [{title: 'Emergency Phone Numbers', content: 'If you need to call an ambulance, the police, or the fire brigade, use the central emergency number 112 from any fixed line or mobile phone. For non-emergency police calls, use 114 14.'},
-                {title: 'Medical Information', content: 'For 24 hour medical advice, call 1177 or visit www.1177.se. For non-emergency medical issues there is a drop-in clinic: Närakuten, Dragarbrunnsgatan 70, daily 07:00-23:00 (expect at least a 2-hour wait to see a doctor). Pharmacies: For opening hours and locations check Apoteksinfo Apoteksamariten (Kålsängsgränd 10 C, across from the Närakuten clinic) has extended hours (daily 08:00-22:00) 24-hour pharmacy: Apoteket C W Scheele, Klarabergsgatan 64, Stockholm Many non-prescription drugs (e.g., aspirin, paracetamol) are available over the counter at most grocery stores'},
-                {title: 'Conference Staff', content: 'Contact the conference staff through the phone number: TBA'}]
+    sections:  [{
+        title: 'Emergency Phone Numbers',
+        content: 'If you need to call an ambulance, the police, or the fire brigade, use the central emergency number 112 from any fixed line or mobile phone. For non-emergency police calls, use 114 14.'
+    }, {title: 'Medical Information',
+        content: 'For 24 hour medical advice, call 1177 or visit www.1177.se. For non-emergency medical issues there is a drop-in clinic: Närakuten, Dragarbrunnsgatan 70, daily 07:00-23:00 (expect at least a 2-hour wait to see a doctor). Pharmacies: For opening hours and locations check Apoteksinfo Apoteksamariten (Kålsängsgränd 10 C, across from the Närakuten clinic) has extended hours (daily 08:00-22:00) 24-hour pharmacy: Apoteket C W Scheele, Klarabergsgatan 64, Stockholm Many non-prescription drugs (e.g., aspirin, paracetamol) are available over the counter at most grocery stores'
+    }, {title: 'Conference Staff',
+        content: 'Contact the conference staff through the phone number: TBA'
+    }]
 }, {
     _id: 'feedback',
-    texts: [{
+    sections: [{
         title: 'About the App',
         content: 'This app was developed by three IT students at Uppsala University.'
     }, {
-        title: 'Device support',
+        title: 'Device Support',
         content: 'The app is supported on most devices with a modern web browser.'
     }, {
-        title: 'Offline capabilities',
+        title: 'Offline Capabilities',
         content: 'The app is fully functional even if you lose your Internet connection. As long as you do not close or refresh your web browser window when without network access, everything should still be working.'
     }, {
         title: 'My Schedule',
