@@ -503,3 +503,25 @@ db.bulkDocs([{
     name: 'Microsoft Research Connections',
     logo: 'microsoft-research-connections.jpg'
 }]);
+
+db.bulkDocs([{
+    _id: 'spsr0001',
+    name: 'ACM',
+    logo: 'acm.png'
+}, {
+    _id: 'spsr0002',
+    name: 'ACM-W',
+    logo: 'acm-w.png'
+}, {
+    _id: 'spsr0003',
+    name: 'ACM Europe',
+    logo: 'acm-europe.png'
+}, {
+    _id: 'spsr0004',
+    name: 'ACM-W Europe',
+    logo: 'acm-w-europe.png'
+}, {
+    _id: 'spsr0005',
+    name: 'Uppsala University',
+    logo: 'uu.png'
+}]);
