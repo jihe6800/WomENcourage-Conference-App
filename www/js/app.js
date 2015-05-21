@@ -257,7 +257,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         url: "/feedback",
         views: {
           'menuContent': {
-            templateUrl: "templates/feedback.html"
+            templateUrl: "templates/feedback.html",
+            controller: 'FeedbackCtrl as feedback'
           }
         }
       });

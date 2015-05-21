@@ -25,7 +25,16 @@ angular.module('starter.controllers', ['starter.services'])
         database.getOther('emergency').then(function (result) {
             that.emergency = result;
         }).catch(function (error) {
-            that.information = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
+            that.emergency = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
+        });
+    })
+
+    .controller('FeedbackCtrl', function(database){
+        var that = this;
+        database.getOther('feedback').then(function (result) {
+            that.feedback = result;
+        }).catch(function (error) {
+            that.feedback = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
         });
     })
 

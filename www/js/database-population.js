@@ -10,6 +10,24 @@ odb.bulkDocs([{
         texts:  [{title: 'Emergency Phone Numbers', content: 'If you need to call an ambulance, the police, or the fire brigade, use the central emergency number 112 from any fixed line or mobile phone. For non-emergency police calls, use 114 14.'},
                 {title: 'Medical Information', content: 'For 24 hour medical advice, call 1177 or visit www.1177.se. For non-emergency medical issues there is a drop-in clinic: Närakuten, Dragarbrunnsgatan 70, daily 07:00-23:00 (expect at least a 2-hour wait to see a doctor). Pharmacies: For opening hours and locations check Apoteksinfo Apoteksamariten (Kålsängsgränd 10 C, across from the Närakuten clinic) has extended hours (daily 08:00-22:00) 24-hour pharmacy: Apoteket C W Scheele, Klarabergsgatan 64, Stockholm Many non-prescription drugs (e.g., aspirin, paracetamol) are available over the counter at most grocery stores'},
                 {title: 'Conference Staff', content: 'Contact the conference staff through the phone number: TBA'}]
+}, {
+    _id: 'feedback',
+    texts: [{
+        title: 'About the App',
+        content: 'This app was developed by three IT students at Uppsala University.'
+    }, {
+        title: 'Device support',
+        content: 'The app is supported on most devices with a modern web browser.'
+    }, {
+        title: 'Offline capabilities',
+        content: 'The app is fully functional even if you lose your Internet connection. As long as you do not close or refresh your web browser window when without network access, everything should still be working.'
+    }, {
+        title: 'My Schedule',
+        content: 'Your personalized schedule is automatically saved locally in your web browser, so you can close or refresh the web page and still have your schedule available the next time you visit the website.'
+    }, {
+        title: 'Feedback',
+        content: 'Is some feature missing or not quite working in the way you would expect? We gladly appreciate all the feedback you can give us!'
+    }]
 }]);
 
 db.bulkDocs([{
