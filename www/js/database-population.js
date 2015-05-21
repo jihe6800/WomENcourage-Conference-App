@@ -258,7 +258,7 @@ db.bulkDocs([{
     _id: 'cmmn001',
     title: 'Poster session',
     location: 'Norrlands Nation',
-    description: 'Poster session.',
+    description: 'Please see the "Posters" page.',
     startDate: new Date(2015, 8, 24, 16, 15),
     endDate: new Date(2015, 8, 24, 20, 0),
     speakers: []
@@ -274,7 +274,7 @@ db.bulkDocs([{
     _id: 'cmmn003',
     title: 'Career fair',
     location: 'Norrlands Nation',
-    description: 'Career fair.',
+    description: 'Please see the "Supporters" page.',
     startDate: new Date(2015, 8, 24, 16, 15),
     endDate: new Date(2015, 8, 24, 20, 0),
     speakers: []
