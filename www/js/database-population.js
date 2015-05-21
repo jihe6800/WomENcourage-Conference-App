@@ -1,17 +1,15 @@
 odb.bulkDocs([{
     _id: 'info',
-    title1: 'Venue',
-    text1: "The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population.",
-    title2: 'Currency',
-    text2: 'The Swedish monetary unit is the Swedish krona (SEK), divided into 100 öre. In August 2014: Euro 1=SEK 9, USD 1=SEK 7, GBP 1=SEK 11,5. Major credit cards are accepted almost everywhere. There are several currency exchange offices and cash dispensers at Stockholm Arlanda International Airport and in Uppsala. Exchange rates may vary. To see current exchange rates, please visit oanda.com. or x-rates.com.'
+    texts: [{title: "Venue", content: "The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population. The primary venue will be the historic Main University Building (Universitetshuset), dating from the 1880s. It is located in central Uppsala, near the cathedral, and in easy walking distance to many hotels and restaurants."},
+            {title: "News", content: "Updates and news will be posted at the womENcourage Twitter @acmwomencourage"},
+            {title: "Smoking", content: "Smoking is prohibited in any public indoor establishment. This includes restaurants and bars as well as the conference venue."},
+            {title: "Uppsala", content: "Uppsala is Swedenâ€™s fourth largest city with a population of 200 000 inhabitants. Unique cultural treasures and an exciting history are to be found in the city of knowledge and inspiration. Uppsala has retained its small-town charm while offering a big cityâ€™s selection of shops, restaurants and other entertainment. Uppsala has many historical attractions. Among the most famous are: Uppsala cathedral, the largest cathedral in Scandinavia. One of Swedenâ€™s oldest botanical gardens A unique anatomical theatre built in the 1600â€™s The Linnaeus Garden Uppsala Castle from the mid-1500's. However, Uppsala is not only known for its traditions. Today Uppsala is a dynamic industrial and commercial city where knowledge, ideas and entrepreneurship are at the centre. The cityâ€™s geographical location with only 20 minutes to Stockholm-Arlanda international airport and 40 minutes to Stockholm has made Uppsala an attractive place for meetings. "},
+            {title: "Currency", content: "The Swedish monetary unit is the Swedish krona (SEK), divided into 100 Ã¶re. In August 2014: Euro 1=SEK 9, USD 1=SEK 7, GBP 1=SEK 11,5. Major credit cards are accepted almost everywhere. There are several currency exchange offices and cash dispensers at Stockholm Arlanda International Airport and in Uppsala."}]
 }, {
     _id: 'emergency',
-    title1: 'Emergency Phone Numbers',
-    title2: 'Medical Information',
-    title3: 'Conference Staff',
-    text1: 'If you need to call an ambulance, the police, or the fire brigade, use the central emergency number 112 from any fixed line or mobile phone. For non-emergency police calls, use 114 14.',
-    text2: 'For 24 hour medical advice, call 1177 or visit www.1177.se. For non-emergency medical issues there is a drop-in clinic: Närakuten, Dragarbrunnsgatan 70, daily 07:00-23:00 (expect at least a 2-hour wait to see a doctor). Pharmacies: For opening hours and locations check Apoteksinfo Apoteksamariten (Kålsängsgränd 10 C, across from the Närakuten clinic) has extended hours (daily 08:00-22:00) 24-hour pharmacy: Apoteket C W Scheele, Klarabergsgatan 64, Stockholm Many non-prescription drugs (e.g., aspirin, paracetamol) are available over the counter at most grocery stores',
-    text3: 'Contact the conference staff through the phone number: TBA'
+        texts:  [{title: 'Emergency Phone Numbers', content: 'If you need to call an ambulance, the police, or the fire brigade, use the central emergency number 112 from any fixed line or mobile phone. For non-emergency police calls, use 114 14.'},
+                {title: 'Medical Information', content: 'For 24 hour medical advice, call 1177 or visit www.1177.se. For non-emergency medical issues there is a drop-in clinic: NÃ¤rakuten, Dragarbrunnsgatan 70, daily 07:00-23:00 (expect at least a 2-hour wait to see a doctor). Pharmacies: For opening hours and locations check Apoteksinfo Apoteksamariten (KÃ¥lsÃ¤ngsgrÃ¤nd 10 C, across from the NÃ¤rakuten clinic) has extended hours (daily 08:00-22:00) 24-hour pharmacy: Apoteket C W Scheele, Klarabergsgatan 64, Stockholm Many non-prescription drugs (e.g., aspirin, paracetamol) are available over the counter at most grocery stores'},
+                {title: 'Conference Staff', content: 'Contact the conference staff through the phone number: TBA'}]
 }]);
 
 db.bulkDocs([{
@@ -53,8 +51,8 @@ db.bulkDocs([{
     papers: ['papr0002']
 }, {
     _id: 'spkr006',
-    firstName: "Hélène",
-    lastName: "Sauzéon ",
+    firstName: "HÃ©lÃ¨ne",
+    lastName: "SauzÃ©on ",
     affiliation: '',
     papers: ['papr0002']
 }, {
@@ -130,7 +128,7 @@ db.bulkDocs([{
     papers: ['papr0006']
 }, {
     _id: 'spkr019',
-    firstName: "Åsa",
+    firstName: "Ã…sa",
     lastName: "Cajander",
     affiliation: 'Uppsala University',
     papers: ''
@@ -189,7 +187,7 @@ db.bulkDocs([{
 }, {
     _id: 'papr0002',
     title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
-    authors: ['Lucile Dupuy', 'Hélène Sauzéon', 'Charles Consel']
+    authors: ['Lucile Dupuy', 'HÃ©lÃ¨ne SauzÃ©on', 'Charles Consel']
 }, {
     _id: 'papr0003',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
@@ -225,7 +223,7 @@ db.bulkDocs([{
 }, {
     _id: 'papr0011',
     title: 'Gender Division in Computer Science: Conceptions and Statistics of Uppsala University',
-    authors: ['Noric Couderc', 'Elin Parsjö', 'Nadia Röning']
+    authors: ['Noric Couderc', 'Elin ParsjÃ¶', 'Nadia RÃ¶ning']
 }, {
     _id: 'papr0012',
     title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
@@ -386,7 +384,7 @@ db.bulkDocs([{
     _id: 'wksp004',
     title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
     location: 'Room 15',
-    description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.', 'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.', 'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:', '1. Presentation of ACM ICPC organization', '2. Presentation of examples of problems solved in contest from simplest one to the most difficult', '3. Explanation and usage of an automatic judging system', '4. Practical session of solving simple problems under judging system', '5. Final 1 hour contest with few simple problems as example of real programming contest.', 'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
+    description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the worldÂ’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.', 'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.', 'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:', '1. Presentation of ACM ICPC organization', '2. Presentation of examples of problems solved in contest from simplest one to the most difficult', '3. Explanation and usage of an automatic judging system', '4. Practical session of solving simple problems under judging system', '5. Final 1 hour contest with few simple problems as example of real programming contest.', 'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30),
     speakers: ['spkr003']
