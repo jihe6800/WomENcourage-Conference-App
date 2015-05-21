@@ -88,7 +88,11 @@ angular.module('starter.controllers', ['starter.services'])
                 that.sponsors = _.sortBy(result, 'name');
             });
             $q.when(database.getSupporters()).then(function(result) {
-                that.supporters = _.sortBy(result, 'name');
+                that.supporters = result;
+                that.supporters.diamond = _.sortBy(that.supporters.diamond, 'name');
+                that.supporters.platinum = _.sortBy(that.supporters.platinum, 'name');
+                that.supporters.silver = _.sortBy(that.supporters.silver, 'name');
+                that.supporters.additional = _.sortBy(that.supporters.additional, 'name');
             })
         };
 

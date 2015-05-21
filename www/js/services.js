@@ -32,7 +32,7 @@ angular.module('starter.services', [])
         var industryTalks = [];
         var industryTalksSessions = [];
         var sponsors = [];
-        var supporters = [];
+        var supporters = {diamond: [], platinum: [], silver: [], additional: []};
 
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
@@ -61,7 +61,7 @@ angular.module('starter.services', [])
                 industryTalks = [];
                 industryTalksSessions = [];
                 sponsors = [];
-                supporters = [];
+                supporters = {diamond: [], platinum: [], silver: [], additional: []};
 
                 scheduleEntries = [];
 
@@ -131,7 +131,22 @@ angular.module('starter.services', [])
                             plainText.push(item);
                             break;
                         case 'supp':
-                            supporters.push(item);
+                            switch(item.tier) {
+                                case 'diamond':
+                                    supporters.diamond.push(item);
+                                    break;
+                                case 'platinum':
+                                    supporters.platinum.push(item);
+                                    break;
+                                case 'silver':
+                                    supporters.silver.push(item);
+                                    break;
+                                case 'additional':
+                                    supporters.additional.push(item);
+                                    break;
+                                default:
+                                    console.log("Unkown supporter tier for " + item.name + ": " + item.tier);
+                            }
                             break;
                         case 'spsr':
                             sponsors.push(item);
@@ -204,7 +219,7 @@ angular.module('starter.services', [])
                             sessionSpeakers.push(talkObject.speakers);
                         }
                     }
-                    session.talks = _.sortBy(talkObjects, "startDate");;
+                    session.talks = _.sortBy(talkObjects, "startDate");
                     session.startDate = new Date(minDate);
                     session.endDate = new Date(maxDate);
                     session.speakers = _.unique(_.flatten(sessionSpeakers, true)); // Put all unique speakers from all talks in a session

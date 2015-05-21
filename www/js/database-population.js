@@ -477,31 +477,38 @@ db.bulkDocs([{
 }, {
     _id: 'supp0001',
     name: 'Google',
-    logo: 'google.jpg'
+    logo: 'google.jpg',
+    tier: 'diamond'
 }, {
     _id: 'supp0002',
     name: 'Oracle Academy',
-    logo: 'oracle-academy.jpg'
+    logo: 'oracle-academy.jpg',
+    tier: 'diamond'
 }, {
     _id: 'supp0003',
     name: 'Bloomberg',
-    logo: 'bloomberg.jpg'
+    logo: 'bloomberg.jpg',
+    tier: 'platinum'
 }, {
     _id: 'supp0004',
     name: 'Cisco',
-    logo: 'cisco.jpg'
+    logo: 'cisco.jpg',
+    tier: 'platinum'
 }, {
     _id: 'supp0005',
     name: 'Facebook',
-    logo: 'facebook.jpg'
+    logo: 'facebook.jpg',
+    tier: 'platinum'
 }, {
     _id: 'supp0006',
     name: 'Informatics Europe',
-    logo: 'informatics-europe.jpg'
+    logo: 'informatics-europe.jpg',
+    tier: 'silver'
 }, {
     _id: 'supp0007',
     name: 'Microsoft Research Connections',
-    logo: 'microsoft-research-connections.jpg'
+    logo: 'microsoft-research-connections.jpg',
+    tier: 'silver'
 }]);
 
 db.bulkDocs([{
