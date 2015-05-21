@@ -18,17 +18,17 @@
                 </div>
             </div>
         </div>
-        <ion-item class="item-divider" ng-if="entry.activeEntry.talks.length > 0">
+        <ion-item class="item-divider active" ng-if="entry.activeEntry.talks.length > 0">
             Papers
         </ion-item>
         <div class="card" ng-repeat="talk in entry.activeEntry.talks">
-            <ion-item class="item-divider item-text-wrap">
+            <ion-item class="item-divider gray item-text-wrap">
                 {{talk.title}}
             </ion-item>
             <ion-item>
                 <h3><i class="ion-android-time"></i> {{talk.startDate.toTimeString().substr(0,5)}} - {{talk.endDate.toTimeString().substr(0,5)}}</h3>
             </ion-item>
-            <ion-item class="item-divider"><p>Speakers</p></ion-item>
+            <ion-item class="item-divider gray"><p>Speakers</p></ion-item>
             <ion-item class="item-avatar" ng-repeat="speaker in talk.speakers" ng-href="#/app/speaker/{{speaker.id}}">
                 <i class="ion-android-person"></i>
                 <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>

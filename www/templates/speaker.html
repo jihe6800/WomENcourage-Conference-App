@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="card" ng-if="speaker.activeSpeaker.papers.length > 0">
-            <ion-item class="item-divider">
+            <ion-item class="item-divider active">
                 Papers
             </ion-item>
             <ion-item class="item-text-wrap" ng-repeat="paper in speaker.activeSpeaker.papers" ng-href="#/app/schedule/session/{{paper.sessionID}}">

@@ -128,25 +128,31 @@
 
 }
 
-/* Schedule item collapse animations */
-.list .item.item-divider {
+/* Item dividers */
+.item.item-divider {
     transition: 0.09s all linear;
     background-color: #520752;
     color: white;
     border-color: #300330;
 }
 
-.list .item.item-divider.active {
+.item.item-divider.active {
     color: white;
     background-color: #A268A0;
     border-color: #875784;
 }
 
-.list .item.item-accordion {
+.item.item-divider.gray {
+    background-color: #f5f5f5;
+    color: #222;
+    border-color: #ddd;
+}
+
+.item.item-accordion {
     transition: 0.09s all linear;
 }
 
-.list .item.item-accordion.ng-hide {
+.item.item-accordion.ng-hide {
     line-height: 0;
 }
 

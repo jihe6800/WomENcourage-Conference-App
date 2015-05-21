@@ -8,8 +8,6 @@
                 <h2><i class="ion-calendar"></i> {{entry.activeEntry.startDate.toDateString()}}</h2>
                 <h3><i class="ion-android-time"></i> {{entry.activeEntry.startDate.toTimeString().substr(0,5)}} - {{entry.activeEntry.endDate.toTimeString().substr(0,5)}}</h3>
                 <p><i class="ion-location"></i> {{entry.activeEntry.location}}</p>
-                <h2>Description</h2>
-                <p>{{entry.activeEntry.description}}</p>
                 <div class="checkbox-wrapper-schedule">
                     <label class="toggle">
                         <input type="checkbox" ng-model="entry.activeEntry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry.activeEntry)">
@@ -19,9 +17,13 @@
                     </label>
                 </div>
             </div>
+            <ion-item class="item-divider gray"><p>Description</p></ion-item>
+            <ion-item class="item-text-wrap">
+                <p>{{entry.activeEntry.description}}</p>
+            </ion-item>
         </div>
         <div class="card list" ng-if="entry.activeEntry.speakers.length > 0">
-            <ion-item class="item-divider">Speakers</ion-item>
+            <ion-item class="item-divider active">Speakers</ion-item>
             <ion-item class="item-avatar" ng-repeat="speaker in entry.activeEntry.speakers" ng-href="#/app/speaker/{{speaker.id}}">
                 <i class="ion-android-person"></i>
                 <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>
