@@ -16,8 +16,7 @@ angular.module('starter.controllers', ['starter.services'])
         database.getOther('info').then(function (result) {
             that.information = result;
         }).catch(function (error) {
-            console.log("other2 error: " + error);
-            that.information = {title1: 'error' , title2: 'error' ,text1: 'error', text2: 'error'}
+            that.information = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
         });
     })
 
@@ -26,8 +25,7 @@ angular.module('starter.controllers', ['starter.services'])
         database.getOther('emergency').then(function (result) {
             that.emergency = result;
         }).catch(function (error) {
-            console.log("other2 error: " + error);
-            that.information = {title1: 'error' , title2: 'error', title3: 'error' ,text1: 'error', text2: 'error', text3: 'error'}
+            that.information = {texts: [{title: 'Error', content: 'Something went wrong.'}]};
         });
     })
 

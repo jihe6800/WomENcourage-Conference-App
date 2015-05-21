@@ -1,17 +1,12 @@
 <ion-view view-title="Emergency Contact">
     <ion-content>
-        <div class="card"><div class="item item-divider active">{{emergency.emergency.title1}}</div>
+        <div class="card" ng-repeat="section in emergency.emergency.texts">
+            <div class="item item-divider active">
+                {{section.title}}
+            </div>
             <div class="item item-text-wrap">
-       {{emergency.emergency.text1}} </div>
-    </div>
-        <div class="card"><div class="item item-divider active">{{emergency.emergency.title2}}</div>
-            <div class="item item-text-wrap">
-                {{emergency.emergency.text2}} </div>
+                {{section.content}}
+            </div>
         </div>
-        <div class="card"><div class="item item-divider active">{{emergency.emergency.title3}}</div>
-            <div class="item item-text-wrap">
-                {{emergency.emergency.text3}} </div>
-        </div>
-
     </ion-content>
 </ion-view>

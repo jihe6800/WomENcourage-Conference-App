@@ -3,21 +3,13 @@
         <div style="width:100%; text-align: center" class="banner-start img" >
             <img src="img/banner-small.png" />
         </div>
-        <div class="card">
+        <div class="card" ng-repeat="section in information.information.texts">
             <div class="item item-divider active">
-                {{information.information.title1}}
+                {{section.title}}
             </div>
-        <div class="item item-text-wrap">
-            {{information.information.text1}}
-        </div>
-        </div>
-        <div class="card">
-            <div class="item item-divider active">
-                {{information.information.title2}}
+            <div class="item item-text-wrap">
+                {{section.content}}
             </div>
-        <div class="item item-text-wrap">
-            {{information.information.text2}}
-        </div>
         </div>
     </ion-content>
 </ion-view>
