@@ -11,27 +11,27 @@ angular.module('starter.controllers', ['starter.services'])
         this.activeEntry = entry;
     })
 
-    .controller('InformationCtrl', function(database){
+    .controller('InformationCtrl', function($q, database){
         var that = this;
-        database.getOther('info').then(function (result) {
+        $q.when(database.getOther('info')).then(function (result) {
             that.sections = result.sections;
         }).catch(function (error) {
             that.sections = [{title: 'Error', content: 'Something went wrong.'}];
         });
     })
 
-    .controller('EmergencyCtrl', function(database){
+    .controller('EmergencyCtrl', function($q, database){
         var that = this;
-        database.getOther('emergency').then(function (result) {
+        $q.when(database.getOther('emergency')).then(function (result) {
             that.sections = result.sections;
         }).catch(function (error) {
             that.sections = [{title: 'Error', content: 'Something went wrong.'}];
         });
     })
 
-    .controller('FeedbackCtrl', function(database){
+    .controller('FeedbackCtrl', function($q, database){
         var that = this;
-        database.getOther('feedback').then(function (result) {
+        $q.when(database.getOther('feedback')).then(function (result) {
             that.sections = result.sections;
         }).catch(function (error) {
             that.sections = [{title: 'Error', content: 'Something went wrong.'}];
