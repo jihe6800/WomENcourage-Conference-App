@@ -18,7 +18,6 @@ angular.module('starter.services', [])
         var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other');
 
         // Declare arrays to store data types
-        var plainText = [];
         var sessions = [];
         var speakers = [];
         var talks = [];
@@ -47,7 +46,6 @@ angular.module('starter.services', [])
                 });
             }).then(function(result) {
                 // Reset arrays that store data types
-                plainText = [];
                 sessions = [];
                 speakers = [];
                 talks = [];
@@ -64,12 +62,6 @@ angular.module('starter.services', [])
                 supporters = {diamond: [], platinum: [], silver: [], additional: []};
 
                 scheduleEntries = [];
-
-                // Uncertain
-                var carreerFair = [];
-                var specialEntries = [];
-                var posterEvents = [];
-                var caseStudies = [];
 
                 // Add items to the correct arrays
                 for (var i = 0; i < result.length; i++) {
@@ -94,23 +86,14 @@ angular.module('starter.services', [])
                         case 'pstr':
                             posters.push(item);
                             break;
-                        case 'crfr':
-                            carreerFair.push(item);
-                            break;
                         case 'note':
                             keynotes.push(item);
                             break;
                         case 'cmmn':
                             commonEntries.push(item);
                             break;
-                        case 'spcl':
-                            specialEntries.push(item);
-                            break;
                         case 'panl':
                             panels.push(item);
-                            break;
-                        case 'ptre':
-                            posterEvents.push(item);
                             break;
                         case 'indt':
                             industryTalks.push(item);
@@ -121,14 +104,8 @@ angular.module('starter.services', [])
                         case 'wksp':
                             workshops.push(item);
                             break;
-                        case 'cstd':
-                            caseStudies.push(item);
-                            break;
                         case 'uncf':
                             unconferences.push(item);
-                            break;
-                        case 'plan':
-                            plainText.push(item);
                             break;
                         case 'supp':
                             switch(item.tier) {
