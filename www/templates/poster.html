@@ -6,9 +6,11 @@
             </div>
             <div class="item item-text-wrap">
                 <p><span ng-repeat="author in poster.activePoster.authors">{{author}}<span ng-if="!$last">, </span></span></p>
-                <h2>Description</h2>
-                <p>{{poster.activePoster.description}}</p>
             </div>
+            <ion-item class="item-divider gray"><p>Description</p></ion-item>
+            <ion-item class="item-text-wrap">
+                <p>{{poster.activePoster.description}}</p>
+            </ion-item>
         </div>
     </ion-content>
 </ion-view>
