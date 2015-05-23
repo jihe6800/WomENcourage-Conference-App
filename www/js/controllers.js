@@ -107,7 +107,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, database, mySchedule) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, $state, database, mySchedule) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -336,6 +336,22 @@ angular.module('starter.controllers', ['starter.services'])
             }
         });
     };
+
+    // Make My Schedule refresh upon state load if changes have been made
+    if (mySchedule) {
+        var that = this;
+
+        database.on('myScheduleChanged', function() {
+            that.myScheduleHasChanged = true;
+        });
+
+        $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+            if(toState.name === "app.my-schedule" && that.myScheduleHasChanged) {
+                that.update();
+                that.myScheduleHasChanged = false;
+            }
+        });
+    }
 
     this.mySchedule = mySchedule;
 

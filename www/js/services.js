@@ -6,6 +6,14 @@ angular.module('starter.services', [])
         var odb = new PouchDB('other');
         var mydb = new PouchDB('my-schedule');
 
+        var myScheduleListeners = []; // Used to notify when My Schedule has changed
+
+        function notifyMyScheduleListeners() {
+            for (var i = 0; i < myScheduleListeners.length; i++) {
+                myScheduleListeners[i]();
+            }
+        }
+
         // Used to verify that everything is downloaded and constructed before returning data from the service
         var constructPromise = db.replicate.from('http://130.238.15.131:5984/schedule').then(function(result) {
             console.log("Everything loaded from server database! Now constructing schedule...");
@@ -345,6 +353,7 @@ angular.module('starter.services', [])
                     console.log("put() result: " + JSON.stringify(result));
                     if(result.ok) {
                         entry.isInMySchedule = true;
+                        notifyMyScheduleListeners();
                     }
                 }).catch(function(error) {
                     console.log("addToMySchedule error: " + error);
@@ -358,6 +367,7 @@ angular.module('starter.services', [])
                     console.log("remove() result: " + JSON.stringify(result));
                     if(result.ok) {
                         entry.isInMySchedule = false;
+                        notifyMyScheduleListeners();
                     }
                 }).catch(function (error) {
                     console.log("removeFromMySchedule error: " + error);
@@ -442,6 +452,12 @@ angular.module('starter.services', [])
                         return result;
                     });
                 });
+            },
+            on: function(event, func) {
+                switch(event) {
+                    case "myScheduleChanged":
+                        myScheduleListeners.push(func);
+                }
             }
         };
     });
