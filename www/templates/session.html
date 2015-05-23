@@ -18,11 +18,8 @@
                 </div>
             </div>
         </div>
-        <ion-item class="item-divider active" ng-if="entry.activeEntry.talks.length > 0">
-            Papers
-        </ion-item>
         <div class="card" ng-repeat="talk in entry.activeEntry.talks">
-            <ion-item class="item-divider gray item-text-wrap">
+            <ion-item class="item-divider active item-text-wrap">
                 {{talk.title}}
             </ion-item>
             <ion-item>
