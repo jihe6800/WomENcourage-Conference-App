@@ -143,6 +143,11 @@ angular.module('starter.services', [])
 
                 // Takes an array of ids and replaces those with matching objects from the array 'objects'
                 function replaceIdsWithObjects(ids, objects) {
+                    return replaceIdsWithObjectsFunc(ids, objects, function(object){});
+                }
+
+                // Takes an array of ids and replaces those with matching objects from the array 'objects' as well as executes objFunc on each object
+                function replaceIdsWithObjectsFunc(ids, objects, objFunc) {
                     var matchedObjects = [];
 
                     for (var i = 0; i < ids.length; i++) {
@@ -153,6 +158,7 @@ angular.module('starter.services', [])
                             console.log("ERROR: Failed to find id " + id + "!");
                         } else {
                             console.log("Found id " + id + "!");
+                            objFunc(matchedObject);
                             matchedObjects.push(matchedObject);
                         }
                     }
@@ -166,9 +172,10 @@ angular.module('starter.services', [])
                     entry.endDate = new Date(Date.parse(entry.endDate));
                 }
 
-                // Add papers to speakers
+                // Add papers and array for other activities to speakers
                 for (var i = 0; i < speakers.length; i++) {
                     speakers[i].papers = replaceIdsWithObjects(speakers[i].papers, papers);
+                    speakers[i].activities = [];
                 }
 
                 // Add speakers to talks and talks to sessions
@@ -208,6 +215,11 @@ angular.module('starter.services', [])
                     session.startDate = new Date(minDate);
                     session.endDate = new Date(maxDate);
                     session.speakers = _.unique(_.flatten(sessionSpeakers, true)); // Put all unique speakers from all talks in a session
+
+                    // Add this session to the speakers' activities arrays
+                    angular.forEach(session.speakers, function(speaker) {
+                        speaker.activities.push(session);
+                    });
                 }
 
                 // Add speakers to industryTalks and industryTalks to industryTalksSessions
@@ -243,29 +255,39 @@ angular.module('starter.services', [])
                     industryTalksSession.startDate = new Date(minDate);
                     industryTalksSession.endDate = new Date(maxDate);
                     industryTalksSession.speakers = _.unique(_.flatten(industryTalksSessionSpeakers, true)); // Put all unique speakers from all talks in a session
+
+                    // Add this industryTalksSession to the speakers' activities arrays
+                    angular.forEach(industryTalksSession.speakers, function(speaker) {
+                        speaker.activities.push(industryTalksSession);
+                    });
                 }
 
                 // Fix dates and add speakers to keynotes
-                for (var i = 0; i < keynotes.length; i++) {
-                    var keynote = keynotes[i];
-                    keynote.speakers = replaceIdsWithObjects(keynote.speakers, speakers);
-                    fixDates(keynote)
-                }
+                angular.forEach(keynotes, function(keynote) {
+                    keynote.speakers = replaceIdsWithObjectsFunc(keynote.speakers, speakers, function(speaker) {
+                        speaker.activities.push(keynote);
+                    });
+                    fixDates(keynote);
+                });
 
                 // Fix dates and add speakers/organizers to workshops
-                for (var i = 0; i < workshops.length; i++) {
-                    var workshop = workshops[i];
-                    workshop.speakers = replaceIdsWithObjects(workshop.speakers, speakers);
+                angular.forEach(workshops, function(workshop) {
+                    workshop.speakers = replaceIdsWithObjectsFunc(workshop.speakers, speakers, function(speaker) {
+                        speaker.activities.push(workshop);
+                    });
                     fixDates(workshop);
-                }
+                });
 
                 // Fix dates and add speakers/panelists and moderators to panels
-                for (var i = 0; i < panels.length; i++) {
-                    var panel = panels[i];
-                    panel.speakers = replaceIdsWithObjects(panel.speakers, speakers);
-                    panel.moderators = replaceIdsWithObjects(panel.moderators, speakers);
+                angular.forEach(panels, function(panel) {
+                    panel.speakers = replaceIdsWithObjectsFunc(panel.speakers, speakers, function(speaker) {
+                        speaker.activities.push(panel);
+                    });
+                    panel.moderators = replaceIdsWithObjectsFunc(panel.moderators, speakers, function(moderator) {
+                        moderator.activities.push(panel);
+                    });
                     fixDates(panel);
-                }
+                });
 
                 // Fix dates of common entries
                 for (var i = 0; i < commonEntries.length; i++) {

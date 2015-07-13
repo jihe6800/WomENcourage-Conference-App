@@ -17,5 +17,31 @@
                 <p><span ng-repeat="author in paper.authors">{{author}}<span ng-if="!$last">, </span></span></p>
             </ion-item>
         </div>
+        <div class="card" ng-if="speaker.activeSpeaker.activities.length > 0">
+            <ion-item class="item-divider active">
+                Participates in
+            </ion-item>
+            <ion-item class="item-text-wrap" ng-repeat="entry in speaker.activeSpeaker.activities" ng-href="{{getEntryURL(entry)}}">
+                <div class="item-wrapper-schedule">
+                    <div class="color-stripe-schedule" style="background-color: {{getEntryColor(entry)}}"></div>
+                    <div class="info-schedule">
+                        <h2>{{entry.title}}</h2>
+                        <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
+                        <p ng-if="entry.location"><i class="ion-location"></i> {{entry.location}}</p>
+                        <p ng-if="entry.speakers.length > 0"><i class="ion-ios-people"></i> <span ng-repeat="speaker in entry.speakers">{{speaker.firstName}} {{speaker.lastName}}<span ng-if="!$last">, </span></span></p>
+                    </div>
+
+                    <!-- Toggle-button to add for personal schedule -->
+                    <div class="checkbox-wrapper-schedule">
+                        <label class="toggle">
+                            <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="toggleInMySchedule(entry)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </ion-item>
+        </div>
     </ion-content>
 </ion-view>
