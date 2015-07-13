@@ -34,9 +34,9 @@
                 <ion-list>
                     <div ng-repeat="group in day.groups">
                         <ion-item class="item-divider" ng-click="group.visible = !group.visible" ng-class="{active: group.visible}">{{group.name}}</ion-item>
-                        <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-href="{{schedule.getEntryURL(entry)}}" ng-show="group.visible">
+                        <ion-item class="item-accordion item-text-wrap" ng-repeat="entry in group.entries" ng-href="{{getEntryURL(entry)}}" ng-show="group.visible">
                             <div class="item-wrapper-schedule">
-                                <div class="color-stripe-schedule" style="background-color: {{schedule.getEntryColor(entry)}}"></div>
+                                <div class="color-stripe-schedule" style="background-color: {{getEntryColor(entry)}}"></div>
                                 <div class="info-schedule">
                                     <h2>{{entry.title}}</h2>
                                     <h3><i class="ion-android-time"></i> {{entry.startDate.toTimeString().substr(0,5)}} - {{entry.endDate.toTimeString().substr(0,5)}}</h3>
@@ -47,7 +47,7 @@
                                 <!-- Toggle-button to add for personal schedule -->
                                 <div class="checkbox-wrapper-schedule">
                                     <label class="toggle">
-                                        <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="schedule.toggleInMySchedule(entry)">
+                                        <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="toggleInMySchedule(entry)">
                                         <div class="track">
                                             <div class="handle"></div>
                                         </div>

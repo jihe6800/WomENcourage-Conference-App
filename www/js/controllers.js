@@ -1,7 +1,70 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function($scope){
+.controller('AppCtrl', function($scope, database){
+        $scope.getEntryColor = function(entry) {
+            switch(entry._id.substr(0, 4)) {
+                case 'sssn':
+                    return "#DFF69D";
+                case 'note':
+                    return "#A5B1C0";
+                case 'cmmn':
+                    return "#FFE4A3";
+                case 'wksp':
+                    return "#D3AA47";
+                case 'panl':
+                    return "#A6C843";
+                case 'uncf':
+                    return "#316B85";
+                case 'inds':
+                    return "#7CAABD";
+                default:
+                    return "#FFFFFF";
+            }
+        };
 
+        $scope.getEntryURL = function(entry) {
+            switch(entry._id.substr(0, 4)) {
+                case 'sssn':
+                    return "#/app/schedule/session/" + entry.id;
+                case 'note':
+                    return "#/app/schedule/keynote/" + entry.id;
+                case 'cmmn':
+                    return "#/app/schedule/common/" + entry.id;
+                case 'wksp':
+                    return "#/app/schedule/workshop/" + entry.id;
+                case 'panl':
+                    return "#/app/schedule/panel/" + entry.id;
+                case 'uncf':
+                    return "#/app/schedule/unconference/" + entry.id;
+                case 'inds':
+                    return "#/app/schedule/industry-talks/" + entry.id;
+                default:
+                    return "#/app/schedule";
+            }
+        };
+
+        $scope.addToMySchedule = function(entry) {
+            console.log("addToMySchedule called!");
+            database.addToMySchedule(entry);
+        };
+
+        $scope.removeFromMySchedule = function(entry) {
+            console.log("removeFromMySchedule called!");
+            database.removeFromMySchedule(entry);
+        };
+
+        $scope.toggleInMySchedule = function(entry) {
+            database.isInMySchedule(entry).then(function(isInMySchedule) {
+                console.log("isInMySchedule return value in controller: " + JSON.stringify(isInMySchedule));
+                if(isInMySchedule) {
+                    $scope.removeFromMySchedule(entry);
+                } else {
+                    $scope.addToMySchedule(entry);
+                }
+            }).catch(function (error) {
+                console.log("isInMySchedule error in controller: " + error);
+            });
+        };
     })
 
     .controller('HomeCtrl', function($scope, $location) {
@@ -220,72 +283,6 @@ angular.module('starter.controllers', ['starter.services'])
         }else{
             return "button-womencourage inactive"
         }
-    };
-
-    this.getEntryColor = function(entry) {
-        switch(entry._id.substr(0, 4)) {
-            case 'sssn':
-                return "#DFF69D";
-            case 'note':
-                return "#A5B1C0";
-            case 'cmmn':
-                return "#FFE4A3";
-            case 'wksp':
-                return "#D3AA47";
-            case 'panl':
-                return "#A6C843";
-            case 'uncf':
-                return "#316B85";
-            case 'inds':
-                return "#7CAABD";
-            default:
-                return "#FFFFFF";
-        }
-    };
-
-    this.getEntryURL = function(entry) {
-        switch(entry._id.substr(0, 4)) {
-            case 'sssn':
-                return "#/app/schedule/session/" + entry.id;
-            case 'note':
-                return "#/app/schedule/keynote/" + entry.id;
-            case 'cmmn':
-                return "#/app/schedule/common/" + entry.id;
-            case 'wksp':
-                return "#/app/schedule/workshop/" + entry.id;
-            case 'panl':
-                return "#/app/schedule/panel/" + entry.id;
-            case 'uncf':
-                return "#/app/schedule/unconference/" + entry.id;
-            case 'inds':
-                return "#/app/schedule/industry-talks/" + entry.id;
-            default:
-                return "#/app/schedule";
-        }
-    };
-
-    this.addToMySchedule = function(entry) {
-        console.log("addToMySchedule called!");
-        database.addToMySchedule(entry);
-    };
-
-    this.removeFromMySchedule = function(entry) {
-        console.log("removeFromMySchedule called!");
-        database.removeFromMySchedule(entry);
-    };
-
-    this.toggleInMySchedule = function(entry) {
-        var that = this;
-        database.isInMySchedule(entry).then(function(isInMySchedule) {
-            console.log("isInMySchedule return value in controller: " + JSON.stringify(isInMySchedule));
-            if(isInMySchedule) {
-                that.removeFromMySchedule(entry);
-            } else {
-                that.addToMySchedule(entry);
-            }
-        }).catch(function (error) {
-            console.log("isInMySchedule error in controller: " + error);
-        });
     };
 
     /* Formats date to a string that's compatible with the .ics export library */
