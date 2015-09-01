@@ -58,210 +58,176 @@ db.bulkDocs([{
     _id: 'spkr001',
     firstName: "Camille",
     lastName: "Jeunet",
-    affiliation: '',
-    papers: ['papr0001']
+    affiliation: ''
 }, {
     _id: 'spkr002',
     firstName: "Bernard",
     lastName: "N'Kaoua",
-    affiliation: '',
-    papers: ['papr0001']
+    affiliation: ''
 }, {
     _id: 'spkr003',
     firstName: "Martin",
     lastName: "Hachet",
-    affiliation: '',
-    papers: ['papr0001']
+    affiliation: ''
 }, {
     _id: 'spkr004',
     firstName: "Fabien",
-    lastName: "Lotte",
-    papers: ['papr0001']
+    lastName: "Lotte"
 }, {
     _id: 'spkr005',
     firstName: "Lucile",
     lastName: "Dupuy",
-    affiliation: '',
-    papers: ['papr0002']
+    affiliation: ''
 }, {
     _id: 'spkr006',
     firstName: "Hélène",
     lastName: "Sauzéon ",
-    affiliation: '',
-    papers: ['papr0002']
+    affiliation: ''
 }, {
     _id: 'spkr007',
     firstName: "Charles",
-    lastName: "Consel",
-    papers: ['papr0002']
+    lastName: "Consel"
+    // Affiliation?
 }, {
     _id: 'spkr008',
     firstName: "Gillian",
     lastName: "Dowds",
-    affiliation: '',
-    papers: ['papr0003']
+    affiliation: ''
 }, {
     _id: 'spkr009',
     firstName: "Maud",
     lastName: "Gibbons",
-    affiliation: '',
-    papers: ['papr0004']
+    affiliation: ''
 }, {
     _id: 'spkr010',
     firstName: "Colm",
     lastName: "O'Riordan",
-    affiliation: '',
-    papers: ['papr0004']
+    affiliation: ''
 }, {
     _id: 'spkr011',
     firstName: "Josephine",
     lastName: "Griffith",
-    affiliation: '',
-    papers: ['papr0004']
+    affiliation: ''
 }, {
     _id: 'spkr012',
     firstName: "Martina",
     lastName: "Curran",
-    affiliation: '',
-    papers: ['papr0005']
+    affiliation: ''
 }, {
     _id: 'spkr013',
     firstName: "Enda",
     lastName: "Howley",
-    affiliation: '',
-    papers: ['papr0005']
+    affiliation: ''
 }, {
     _id: 'spkr014',
     firstName: "Jim",
     lastName: "Duggan",
-    affiliation: '',
-    papers: ['papr0005']
+    affiliation: ''
 }, {
     _id: 'spkr015',
     firstName: "Camille",
     lastName: "Schreck",
-    affiliation: '',
-    papers: ['papr0006']
+    affiliation: ''
 }, {
     _id: 'spkr016',
     firstName: "Damien",
     lastName: "Rohmer",
-    affiliation: '',
-    papers: ['papr0006']
+    affiliation: ''
 }, {
     _id: 'spkr017',
     firstName: "Stefanie",
     lastName: "Hahmann",
-    affiliation: '',
-    papers: ['papr0006']
+    affiliation: ''
 }, {
     _id: 'spkr018',
     firstName: "Marie-Paule",
     lastName: "Cani",
-    affiliation: 'Grenoble University (Grenoble Institute of Technology & Inria)',
-    papers: ['papr0006']
+    affiliation: 'Grenoble University (Grenoble Institute of Technology & Inria)'
 }, {
     _id: 'spkr019',
     firstName: "Åsa",
     lastName: "Cajander",
-    affiliation: 'Uppsala University',
-    papers: ''
+    affiliation: 'Uppsala University'
 }, {
     _id: 'spkr020',
     firstName: 'Carla',
     lastName: 'Griggio',
-    affilliation: '',
-    papers: ''
+    affilliation: ''
 }, {
     _id: 'spkr021',
     firstName: 'Mario',
     lastName: 'Romero',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr022',
     firstName: 'Anna Maria',
     lastName: 'Feit',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr023',
     firstName: 'Srinath',
     lastName: 'Sridhar',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr024',
     firstName: 'Christian',
     lastName: 'Theobalt',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr025',
     firstName: 'Antti',
     lastName: 'Oulasvirta',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr026',
     firstName: 'Particia',
     lastName: 'Pons',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr027',
     firstName: 'Javier',
     lastName: 'Jaen',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr028',
     firstName: 'Alejandro',
     lastName: 'Catala',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr029',
     firstName: 'Samantha',
     lastName: 'Breslin',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr030',
     firstName: 'Bimlesh',
     lastName: 'Wadhwa',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr031',
     firstName: 'Noric',
     lastName: 'Couderc',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr032',
     firstName: 'Elin',
     lastName: 'Parsjö',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr033',
     firstName: 'Nadia',
     lastName: 'Röning',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr034',
     firstName: 'Karin',
     lastName: 'Siebenhandl',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'spkr035',
     firstName: 'Eva',
     lastName: 'Mayr',
-    affiliation: '',
-    papers: ''
+    affiliation: ''
 }, {
     _id: 'talk0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',

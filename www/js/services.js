@@ -172,15 +172,22 @@ angular.module('starter.services', [])
                     entry.endDate = new Date(Date.parse(entry.endDate));
                 }
 
-                // Add papers and array for other activities to speakers
+                // Initialize arrays to store papers and activities for speakers
                 for (var i = 0; i < speakers.length; i++) {
-                    speakers[i].papers = replaceIdsWithObjects(speakers[i].papers, papers);
+                    speakers[i].papers = [];
                     speakers[i].activities = [];
                 }
 
                 // Add authors to papers
                 for (var i = 0; i < papers.length; i++) {
-                    papers[i].authors = replaceIdsWithObjects(papers[i].authors, speakers);
+                    var paper = papers[i];
+
+                    paper.authors = replaceIdsWithObjects(paper.authors, speakers);
+
+                    // Add the paper to its authors' papers arrays
+                    for (var j = 0; j < paper.authors.length; j++) {
+                        paper.authors[j].papers.push(paper);
+                    }
                 }
 
                 // Add speakers to talks and talks to sessions
