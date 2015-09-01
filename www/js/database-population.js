@@ -232,7 +232,6 @@ db.bulkDocs([{
     _id: 'talk0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
     location: 'Room 103',
-    speakers: ['spkr001', 'spkr002', 'spkr003', 'spkr004'],
     papers: ['papr0001'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 11, 20)
@@ -240,7 +239,6 @@ db.bulkDocs([{
     _id: 'talk0002',
     title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
     location: 'Room 103',
-    speakers: ['spkr005', 'spkr006', 'spkr007'],
     papers: ['papr0002'],
     startDate: new Date(2015, 8, 25, 11, 20),
     endDate: new Date(2015, 8, 25, 11, 40)
@@ -248,7 +246,6 @@ db.bulkDocs([{
     _id: 'talk0003',
     title: 'Window to the Outside World: Bringing the outside in to housebound older adults in remote and rural areas',
     location: 'Room 103',
-    speakers: ['spkr008'],
     papers: ['papr0003'],
     startDate: new Date(2015, 8, 25, 11, 40),
     endDate: new Date(2015, 8, 25, 12, 0)
@@ -256,7 +253,6 @@ db.bulkDocs([{
     _id: 'talk0004',
     title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
     location: 'Room 46',
-    speakers: ['spkr009', 'spkr010', 'spkr011'],
     papers: ['papr0004'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 11, 20)
@@ -264,7 +260,6 @@ db.bulkDocs([{
     _id: 'talk0005',
     title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
     location: 'Room 46',
-    speakers: ['spkr012', 'spkr013', 'spkr014'],
     papers: ['papr0005'],
     startDate: new Date(2015, 8, 25, 11, 20),
     endDate: new Date(2015, 8, 25, 11, 40)
@@ -272,7 +267,6 @@ db.bulkDocs([{
     _id: 'talk0006',
     title: 'Interactively animating crumpling paper',
     location: 'Room 46',
-    speakers: ['spkr015', 'spkr016', 'spkr017', 'spkr018'],
     papers: ['papr0006'],
     startDate: new Date(2015, 8, 25, 11, 40),
     endDate: new Date(2015, 8, 25, 12, 0)

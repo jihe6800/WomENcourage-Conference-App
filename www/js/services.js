@@ -215,11 +215,18 @@ angular.module('starter.services', [])
                             minDate = (talkObject.startDate < minDate || minDate === 0) ? talkObject.startDate : minDate;
                             maxDate = (talkObject.endDate > maxDate) ? talkObject.endDate : maxDate;
 
-                            talkObject.speakers = replaceIdsWithObjects(talkObject.speakers, speakers);
                             talkObject.papers = replaceIdsWithObjects(talkObject.papers, papers); // This should check that all these papers exist in the speakers paper arrays and give warning if not
+                            talkObject.speakers = [];
+
+                            // Add session ids to papers and speakers to the talk
                             for (var k = 0; k < talkObject.papers.length; k++) {
-                                talkObject.papers[k].sessionID = sessions[i].id; // Add id of the papers session in which this paper will be presented in order to be able to link back to it
+                                var paper = talkObject.papers[k];
+                                paper.sessionID = sessions[i].id; // Add id of the papers session in which this paper will be presented in order to be able to link back to it
+                                talkObject.speakers.push(paper.authors);
                             }
+
+                            // Flatten the talk's list of speakers
+                            talkObject.speakers = _.unique(_.flatten(talkObject.speakers, true)); // Put all unique speakers from all talks in a session
                             sessionSpeakers.push(talkObject.speakers);
                         }
                     }
