@@ -167,6 +167,102 @@ db.bulkDocs([{
     affiliation: 'Uppsala University',
     papers: ''
 }, {
+    _id: 'spkr020',
+    firstName: 'Carla',
+    lastName: 'Griggio',
+    affilliation: '',
+    papers: ''
+}, {
+    _id: 'spkr021',
+    firstName: 'Mario',
+    lastName: 'Romero',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr022',
+    firstName: 'Anna Maria',
+    lastName: 'Feit',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr023',
+    firstName: 'Srinath',
+    lastName: 'Sridhar',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr024',
+    firstName: 'Christian',
+    lastName: 'Theobalt',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr025',
+    firstName: 'Antti',
+    lastName: 'Oulasvirta',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr026',
+    firstName: 'Particia',
+    lastName: 'Pons',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr027',
+    firstName: 'Javier',
+    lastName: 'Jaen',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr028',
+    firstName: 'Alejandro',
+    lastName: 'Catala',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr029',
+    firstName: 'Samantha',
+    lastName: 'Breslin',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr030',
+    firstName: 'Bimlesh',
+    lastName: 'Wadhwa',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr031',
+    firstName: 'Noric',
+    lastName: 'Couderc',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr032',
+    firstName: 'Elin',
+    lastName: 'Parsjö',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr033',
+    firstName: 'Nadia',
+    lastName: 'Röning',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr034',
+    firstName: 'Karin',
+    lastName: 'Siebenhandl',
+    affiliation: '',
+    papers: ''
+}, {
+    _id: 'spkr035',
+    firstName: 'Eva',
+    lastName: 'Mayr',
+    affiliation: '',
+    papers: ''
+}, {
     _id: 'talk0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
     location: 'Room 103',
@@ -217,51 +313,51 @@ db.bulkDocs([{
 }, {
     _id: 'papr0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
-    authors: ["Camille Jeunet", "Bernard N'Kaoua", 'Martin Hachet', 'Fabien Lotte']
+    authors: ["spkr001", "spkr002", 'spkr003', 'spkr004']
 }, {
     _id: 'papr0002',
     title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
-    authors: ['Lucile Dupuy', 'Hélène Sauzéon', 'Charles Consel']
+    authors: ['spkr005', 'spkr006', 'spkr007']
 }, {
     _id: 'papr0003',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
-    authors: ['Gillian Dowds']
+    authors: ['spkr008']
 }, {
     _id: 'papr0004',
     title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
-    authors: ['Maud Gibbons', "Colm O'Riordan", 'Josephine Griffith']
+    authors: ['spkr009', "spkr010", 'spkr011']
 }, {
     _id: 'papr0005',
     title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
-    authors: ['Martina Curran', 'Enda Howley', 'Jim Duggan']
+    authors: ['spkr012', 'spkr013', 'spkr014']
 }, {
     _id: 'papr0006',
     title: 'Interactively animating crumpling paper',
-    authors: ['Camille Schreck', 'Damien Rohmer', 'Stefanie Hahmann', 'Marie-Paule Cani']
+    authors: ['spkr015', 'spkr016', 'spkr017', 'spkr018']
 }, {
     _id: 'papr0007',
     title: 'A real-time dance visualization framework for the design of mappings that favor user appropriation',
-    authors: ['Carla Griggio', 'Mario Romero']
+    authors: ['spkr020', 'spkr021']
 }, {
     _id: 'papr0008',
     title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
-    authors: ['Anna Maria Feit', 'Srinath Sridhar', 'Christian Theobalt', 'Antti Oulasvirta']
+    authors: ['spkr022', 'spkr023', 'spkr024', 'spkr025']
 }, {
     _id: 'papr0009',
     title: 'Beyond the Limits of Digital Interaction: Should Animals Play with Interactive Environments?',
-    authors: ['Patricia Pons', 'Javier Jaen', 'Alejandro Catala']
+    authors: ['spkr026', 'spkr027', 'spkr028']
 }, {
     _id: 'papr0010',
     title: 'EnGendering Design: Implementing Interdisciplinarity',
-    authors: ['Samantha Breslin', 'Bimlesh Wadhwa']
+    authors: ['spkr029', 'spkr030']
 }, {
     _id: 'papr0011',
     title: 'Gender Division in Computer Science: Conceptions and Statistics of Uppsala University',
-    authors: ['Noric Couderc', 'Elin Parsjö', 'Nadia Röning']
+    authors: ['spkr031', 'spkr032', 'spkr033']
 }, {
     _id: 'papr0012',
     title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
-    authors: ['Karin Siebenhandl', 'Eva Mayr']
+    authors: ['spkr034', 'spkr035']
 }, {
     _id: 'note001',
     title: 'Keynote: Title to come',

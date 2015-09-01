@@ -178,6 +178,11 @@ angular.module('starter.services', [])
                     speakers[i].activities = [];
                 }
 
+                // Add authors to papers
+                for (var i = 0; i < papers.length; i++) {
+                    papers[i].authors = replaceIdsWithObjects(papers[i].authors, speakers);
+                }
+
                 // Add speakers to talks and talks to sessions
                 for (var i = 0; i < sessions.length; i++) {
                     var session = sessions[i];
