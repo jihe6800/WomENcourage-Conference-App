@@ -58,119 +58,180 @@ db.bulkDocs([{
     _id: 'spkr001',
     firstName: "Camille",
     lastName: "Jeunet",
-    affiliation: '',
-    papers: ['papr0001']
+    affiliation: ''
 }, {
     _id: 'spkr002',
     firstName: "Bernard",
     lastName: "N'Kaoua",
-    affiliation: '',
-    papers: ['papr0001']
+    affiliation: ''
 }, {
     _id: 'spkr003',
     firstName: "Martin",
     lastName: "Hachet",
-    affiliation: '',
-    papers: ['papr0001']
+    affiliation: ''
 }, {
     _id: 'spkr004',
     firstName: "Fabien",
-    lastName: "Lotte",
-    papers: ['papr0001']
+    lastName: "Lotte"
 }, {
     _id: 'spkr005',
     firstName: "Lucile",
     lastName: "Dupuy",
-    affiliation: '',
-    papers: ['papr0002']
+    affiliation: ''
 }, {
     _id: 'spkr006',
     firstName: "Hélène",
     lastName: "Sauzéon ",
-    affiliation: '',
-    papers: ['papr0002']
+    affiliation: ''
 }, {
     _id: 'spkr007',
     firstName: "Charles",
-    lastName: "Consel",
-    papers: ['papr0002']
+    lastName: "Consel"
+    // Affiliation?
 }, {
     _id: 'spkr008',
     firstName: "Gillian",
     lastName: "Dowds",
-    affiliation: '',
-    papers: ['papr0003']
+    affiliation: ''
 }, {
     _id: 'spkr009',
     firstName: "Maud",
     lastName: "Gibbons",
-    affiliation: '',
-    papers: ['papr0004']
+    affiliation: ''
 }, {
     _id: 'spkr010',
     firstName: "Colm",
     lastName: "O'Riordan",
-    affiliation: '',
-    papers: ['papr0004']
+    affiliation: ''
 }, {
     _id: 'spkr011',
     firstName: "Josephine",
     lastName: "Griffith",
-    affiliation: '',
-    papers: ['papr0004']
+    affiliation: ''
 }, {
     _id: 'spkr012',
     firstName: "Martina",
     lastName: "Curran",
-    affiliation: '',
-    papers: ['papr0005']
+    affiliation: ''
 }, {
     _id: 'spkr013',
     firstName: "Enda",
     lastName: "Howley",
-    affiliation: '',
-    papers: ['papr0005']
+    affiliation: ''
 }, {
     _id: 'spkr014',
     firstName: "Jim",
     lastName: "Duggan",
-    affiliation: '',
-    papers: ['papr0005']
+    affiliation: ''
 }, {
     _id: 'spkr015',
     firstName: "Camille",
     lastName: "Schreck",
-    affiliation: '',
-    papers: ['papr0006']
+    affiliation: ''
 }, {
     _id: 'spkr016',
     firstName: "Damien",
     lastName: "Rohmer",
-    affiliation: '',
-    papers: ['papr0006']
+    affiliation: ''
 }, {
     _id: 'spkr017',
     firstName: "Stefanie",
     lastName: "Hahmann",
-    affiliation: '',
-    papers: ['papr0006']
+    affiliation: ''
 }, {
     _id: 'spkr018',
     firstName: "Marie-Paule",
     lastName: "Cani",
-    affiliation: 'Grenoble University (Grenoble Institute of Technology & Inria)',
-    papers: ['papr0006']
+    affiliation: 'Grenoble University (Grenoble Institute of Technology & Inria)'
 }, {
     _id: 'spkr019',
     firstName: "Åsa",
     lastName: "Cajander",
-    affiliation: 'Uppsala University',
-    papers: ''
+    affiliation: 'Uppsala University'
+}, {
+    _id: 'spkr020',
+    firstName: 'Carla',
+    lastName: 'Griggio',
+    affilliation: ''
+}, {
+    _id: 'spkr021',
+    firstName: 'Mario',
+    lastName: 'Romero',
+    affiliation: ''
+}, {
+    _id: 'spkr022',
+    firstName: 'Anna Maria',
+    lastName: 'Feit',
+    affiliation: ''
+}, {
+    _id: 'spkr023',
+    firstName: 'Srinath',
+    lastName: 'Sridhar',
+    affiliation: ''
+}, {
+    _id: 'spkr024',
+    firstName: 'Christian',
+    lastName: 'Theobalt',
+    affiliation: ''
+}, {
+    _id: 'spkr025',
+    firstName: 'Antti',
+    lastName: 'Oulasvirta',
+    affiliation: ''
+}, {
+    _id: 'spkr026',
+    firstName: 'Particia',
+    lastName: 'Pons',
+    affiliation: ''
+}, {
+    _id: 'spkr027',
+    firstName: 'Javier',
+    lastName: 'Jaen',
+    affiliation: ''
+}, {
+    _id: 'spkr028',
+    firstName: 'Alejandro',
+    lastName: 'Catala',
+    affiliation: ''
+}, {
+    _id: 'spkr029',
+    firstName: 'Samantha',
+    lastName: 'Breslin',
+    affiliation: ''
+}, {
+    _id: 'spkr030',
+    firstName: 'Bimlesh',
+    lastName: 'Wadhwa',
+    affiliation: ''
+}, {
+    _id: 'spkr031',
+    firstName: 'Noric',
+    lastName: 'Couderc',
+    affiliation: ''
+}, {
+    _id: 'spkr032',
+    firstName: 'Elin',
+    lastName: 'Parsjö',
+    affiliation: ''
+}, {
+    _id: 'spkr033',
+    firstName: 'Nadia',
+    lastName: 'Röning',
+    affiliation: ''
+}, {
+    _id: 'spkr034',
+    firstName: 'Karin',
+    lastName: 'Siebenhandl',
+    affiliation: ''
+}, {
+    _id: 'spkr035',
+    firstName: 'Eva',
+    lastName: 'Mayr',
+    affiliation: ''
 }, {
     _id: 'talk0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
     location: 'Room 103',
-    speakers: ['spkr001', 'spkr002', 'spkr003', 'spkr004'],
     papers: ['papr0001'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 11, 20)
@@ -178,7 +239,6 @@ db.bulkDocs([{
     _id: 'talk0002',
     title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
     location: 'Room 103',
-    speakers: ['spkr005', 'spkr006', 'spkr007'],
     papers: ['papr0002'],
     startDate: new Date(2015, 8, 25, 11, 20),
     endDate: new Date(2015, 8, 25, 11, 40)
@@ -186,7 +246,6 @@ db.bulkDocs([{
     _id: 'talk0003',
     title: 'Window to the Outside World: Bringing the outside in to housebound older adults in remote and rural areas',
     location: 'Room 103',
-    speakers: ['spkr008'],
     papers: ['papr0003'],
     startDate: new Date(2015, 8, 25, 11, 40),
     endDate: new Date(2015, 8, 25, 12, 0)
@@ -194,7 +253,6 @@ db.bulkDocs([{
     _id: 'talk0004',
     title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
     location: 'Room 46',
-    speakers: ['spkr009', 'spkr010', 'spkr011'],
     papers: ['papr0004'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 11, 20)
@@ -202,7 +260,6 @@ db.bulkDocs([{
     _id: 'talk0005',
     title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
     location: 'Room 46',
-    speakers: ['spkr012', 'spkr013', 'spkr014'],
     papers: ['papr0005'],
     startDate: new Date(2015, 8, 25, 11, 20),
     endDate: new Date(2015, 8, 25, 11, 40)
@@ -210,58 +267,57 @@ db.bulkDocs([{
     _id: 'talk0006',
     title: 'Interactively animating crumpling paper',
     location: 'Room 46',
-    speakers: ['spkr015', 'spkr016', 'spkr017', 'spkr018'],
     papers: ['papr0006'],
     startDate: new Date(2015, 8, 25, 11, 40),
     endDate: new Date(2015, 8, 25, 12, 0)
 }, {
     _id: 'papr0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
-    authors: ["Camille Jeunet", "Bernard N'Kaoua", 'Martin Hachet', 'Fabien Lotte']
+    authors: ["spkr001", "spkr002", 'spkr003', 'spkr004']
 }, {
     _id: 'papr0002',
     title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
-    authors: ['Lucile Dupuy', 'Hélène Sauzéon', 'Charles Consel']
+    authors: ['spkr005', 'spkr006', 'spkr007']
 }, {
     _id: 'papr0003',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
-    authors: ['Gillian Dowds']
+    authors: ['spkr008']
 }, {
     _id: 'papr0004',
     title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
-    authors: ['Maud Gibbons', "Colm O'Riordan", 'Josephine Griffith']
+    authors: ['spkr009', "spkr010", 'spkr011']
 }, {
     _id: 'papr0005',
     title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
-    authors: ['Martina Curran', 'Enda Howley', 'Jim Duggan']
+    authors: ['spkr012', 'spkr013', 'spkr014']
 }, {
     _id: 'papr0006',
     title: 'Interactively animating crumpling paper',
-    authors: ['Camille Schreck', 'Damien Rohmer', 'Stefanie Hahmann', 'Marie-Paule Cani']
+    authors: ['spkr015', 'spkr016', 'spkr017', 'spkr018']
 }, {
     _id: 'papr0007',
     title: 'A real-time dance visualization framework for the design of mappings that favor user appropriation',
-    authors: ['Carla Griggio', 'Mario Romero']
+    authors: ['spkr020', 'spkr021']
 }, {
     _id: 'papr0008',
     title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
-    authors: ['Anna Maria Feit', 'Srinath Sridhar', 'Christian Theobalt', 'Antti Oulasvirta']
+    authors: ['spkr022', 'spkr023', 'spkr024', 'spkr025']
 }, {
     _id: 'papr0009',
     title: 'Beyond the Limits of Digital Interaction: Should Animals Play with Interactive Environments?',
-    authors: ['Patricia Pons', 'Javier Jaen', 'Alejandro Catala']
+    authors: ['spkr026', 'spkr027', 'spkr028']
 }, {
     _id: 'papr0010',
     title: 'EnGendering Design: Implementing Interdisciplinarity',
-    authors: ['Samantha Breslin', 'Bimlesh Wadhwa']
+    authors: ['spkr029', 'spkr030']
 }, {
     _id: 'papr0011',
     title: 'Gender Division in Computer Science: Conceptions and Statistics of Uppsala University',
-    authors: ['Noric Couderc', 'Elin Parsjö', 'Nadia Röning']
+    authors: ['spkr031', 'spkr032', 'spkr033']
 }, {
     _id: 'papr0012',
     title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
-    authors: ['Karin Siebenhandl', 'Eva Mayr']
+    authors: ['spkr034', 'spkr035']
 }, {
     _id: 'note001',
     title: 'Keynote: Title to come',
