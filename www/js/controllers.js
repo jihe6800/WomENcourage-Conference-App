@@ -79,7 +79,10 @@ angular.module('starter.controllers', ['starter.services'])
         $q.when(database.getOther('info')).then(function (result) {
             that.sections = result.sections;
         }).catch(function (error) {
-            that.sections = [{title: 'Error', content: 'Something went wrong.'}];
+            that.sections = [{
+                title: 'Sorry!',
+                content: 'This page is supposed to be filled with information, but something went wrong when trying to get it. Try to find Internet access again and refresh the page.'
+            }];
         });
     })
 
@@ -88,7 +91,10 @@ angular.module('starter.controllers', ['starter.services'])
         $q.when(database.getOther('emergency')).then(function (result) {
             that.sections = result.sections;
         }).catch(function (error) {
-            that.sections = [{title: 'Error', content: 'Something went wrong.'}];
+            that.sections = [{
+                title: 'Sorry!',
+                content: 'This page is supposed to be filled with information, but something went wrong when trying to get it. Try to find Internet access again and refresh the page.'
+            }];
         });
     })
 
@@ -108,7 +114,10 @@ angular.module('starter.controllers', ['starter.services'])
             $q.when(database.getPapers()).then(function(result) {
                 that.papers = _.sortBy(result, 'title');
             }).catch(function (error) {
-                console.log("Error when reading from database: " + error);
+                that.sections = [{
+                    title: 'Sorry!',
+                    content: 'This page is supposed to be filled with information, but something went wrong when trying to get it. Try to find Internet access again and refresh the page.'
+                }];
             });
         };
 

@@ -18,12 +18,16 @@ angular.module('starter.services', [])
         var constructPromise = db.replicate.from('http://130.238.15.131:5984/schedule').then(function(result) {
             console.log("Everything loaded from server database! Now constructing schedule...");
             return constructFromDB();
-        }).catch(function(error) {
-            console.log("Database download error: " + error);
+        }).catch(function(error) { // Network error, hopefully...
+            console.log("Schedule database download error, using local cache instead. Error message: " + error);
+            return constructFromDB();
         });
 
         // Used to verify that everything is downloaded before returning data from the service
-        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other');
+        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other').catch(function(error) {
+            // Network error, hopefully...
+            console.log("Other database download error, using local cache instead. Error message: " + error);
+        });
 
         // Declare arrays to store data types
         var sessions = [];
