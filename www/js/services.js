@@ -18,12 +18,16 @@ angular.module('starter.services', [])
         var constructPromise = db.replicate.from('http://130.238.15.131:5984/schedule').then(function(result) {
             console.log("Everything loaded from server database! Now constructing schedule...");
             return constructFromDB();
-        }).catch(function(error) {
-            console.log("Database download error: " + error);
+        }).catch(function(error) { // Network error, hopefully...
+            console.log("Schedule database download error, using local cache instead. Error message: " + error);
+            return constructFromDB();
         });
 
         // Used to verify that everything is downloaded before returning data from the service
-        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other');
+        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other').catch(function(error) {
+            // Network error, hopefully...
+            console.log("Other database download error, using local cache instead. Error message: " + error);
+        });
 
         // Declare arrays to store data types
         var sessions = [];
@@ -172,10 +176,22 @@ angular.module('starter.services', [])
                     entry.endDate = new Date(Date.parse(entry.endDate));
                 }
 
-                // Add papers and array for other activities to speakers
+                // Initialize arrays to store papers and activities for speakers
                 for (var i = 0; i < speakers.length; i++) {
-                    speakers[i].papers = replaceIdsWithObjects(speakers[i].papers, papers);
+                    speakers[i].papers = [];
                     speakers[i].activities = [];
+                }
+
+                // Add authors to papers
+                for (var i = 0; i < papers.length; i++) {
+                    var paper = papers[i];
+
+                    paper.authors = replaceIdsWithObjects(paper.authors, speakers);
+
+                    // Add the paper to its authors' papers arrays
+                    for (var j = 0; j < paper.authors.length; j++) {
+                        paper.authors[j].papers.push(paper);
+                    }
                 }
 
                 // Add speakers to talks and talks to sessions
@@ -203,11 +219,18 @@ angular.module('starter.services', [])
                             minDate = (talkObject.startDate < minDate || minDate === 0) ? talkObject.startDate : minDate;
                             maxDate = (talkObject.endDate > maxDate) ? talkObject.endDate : maxDate;
 
-                            talkObject.speakers = replaceIdsWithObjects(talkObject.speakers, speakers);
                             talkObject.papers = replaceIdsWithObjects(talkObject.papers, papers); // This should check that all these papers exist in the speakers paper arrays and give warning if not
+                            talkObject.speakers = [];
+
+                            // Add session ids to papers and speakers to the talk
                             for (var k = 0; k < talkObject.papers.length; k++) {
-                                talkObject.papers[k].sessionID = sessions[i].id; // Add id of the papers session in which this paper will be presented in order to be able to link back to it
+                                var paper = talkObject.papers[k];
+                                paper.sessionID = sessions[i].id; // Add id of the papers session in which this paper will be presented in order to be able to link back to it
+                                talkObject.speakers.push(paper.authors);
                             }
+
+                            // Flatten the talk's list of speakers
+                            talkObject.speakers = _.unique(_.flatten(talkObject.speakers, true)); // Put all unique speakers from all talks in a session
                             sessionSpeakers.push(talkObject.speakers);
                         }
                     }
