@@ -33,14 +33,16 @@
                     </div>
 
                     <!-- Toggle-button to add for personal schedule -->
-                    <div class="checkbox-wrapper-schedule">
-                        <label class="toggle">
-                            <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="toggleInMySchedule(entry)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                    </div>
+                    <a>
+                        <div class="checkbox-wrapper-schedule button button-transparent" ng-click="toggleInMySchedule(entry)">
+                            <label class="toggle">
+                                <input type="checkbox" ng-model="entry.isInMySchedule" ng-click="toggleInMySchedule(entry)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </a>
                 </div>
             </ion-item>
         </div>
