@@ -1,7 +1,7 @@
 <ion-view view-title="Papers">
     <ion-content has-bouncing="false">
         <ion-list>
-            <ion-item class="item-text-wrap" ng-repeat="paper in papers.papers" ng-href="#/app/schedule/session/{{paper.sessionID}}">
+            <ion-item class="item-text-wrap" ng-repeat="paper in papers.papers | orderBy: 'title'" ng-href="#/app/schedule/session/{{paper.sessionID}}">
                 <h2>{{paper.title}}</h2>
                 <p><span ng-repeat="author in paper.authors">{{author.firstName}} {{author.lastName}}<span ng-if="!$last">, </span></span></p>
             </ion-item>

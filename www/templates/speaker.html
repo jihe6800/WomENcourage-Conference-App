@@ -12,7 +12,7 @@
             <ion-item class="item-divider active">
                 Papers
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="paper in speaker.activeSpeaker.papers" ng-href="#/app/schedule/session/{{paper.sessionID}}">
+            <ion-item class="item-text-wrap" ng-repeat="paper in speaker.activeSpeaker.papers | orderBy: 'title'" ng-href="#/app/schedule/session/{{paper.sessionID}}">
                 <h2>{{paper.title}}</h2>
                 <p><span ng-repeat="author in paper.authors">{{author.firstName}} {{author.lastName}}<span ng-if="!$last">, </span></span></p>
             </ion-item>
@@ -21,7 +21,7 @@
             <ion-item class="item-divider active">
                 Participates in
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="entry in speaker.activeSpeaker.activities" ng-href="{{getEntryURL(entry)}}">
+            <ion-item class="item-text-wrap" ng-repeat="entry in speaker.activeSpeaker.activities | orderBy: ['startDate','title']" ng-href="{{getEntryURL(entry)}}">
                 <div class="item-wrapper-schedule">
                     <div class="color-stripe-schedule" style="background-color: {{getEntryColor(entry)}}"></div>
                     <div class="info-schedule">

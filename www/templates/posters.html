@@ -1,7 +1,7 @@
 <ion-view view-title="Posters">
     <ion-content has-bouncing="false">
         <ion-list>
-            <ion-item class="item-text-wrap" ng-repeat="poster in posters.posters" ng-href="#/app/poster/{{poster.id}}">
+            <ion-item class="item-text-wrap" ng-repeat="poster in posters.posters | orderBy: 'title'" ng-href="#/app/poster/{{poster.id}}">
                 <h2>{{poster.title}}</h2>
                 <p><span ng-repeat="author in poster.authors">{{author}}<span ng-if="!$last">, </span></span></p>
             </ion-item>

@@ -115,7 +115,7 @@ angular.module('starter.controllers', ['starter.services'])
         this.update = function() {
             var that = this;
             $q.when(database.getPapers()).then(function(result) {
-                that.papers = _.sortBy(result, 'title');
+                that.papers = result;
             }).catch(function (error) {
                 console.log("Error when reading from database: " + error);
             });
@@ -133,7 +133,7 @@ angular.module('starter.controllers', ['starter.services'])
         this.update = function() {
             var that = this;
             $q.when(database.getPosters()).then(function(result) {
-                that.posters = _.sortBy(result, 'title');
+                that.posters = result;
             }).catch(function (error) {
                 console.log("Error when reading from database: " + error);
             });
@@ -151,7 +151,7 @@ angular.module('starter.controllers', ['starter.services'])
         this.update = function() {
             var that = this;
             $q.when(database.getSpeakers()).then(function(result) {
-                that.speakers = _.sortBy(result, 'lastName');
+                that.speakers = result;
             }).catch(function (error) {
                 console.log("Error when reading from database: " + error);
             });

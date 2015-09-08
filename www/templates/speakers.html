@@ -1,9 +1,9 @@
 <ion-view view-title="Speakers">
     <ion-content has-bouncing="false">
         <ion-list>
-            <ion-item class="item-avatar" ng-href="#/app/speaker/{{speaker.id}}" ng-repeat="speaker in speakers.speakers">
+            <ion-item class="item-avatar" ng-href="#/app/speaker/{{speaker.id}}" ng-repeat="speaker in speakers.speakers | orderBy: 'lastName'">
                 <i class="ion-android-person"></i>
-                <h2>{{speaker.firstName}} {{speaker.lastName}}</h2>
+                <h2>{{speaker.lastName}}, {{speaker.firstName}}</h2>
                 <p>{{speaker.affiliation}}</p>
             </ion-item>
         </ion-list>
