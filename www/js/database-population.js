@@ -497,7 +497,7 @@ db.bulkDocs([{
 }, {
     _id: 'pstr0001',
     title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
-    authors: ['Karin Siebenhandl', 'Eva Mayr'],
+    authors: ['spkr034', 'spkr035'],
     description: 'No description.'
 }, {
     _id: 'panl0001',

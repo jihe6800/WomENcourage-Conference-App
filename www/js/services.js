@@ -194,6 +194,11 @@ angular.module('starter.services', [])
                     }
                 }
 
+                // Add authors to posters
+                for (var i = 0; i < posters.length; i++) {
+                    posters[i].authors = replaceIdsWithObjects(posters[i].authors, speakers);
+                }
+
                 // Add speakers to talks and talks to sessions
                 for (var i = 0; i < sessions.length; i++) {
                     var session = sessions[i];
