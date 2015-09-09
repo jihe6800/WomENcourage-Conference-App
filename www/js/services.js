@@ -466,11 +466,6 @@ angular.module('starter.services', [])
                     return posters;
                 });
             },
-            getPoster: function(id) {
-                return constructPromise.then(function(result) {
-                    return _.find(posters, _.matchesProperty('id', id));
-                });
-            },
             getSpeakers: function() {
                 return constructPromise.then(function(result) {
                     return speakers;

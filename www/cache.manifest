@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#v 1.0
+#v 2.0
 CACHE:
 #main index
 index.html
@@ -101,7 +101,6 @@ lib/ionic/scss/ionic.scss
 lib/ionic/scss/_action-sheet.scss
 lib/ionic/version.json
 #templates
-templates/poster.html
 templates/posters.html
 templates/schedule.html
 templates/session.html

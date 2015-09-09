@@ -124,10 +124,6 @@ angular.module('starter.controllers', ['starter.services'])
         this.update();
     })
 
-    .controller('PosterCtrl', function(poster) {
-        this.activePoster = poster;
-    })
-
     .controller('PostersCtrl', function(database, $q) {
         /* Reads posters from database and sorts them alphabetically */
         this.update = function() {

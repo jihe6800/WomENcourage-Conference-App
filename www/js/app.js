@@ -184,21 +184,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       })
 
-  .state('app.poster', {
-    url: "/poster/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/poster.html",
-        controller: 'PosterCtrl as poster'
-      }
-    },
-    resolve: {
-      poster: function($stateParams, database) {
-        return database.getPoster($stateParams.id);
-      }
-    }
-  })
-
   .state('app.speakers', {
     url: "/speakers",
     views: {
