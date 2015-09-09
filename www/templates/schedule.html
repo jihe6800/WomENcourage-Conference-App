@@ -3,7 +3,7 @@
     <ion-nav-buttons side="right">
         <button class="button button-clear button-light icon ion-refresh" ng-click="schedule.update()">
         </button>
-        <button class="button button-clear button-light icon ion-arrow-down-a" ng-click="schedule.exportMySchedule()" ng-show="schedule.mySchedule">
+        <button class="button button-clear button-light icon ion-arrow-down-a" ng-click="schedule.exportMySchedule()" ng-show="schedule.mySchedule && schedule.days.length > 0">
             Export
         </button>
     </ion-nav-buttons>
