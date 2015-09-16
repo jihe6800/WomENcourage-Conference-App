@@ -18,8 +18,8 @@
                 </div>
             </div>
             <ion-item class="item-divider gray"><p>Description</p></ion-item>
-            <ion-item class="item-text-wrap">
-                <p>{{entry.activeEntry.description}}</p>
+            <ion-item class="item-text-wrap entry-description">
+                <p ng-repeat="paragraph in entry.activeEntry.description">{{paragraph}}</p>
             </ion-item>
         </div>
         <div class="card list" ng-if="entry.activeEntry.speakers.length > 0">

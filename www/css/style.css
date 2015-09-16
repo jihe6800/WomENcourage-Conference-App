@@ -275,3 +275,8 @@ ion-side-menu ion-list ion-item.item a {
     box-shadow: none;
     color: transparent;
    }
+
+/* Used to separate paragraphs in entry descriptions */
+.entry-description p {
+    margin-bottom: 1em;
+}
