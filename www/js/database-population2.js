@@ -710,7 +710,25 @@ db.bulkDocs([{
 }, {
     _id: 'uncf0003',
     title: 'Unconference',
+    location: 'TBA',
+    startDate: new Date(2015, 8, 26, 13, 30),
+    endDate: new Date(2015, 8, 26, 15, 30)
+}, {
+    _id: 'uncf0004',
+    title: 'Case Studies',
+    location: 'TBA',
+    startDate: new Date(2015, 8, 26, 13, 30),
+    endDate: new Date(2015, 8, 26, 15, 30)
+}, {
+    _id: 'uncf0005',
+    title: 'Unconference',
     location: 'Main Aula',
+    startDate: new Date(2015, 8, 26, 14, 30),
+    endDate: new Date(2015, 8, 26, 15, 30)
+}, {
+    _id: 'uncf0006',
+    title: 'Unconference',
+    location: 'TBA',
     startDate: new Date(2015, 8, 26, 14, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
