@@ -1294,31 +1294,51 @@ db.bulkDocs([{
     tier: 'diamond'
 }, {
     _id: 'supp0002',
+    name: 'Inria Informatics Mathematics',
+    logo: 'inria-informatics-mathematics.png',
+    tier: 'diamond'
+}, {
+    _id: 'supp0003',
     name: 'Oracle Academy',
     logo: 'oracle-academy.png',
     tier: 'diamond'
 }, {
-    _id: 'supp0003',
+    _id: 'supp0004',
     name: 'Bloomberg',
     logo: 'bloomberg.png',
     tier: 'platinum'
 }, {
-    _id: 'supp0004',
+    _id: 'supp0005',
     name: 'Cisco',
     logo: 'cisco.png',
     tier: 'platinum'
 }, {
-    _id: 'supp0005',
+    _id: 'supp0006',
     name: 'Facebook',
     logo: 'facebook.png',
     tier: 'platinum'
 }, {
-    _id: 'supp0006',
+    _id: 'supp0007',
+    name: 'IAR Systems',
+    logo: 'iar-systems.png',
+    tier: 'gold'
+}, {
+    _id: 'supp0008',
+    name: 'The FreeBSD Foundation',
+    logo: 'the-freebsd-foundation.png',
+    tier: 'silver'
+}, {
+    _id: 'supp0009',
     name: 'Informatics Europe',
     logo: 'informatics-europe.png',
     tier: 'silver'
 }, {
-    _id: 'supp0007',
+    _id: 'supp0010',
+    name: 'Intel',
+    logo: 'intel.png',
+    tier: 'silver'
+}, {
+    _id: 'supp0011',
     name: 'Microsoft Research Connections',
     logo: 'microsoft-research-connections.png',
     tier: 'silver'

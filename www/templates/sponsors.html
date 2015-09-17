@@ -20,6 +20,12 @@
                 <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
             </ion-item>
             <ion-item class="item-divider active">
+                Gold Supporters
+            </ion-item>
+            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.gold">
+                <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
+            </ion-item>
+            <ion-item class="item-divider active">
                 Silver Supporters
             </ion-item>
             <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.silver">

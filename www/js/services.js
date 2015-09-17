@@ -43,7 +43,7 @@ angular.module('starter.services', [])
         var industryTalks = [];
         var industryTalksSessions = [];
         var sponsors = [];
-        var supporters = {diamond: [], platinum: [], silver: [], additional: []};
+        var supporters = {diamond: [], platinum: [], gold: [], silver: [], additional: []};
 
         // Array for all entries to be displayed in the schedule
         var scheduleEntries = [];
@@ -71,7 +71,7 @@ angular.module('starter.services', [])
                 industryTalks = [];
                 industryTalksSessions = [];
                 sponsors = [];
-                supporters = {diamond: [], platinum: [], silver: [], additional: []};
+                supporters = {diamond: [], platinum: [], gold: [], silver: [], additional: []};
 
                 scheduleEntries = [];
 
@@ -126,6 +126,9 @@ angular.module('starter.services', [])
                                     break;
                                 case 'platinum':
                                     supporters.platinum.push(item);
+                                    break;
+                                case 'gold':
+                                    supporters.gold.push(item);
                                     break;
                                 case 'silver':
                                     supporters.silver.push(item);
