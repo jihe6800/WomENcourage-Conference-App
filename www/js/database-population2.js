@@ -3,7 +3,7 @@ db.bulkDocs([{
     _id: 'cmmn0001',
     title: 'Hackathon',
     location: 'Norrlands Nation',
-    description: [],
+    description: ['ACM-W Europe and Codess Hackathon sponsored by Intel® and Microsoft will be held in conjunction with womENcourage 2015 in celebration of women in computing. The challenge is to build innovative and exciting projects which improve the day to day lives of people using the Intel® Edison Development Board and the Intel IOT DevKit. Your resulting project could be anything that will help humanity.'],
     startDate: new Date(2015, 8, 24, 8, 30),
     endDate: new Date(2015, 8, 24, 16, 0)
 }, {
@@ -23,14 +23,14 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0004',
     title: 'Registration',
-    location: 'TBA',
+    location: 'Downstairs Hallway',
     description: [],
     startDate: new Date(2015, 8, 25, 8, 30),
     endDate: new Date(2015, 8, 25, 9, 0)
 }, {
     _id: 'cmmn0005',
     title: 'Opening/Announcements',
-    location: 'TBA',
+    location: 'Main Aula',
     description: [],
     speakers: ['spkr0001'],
     startDate: new Date(2015, 8, 25, 9, 0),
@@ -56,8 +56,8 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0006',
     title: 'Break',
-    location: '',
-    description: ['Have a break!'],
+    location: 'Downstairs Hallway',
+    description: ['Coffee and tea will be served.'],
     startDate: new Date(2015, 8, 25, 10, 30),
     endDate: new Date(2015, 8, 25, 11, 0)
 }, {
@@ -160,7 +160,7 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0007',
     title: 'ACM-W volunteers meeting',
-    location: '',
+    location: 'TBA',
     description: [],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 12, 0)
@@ -197,8 +197,8 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0008',
     title: 'Break',
-    location: '',
-    description: ['Have a break!'],
+    location: 'Downstairs Hallway',
+    description: ['Coffee and tea will be served.'],
     startDate: new Date(2015, 8, 25, 12, 0),
     endDate: new Date(2015, 8, 25, 13, 30)
 }, {
@@ -302,8 +302,8 @@ db.bulkDocs([{
     lastName: 'Samuelsson',
     affiliation: 'Cisco'
 }, {
-    _id: 'indt0003',
-    title: 'Move Fast, Learn Thing',
+    _id: 'indt0004',
+    title: 'Move Fast, Learn Things',
     location: 'Room X',
     speakers: ['spkr0030'],
     company: 'Facebook',
@@ -368,8 +368,8 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0009',
     title: 'Break',
-    location: '',
-    description: ['Have a break!'],
+    location: 'Downstairs Hallway',
+    description: ['Coffee and tea will be served.'],
     startDate: new Date(2015, 8, 25, 14, 30),
     endDate: new Date(2015, 8, 25, 15, 0)
 }, {
@@ -432,14 +432,14 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0010',
     title: 'Registration',
-    location: 'TBA',
+    location: 'Downstairs Hallway',
     description: [],
     startDate: new Date(2015, 8, 26, 8, 30),
     endDate: new Date(2015, 8, 26, 9, 0)
 }, {
     _id: 'cmmn0011',
     title: 'Opening/Announcements',
-    location: 'TBA',
+    location: 'Main Aula',
     description: [],
     speakers: ['spkr0031'],
     startDate: new Date(2015, 8, 26, 9, 0),
@@ -465,8 +465,8 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0012',
     title: 'Break',
-    location: '',
-    description: ['Have a break!'],
+    location: 'Downstairs Hallway',
+    description: ['Coffee and tea will be served.'],
     startDate: new Date(2015, 8, 26, 10, 30),
     endDate: new Date(2015, 8, 26, 11, 0)
 }, {
@@ -596,8 +596,8 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0013',
     title: 'Break',
-    location: '',
-    description: ['Have a break!'],
+    location: 'Downstairs Hallway',
+    description: ['Coffee and tea will be served.'],
     startDate: new Date(2015, 8, 26, 12, 0),
     endDate: new Date(2015, 8, 26, 13, 30)
 }, {
@@ -716,8 +716,8 @@ db.bulkDocs([{
 }, {
     _id: 'cmmn0014',
     title: 'Break',
-    location: '',
-    description: ['Have a break!'],
+    location: 'Downstairs Hallway',
+    description: ['Coffee and tea will be served.'],
     startDate: new Date(2015, 8, 26, 15, 30),
     endDate: new Date(2015, 8, 26, 16, 0)
 }, {
@@ -878,19 +878,19 @@ db.bulkDocs([{
 }, {
     _id: 'spkr0075',
     firstName: 'Júlia',
-    lastName: 'Kuc?erová'
+    lastName: 'Ku?erová'
 }, {
     _id: 'pstr0014',
     title: 'Analysis of Social Learning Networks on Twitter for Supporting MOOCs Education',
     authors: ['spkr0076', 'spkr0077', 'spkr0078', 'spkr0079']
 }, {
     _id: 'spkr0076',
-    firstName: 'Ayse',
-    lastName: 'Saliha Sunar'
+    firstName: 'Ayse Saliha',
+    lastName: 'Sunar'
 }, {
     _id: 'spkr0077',
-    firstName: 'Nor',
-    lastName: 'Aniza Abdullah'
+    firstName: 'Nor Aniza',
+    lastName: 'Abdullah'
 }, {
     _id: 'spkr0078',
     firstName: 'Su',
