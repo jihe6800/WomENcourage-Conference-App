@@ -158,13 +158,6 @@ db.bulkDocs([{
     firstName: 'Gillian',
     lastName: 'Dowds'
 }, {
-    _id: 'cmmn0007',
-    title: 'ACM-W volunteers meeting',
-    location: 'TBA',
-    description: [],
-    startDate: new Date(2015, 8, 25, 11, 0),
-    endDate: new Date(2015, 8, 25, 12, 0)
-}, {
     _id: 'inds0001',
     title: 'Industry Talks: Google, Bloomberg',
     talks: ['indt0001', 'indt0002']
@@ -691,22 +684,23 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
     _id: 'wksp0011',
-    title: 'Workshop 6 (cont.): Contributing to Open Source',
+    title: 'Workshop 7: ACM-W volunteers meeting',
     location: '',
-    description: ['Open Source software has become widespread and forms a vital part of the Internet. Open Source projects can be very rewarding, both for the people who use the products and for the people involved in the project. Many people have careers using open source software and developing skills with such projects can greatly widen your opportunities for employment. Fortunately, with open source software, you can gain experience during your spare time with freely available tools and resources.',
-        'For those who have never worked with open source software, it can be bewildering as to how all of this works. How do you get involved with a project? How do you propose changes? How do you test them?',
-        'More importantly, you might be a open source user, and you love the tools you use. How can you contribute back to the projects you love? You don\'t have to be a coder with developer skills. There is more to open source than coding.',
-        'The organizers will provide a small open source project for you. You can join the project and start contributing in a tightly controlled environment. You\'ll learn how to submit bug reports, contribute improvements, and get involved with a project.',
-        'All of this will be done within our own project with just the workshop attendees involved. We will work over IRC (Internet Relay Chat) & Mailing Lists to resolve bugs and contribute to the project.',
-        'The skills you learn in the workshop will be form a good starting point for your future contributions to open source.',
-        'Participants should:',
-        '- bring a laptop and wifi',
-        '- install an IRC client software',
-        '- have a working email address',
-        '- have an ssh client installed'],
-    speakers: ['spkr0143'],
-    startDate: new Date(2015, 8, 26, 13, 30),
-    endDate: new Date(2015, 8, 26, 15, 30)
+    description: ['The ACM is the world\'s largest educational and scientific computing society, helping advance computing as a science and a profession. ACM-W supports, celebrates, and advocates internationally for the full engagement of women in all aspects of the computing field. Enthusiastic volunteers represent ACM and ACM-W in their local communities through the chartering of Chapters, both by students and professionals. This session brings together ACM and ACM-W Chapter representatives, as well as anyone (regardless of gender!) interested in starting/joining their local chapter. George Eleftherakis, with years of experience in bringing together Chapters around Europe, will facilitate a session where networking opportunities will be plenty and meaningful. Come learn more about Chapters!'],
+    speakers: [],
+    startDate: new Date(2015, 8, 25, 11, 30),
+    endDate: new Date(2015, 8, 25, 12, 30)
+}, {
+    _id: 'wksp0012',
+    title: 'Workshop 8: Queer Women in Tech',
+    location: '',
+    description: ['A seminar focused on raising awareness around the issue of gender gap and diversity in tech, with a focus on gender identity and sexual orientation. This seminar is about challenges that queer women face in STEM fields, discussing why:',
+        '- We need to Be More Visible to Each Other',
+        '- We need to Be More Visible to Others',
+        '- We need to Get More Women and Lesbians in Technology'],
+    speakers: [],
+    startDate: new Date(2015, 8, 25, 11, 30),
+    endDate: new Date(2015, 8, 25, 12, 30)
 }, {
     _id: 'uncf0003',
     title: 'Unconference',
