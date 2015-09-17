@@ -10,6 +10,10 @@ img/cisco.png
 img/facebook.png
 img/google.png
 img/informatics-europe.png
+img/inria-informatics-mathematics.png
+img/iar-systems.png
+img/the-freebsd-foundation.png
+img/intel.png
 img/ionic.png
 img/map-first-floor.png
 img/map-ground-floor.png
@@ -26,13 +30,11 @@ img/bloomberg.png
 js/app.js
 js/blob.js
 js/controllers.js
-js/database-population.js
 js/filesaver.js
 js/ics.js
 js/lodash.min.js
 js/pouchdb-3.5.0.min.js
 js/services.js
-js/todo.js
 #lib
 lib/ionic/css/ionic.min.css
 lib/ionic/css/ionic.css
