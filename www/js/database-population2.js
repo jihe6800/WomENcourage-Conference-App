@@ -326,7 +326,7 @@ db.bulkDocs([{
         '- How to program lights to blink.',
         '- How to read a button push.',
         '- How to create a model of your own idea.'],
-    speakers: [],
+    speakers: ['spkr0138', 'spkr0139'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
@@ -335,7 +335,7 @@ db.bulkDocs([{
     location: '',
     description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.',
         'To participate you need no prior knowledge. Please bring your laptop with Windows, Linux or Mac OS, and is WiFi enabled.'],
-    speakers: [],
+    speakers: ['spkr0140'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
@@ -346,7 +346,7 @@ db.bulkDocs([{
         'This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people.',
         'All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.',
         'Updates about the event and some resources are available at: dotuyau.wordpress.com.'],
-    speakers: [],
+    speakers: ['spkr0141'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
@@ -362,7 +362,7 @@ db.bulkDocs([{
         '4. Practical session of solving simple problems under judging system',
         '5. Final 1 hour contest with few simple problems as example of real programming contest.',
         'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
-    speakers: [],
+    speakers: ['spkr0142'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
@@ -390,7 +390,7 @@ db.bulkDocs([{
         '- How to program lights to blink.',
         '- How to read a button push.',
         '- How to create a model of your own idea.'],
-    speakers: [],
+    speakers: ['spkr0138', 'spkr0139'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
@@ -399,7 +399,7 @@ db.bulkDocs([{
     location: '',
     description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.',
         'To participate you need no prior knowledge. Please bring your laptop with Windows, Linux or Mac OS, and is WiFi enabled.'],
-    speakers: [],
+    speakers: ['spkr0140'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
@@ -410,7 +410,7 @@ db.bulkDocs([{
         'This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people.',
         'All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.',
         'Updates about the event and some resources are available at: dotuyau.wordpress.com.'],
-    speakers: [],
+    speakers: ['spkr0141'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
@@ -426,7 +426,7 @@ db.bulkDocs([{
         '4. Practical session of solving simple problems under judging system',
         '5. Final 1 hour contest with few simple problems as example of real programming contest.',
         'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
-    speakers: [],
+    speakers: ['spkr0142'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
@@ -590,7 +590,7 @@ db.bulkDocs([{
         '- install an IRC client software',
         '- have a working email address',
         '- have an ssh client installed'],
-    speakers: [],
+    speakers: ['spkr0143'],
     startDate: new Date(2015, 8, 26, 11, 0),
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
@@ -704,7 +704,7 @@ db.bulkDocs([{
         '- install an IRC client software',
         '- have a working email address',
         '- have an ssh client installed'],
-    speakers: [],
+    speakers: ['spkr0143'],
     startDate: new Date(2015, 8, 26, 13, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
@@ -1239,6 +1239,33 @@ db.bulkDocs([{
     _id: 'spkr0137',
     firstName: 'Öznur',
     lastName: 'Özkasap'
+}]);
+
+/* Workshop organizers */
+db.bulkDocs([{
+    _id: 'spkr0138',
+    firstName: 'Beverly',
+    lastName: 'Bachmayer'
+}, {
+    _id: 'spkr0139',
+    firstName: 'Kanya',
+    lastName: 'Subramanian'
+}, {
+    _id: 'spkr0140',
+    firstName: 'George',
+    lastName: 'Eleftherakis'
+}, {
+    _id: 'spkr0141',
+    firstName: 'Teodora',
+    lastName: 'Szasz'
+}, {
+    _id: 'spkr0142',
+    firstName: 'Bozena',
+    lastName: 'Mannova'
+}, {
+    _id: 'spkr0143',
+    firstName: 'Dan',
+    lastName: 'Lingille'
 }]);
 
 /* Sponsors & supporters */
