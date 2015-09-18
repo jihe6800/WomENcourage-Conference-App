@@ -566,8 +566,24 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
     _id: 'inds0003',
-    title: 'Industry Talks',
-    talks: []
+    title: 'Industry Talks: Skype/Microsoft, Anita Borg',
+    talks: ['indt0005', 'indt0006']
+}, {
+    _id: 'indt0005',
+    title: 'Real-time audio processing and user driven development',
+    location: 'Room IV',
+    speakers: ['spkr0144'],
+    company: 'Skype/MS',
+    startDate: new Date(2015, 8, 26, 11, 0),
+    endDate: new Date(2015, 8, 26, 11, 30)
+}, {
+    _id: 'indt0006',
+    title: 'Google Anita Borg Memorial Scholarship, Engage Program and Community',
+    location: 'Room IV',
+    speakers: ['spkr0145'],
+    company: '',
+    startDate: new Date(2015, 8, 26, 11, 30),
+    endDate: new Date(2015, 8, 26, 12, 0)
 }, {
     _id: 'wksp0009',
     title: 'Workshop: Contributing to Open Source',
@@ -1279,6 +1295,18 @@ db.bulkDocs([{
     firstName: 'Nadia',
     lastName: 'Zabehi',
     affiliation: 'Huawei'
+}]);
+
+/* Extra Industry Talks speakers */
+db.bulkDocs([{
+    _id: 'spkr0144',
+    firstName: 'Jon',
+    lastName: 'Bergenheim',
+    affiliation: 'Skype/Microsoft'
+}, {
+    _id: 'spkr0145',
+    firstName: 'Irina',
+    lastName: 'Koitz'
 }]);
 
 /* Sponsors & supporters */
