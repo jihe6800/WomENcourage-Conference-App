@@ -309,7 +309,7 @@ db.bulkDocs([{
     affiliation: 'Facebook'
 }, {
     _id: 'wksp0001',
-    title: 'Workshop 1: Making your ideas into reality',
+    title: 'Workshop: Making your ideas into reality',
     location: '',
     description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.',
         'Come to this workshop and learn how to create a working prototype of your idea! You will learn:',
@@ -324,27 +324,27 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
     _id: 'wksp0002',
-    title: 'Workshop 2: Coding for all: Family friendly endition',
+    title: 'Workshop: Coding for all: Family friendly endition',
     location: '',
     description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.',
         'To participate you need no prior knowledge. Please bring your laptop with Windows, Linux or Mac OS, and is WiFi enabled.'],
-    speakers: ['spkr0140'],
+    speakers: ['spkr0057'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
     _id: 'wksp0003',
-    title: 'Workshop 3: Prototyping wearable electronics workshop',
+    title: 'Workshop: Prototyping wearable electronics workshop',
     location: '',
     description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try!',
         'This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people.',
         'All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.',
         'Updates about the event and some resources are available at: dotuyau.wordpress.com.'],
-    speakers: ['spkr0141'],
+    speakers: ['spkr0140'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
     _id: 'wksp0004',
-    title: 'Workshop 4: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
+    title: 'Workshop: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
     location: '',
     description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
         'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.',
@@ -355,7 +355,7 @@ db.bulkDocs([{
         '4. Practical session of solving simple problems under judging system',
         '5. Final 1 hour contest with few simple problems as example of real programming contest.',
         'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
-    speakers: ['spkr0142'],
+    speakers: ['spkr0141'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
@@ -373,7 +373,7 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
     _id: 'wksp0005',
-    title: 'Workshop 1 (cont.): Making your ideas into reality',
+    title: 'Workshop (cont.): Making your ideas into reality',
     location: '',
     description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.',
         'Come to this workshop and learn how to create a working prototype of your idea! You will learn:',
@@ -388,27 +388,27 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
     _id: 'wksp0006',
-    title: 'Workshop 2 (cont.): Coding for all: Family friendly endition',
+    title: 'Workshop (cont.): Coding for all: Family friendly endition',
     location: '',
     description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.',
         'To participate you need no prior knowledge. Please bring your laptop with Windows, Linux or Mac OS, and is WiFi enabled.'],
-    speakers: ['spkr0140'],
+    speakers: ['spkr0057'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
     _id: 'wksp0007',
-    title: 'Workshop 3 (cont.): Prototyping wearable electronics workshop',
+    title: 'Workshop (cont.): Prototyping wearable electronics workshop',
     location: '',
     description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try!',
         'This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people.',
         'All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.',
         'Updates about the event and some resources are available at: dotuyau.wordpress.com.'],
-    speakers: ['spkr0141'],
+    speakers: ['spkr0140'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
     _id: 'wksp0008',
-    title: 'Workshop 4 (cont.): ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
+    title: 'Workshop (cont.): ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
     location: '',
     description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
         'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.',
@@ -419,7 +419,7 @@ db.bulkDocs([{
         '4. Practical session of solving simple problems under judging system',
         '5. Final 1 hour contest with few simple problems as example of real programming contest.',
         'We expect attendee audience with laptops and internet connection and little knowledge of programming. They may be teachers, organizers and students.'],
-    speakers: ['spkr0142'],
+    speakers: ['spkr0141'],
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
@@ -570,7 +570,7 @@ db.bulkDocs([{
     talks: []
 }, {
     _id: 'wksp0009',
-    title: 'Workshop 6: Contributing to Open Source',
+    title: 'Workshop: Contributing to Open Source',
     location: '',
     description: ['Open Source software has become widespread and forms a vital part of the Internet. Open Source projects can be very rewarding, both for the people who use the products and for the people involved in the project. Many people have careers using open source software and developing skills with such projects can greatly widen your opportunities for employment. Fortunately, with open source software, you can gain experience during your spare time with freely available tools and resources.',
         'For those who have never worked with open source software, it can be bewildering as to how all of this works. How do you get involved with a project? How do you propose changes? How do you test them?',
@@ -583,7 +583,7 @@ db.bulkDocs([{
         '- install an IRC client software',
         '- have a working email address',
         '- have an ssh client installed'],
-    speakers: ['spkr0143'],
+    speakers: ['spkr0142'],
     startDate: new Date(2015, 8, 26, 11, 0),
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
@@ -676,7 +676,7 @@ db.bulkDocs([{
     lastName: 'Mayr'
 }, {
     _id: 'wksp0010',
-    title: 'Workshop 5: Oracle Workshop - Introducing Alice',
+    title: 'Workshop: Oracle Workshop - Introducing Alice',
     location: '',
     description: ['A 2 hour workshop where participants will have a hands on introduction to the features of Carnegie Mellon’s Alice 3.1 platform and learn how it can be used as a tool to introduce programming in the classroom by developing 3D Animations.'],
     speakers: [],
@@ -684,21 +684,21 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
     _id: 'wksp0011',
-    title: 'Workshop 7: ACM-W volunteers meeting',
+    title: 'Workshop: ACM-W volunteers',
     location: '',
     description: ['The ACM is the world\'s largest educational and scientific computing society, helping advance computing as a science and a profession. ACM-W supports, celebrates, and advocates internationally for the full engagement of women in all aspects of the computing field. Enthusiastic volunteers represent ACM and ACM-W in their local communities through the chartering of Chapters, both by students and professionals. This session brings together ACM and ACM-W Chapter representatives, as well as anyone (regardless of gender!) interested in starting/joining their local chapter. George Eleftherakis, with years of experience in bringing together Chapters around Europe, will facilitate a session where networking opportunities will be plenty and meaningful. Come learn more about Chapters!'],
-    speakers: [],
+    speakers: ['spkr0057'],
     startDate: new Date(2015, 8, 25, 11, 30),
     endDate: new Date(2015, 8, 25, 12, 30)
 }, {
     _id: 'wksp0012',
-    title: 'Workshop 8: Queer Women in Tech',
+    title: 'Workshop: Queer Women in Tech',
     location: '',
     description: ['A seminar focused on raising awareness around the issue of gender gap and diversity in tech, with a focus on gender identity and sexual orientation. This seminar is about challenges that queer women face in STEM fields, discussing why:',
         '- We need to Be More Visible to Each Other',
         '- We need to Be More Visible to Others',
         '- We need to Get More Women and Lesbians in Technology'],
-    speakers: [],
+    speakers: ['spkr0143'],
     startDate: new Date(2015, 8, 25, 11, 30),
     endDate: new Date(2015, 8, 25, 12, 30)
 }, {
@@ -1264,20 +1264,21 @@ db.bulkDocs([{
     lastName: 'Subramanian'
 }, {
     _id: 'spkr0140',
-    firstName: 'George',
-    lastName: 'Eleftherakis'
-}, {
-    _id: 'spkr0141',
     firstName: 'Teodora',
     lastName: 'Szasz'
 }, {
-    _id: 'spkr0142',
+    _id: 'spkr0141',
     firstName: 'Bozena',
     lastName: 'Mannova'
 }, {
-    _id: 'spkr0143',
+    _id: 'spkr0142',
     firstName: 'Dan',
     lastName: 'Lingille'
+}, {
+    _id: 'spkr0143',
+    firstName: 'Nadia',
+    lastName: 'Zabehi',
+    affiliation: 'Huawei'
 }]);
 
 /* Sponsors & supporters */
