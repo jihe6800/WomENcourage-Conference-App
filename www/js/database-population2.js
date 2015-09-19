@@ -581,7 +581,7 @@ db.bulkDocs([{
     title: 'Google Anita Borg Memorial Scholarship, Engage Program and Community',
     location: 'Room IV',
     speakers: ['spkr0145'],
-    company: '',
+    company: 'Google',
     startDate: new Date(2015, 8, 26, 11, 30),
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
@@ -1306,7 +1306,8 @@ db.bulkDocs([{
 }, {
     _id: 'spkr0145',
     firstName: 'Irina',
-    lastName: 'Koitz'
+    lastName: 'Koitz',
+    affiliation: 'Google'
 }]);
 
 /* Sponsors & supporters */
