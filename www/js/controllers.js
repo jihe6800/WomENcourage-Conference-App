@@ -160,14 +160,10 @@ angular.module('starter.controllers', ['starter.services'])
         this.update = function() {
             var that = this;
             $q.when(database.getSponsors()).then(function(result) {
-                that.sponsors = _.sortBy(result, 'name');
+                that.sponsors = result;
             });
             $q.when(database.getSupporters()).then(function(result) {
                 that.supporters = result;
-                that.supporters.diamond = _.sortBy(that.supporters.diamond, 'name');
-                that.supporters.platinum = _.sortBy(that.supporters.platinum, 'name');
-                that.supporters.silver = _.sortBy(that.supporters.silver, 'name');
-                that.supporters.additional = _.sortBy(that.supporters.additional, 'name');
             })
         };
 

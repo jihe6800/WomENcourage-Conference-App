@@ -4,31 +4,31 @@
             <ion-item class="item-divider active">
                 Sponsors
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="sponsor in supporters.sponsors">
+            <ion-item class="item-text-wrap" ng-repeat="sponsor in supporters.sponsors | orderBy: 'name'">
                 <img src="img/{{sponsor.logo}}" alt="{{sponsor.name}} logo" style="max-width: 100%"/>
             </ion-item>
             <ion-item class="item-divider active">
                 Diamond Supporters
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.diamond">
+            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.diamond | orderBy: 'name'">
                 <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
             </ion-item>
             <ion-item class="item-divider active">
                 Platinum Supporters
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.platinum">
+            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.platinum | orderBy: 'name'">
                 <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
             </ion-item>
             <ion-item class="item-divider active">
                 Gold Supporters
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.gold">
+            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.gold | orderBy: 'name'">
                 <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
             </ion-item>
             <ion-item class="item-divider active">
                 Silver Supporters
             </ion-item>
-            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.silver">
+            <ion-item class="item-text-wrap" ng-repeat="supporter in supporters.supporters.silver"> <!-- No sorting here on purpose -->
                 <img src="img/{{supporter.logo}}" alt="{{supporter.name}} logo" style="max-width: 100%"/>
             </ion-item>
         </ion-list>
