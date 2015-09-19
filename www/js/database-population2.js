@@ -712,8 +712,8 @@ db.bulkDocs([{
     location: '',
     description: ['The ACM is the world\'s largest educational and scientific computing society, helping advance computing as a science and a profession. ACM-W supports, celebrates, and advocates internationally for the full engagement of women in all aspects of the computing field. Enthusiastic volunteers represent ACM and ACM-W in their local communities through the chartering of Chapters, both by students and professionals. This session brings together ACM and ACM-W Chapter representatives, as well as anyone (regardless of gender!) interested in starting/joining their local chapter. George Eleftherakis, with years of experience in bringing together Chapters around Europe, will facilitate a session where networking opportunities will be plenty and meaningful. Come learn more about Chapters!'],
     speakers: ['spkr0057'],
-    startDate: new Date(2015, 8, 25, 11, 30),
-    endDate: new Date(2015, 8, 25, 12, 30)
+    startDate: new Date(2015, 8, 25, 11, 0),
+    endDate: new Date(2015, 8, 25, 12, 0)
 }, {
     _id: 'wksp0012',
     title: 'Workshop: Queer Women in Tech',
@@ -723,8 +723,8 @@ db.bulkDocs([{
         '- We need to Be More Visible to Others',
         '- We need to Get More Women and Lesbians in Technology'],
     speakers: ['spkr0143'],
-    startDate: new Date(2015, 8, 25, 11, 30),
-    endDate: new Date(2015, 8, 25, 12, 30)
+    startDate: new Date(2015, 8, 25, 11, 0),
+    endDate: new Date(2015, 8, 25, 12, 0)
 }, {
     _id: 'uncf0003',
     title: 'Unconference',
@@ -1442,5 +1442,36 @@ odb.bulkDocs([{
     }, {
         title: 'Feedback',
         content: 'Is some feature missing or not quite working in the way you would expect? We gladly appreciate all the feedback you can give us!'
+    }]
+}, {
+    _id: 'conference-feedback',
+    sections: [{
+        title: 'We want your input!',
+        content: 'Please let us know what you thought about the conference activities in the forms below. Your answers mean a lot to us as they help us improve, so thank you for your participation!'
+    }],
+    forms: [{
+        title: 'Case studies Feedback',
+        url: 'https://docs.google.com/forms/d/1j2G-lwKNfyI1mJZSSWT7S29xGqJP9crcuF8S8mBkyaI/viewform'
+    }, {
+        title: 'Industry Talks Feedback',
+        url: 'https://docs.google.com/forms/d/1h6DVPRv5EEW2alL73R8O8By17MbRod_AH6oryi3QaLU/viewform'
+    }, {
+        title: 'Career Fair Feedback',
+        url: 'https://docs.google.com/forms/d/1JxWKGlWrx7EdrCYTj4W5xssWPE_hZhUGN7oxj6AHbac/viewform'
+    }, {
+        title: 'Panels Feedback',
+        url: 'https://docs.google.com/forms/d/1bmUypDIpnesWEOOjIz-6BVfhEkqzz_JlyWKue0Zp9As/viewform'
+    }, {
+        title: 'Posters Feedback',
+        url: 'https://docs.google.com/forms/d/1WayHN7ZTTU52k0ZxrBwwpTiT-OGWFEfOnwMPo2SbU7c/viewform'
+    }, {
+        title: 'Unconference Feedback',
+        url: 'https://docs.google.com/forms/d/1KYyga6qYas8CEy-jp-WJeMWsv3LFEjiitlb51hx1wCY/viewform'
+    }, {
+        title: 'Papers Feedback',
+        url: 'https://docs.google.com/forms/d/1Hm4pAOb4pNvwV9kweIa1jwX8da03NRj1RT0zwg75xCs/viewform'
+    }, {
+        title: 'Workshop Feedback',
+        url: 'https://docs.google.com/forms/d/1CDbdTIaja5AhCK_6ZImonKyA4_BnS4ywJ-FR4CQ-Jvc/viewform'
     }]
 }]);

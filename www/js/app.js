@@ -246,6 +246,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             controller: 'FeedbackCtrl as feedback'
           }
         }
+      })
+
+      .state('app.conference-feedback', {
+        url: "/conference-feedback",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/conference-feedback.html",
+            controller: 'ConferenceFeedbackCtrl as conferencefeedback'
+          }
+        }
       });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');

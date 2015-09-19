@@ -110,6 +110,25 @@ angular.module('starter.controllers', ['starter.services'])
         });
     })
 
+    .controller('ConferenceFeedbackCtrl', function($q, database){
+        var that = this;
+        $q.when(database.getOther('conference-feedback')).then(function (result) {
+            that.sections = result.sections;
+            that.forms = result.forms;
+        }).catch(function (error) {
+            that.sections = [{
+                title: 'Sorry!',
+                content: 'This page is supposed to be filled with information, but something went wrong when trying to get it. Try to find Internet access again and refresh the page.'
+            }];
+            that.forms = [];
+        });
+
+        this.openURL = function(url) {
+            console.log('Opening URL: ' + url);
+            window.open(url, '_system');
+        }
+    })
+
     .controller('PapersCtrl', function(database, $q) {
         /* Reads papers from database and sorts them alphabetically */
         this.update = function() {

@@ -1,0 +1,27 @@
+<ion-view view-title="Conference Feedback">
+    <ion-content has-bouncing="false">
+
+        <div class="card" ng-repeat="section in conferencefeedback.sections">
+            <div class="item item-divider active">
+                {{section.title}}
+            </div>
+            <div class="item item-text-wrap">
+                {{section.content}}
+            </div>
+        </div>
+
+        <div class="list list-inset" ng-if="conferencefeedback.forms.length > 0">
+            <ion-item class="item-button-right" ng-repeat="form in conferencefeedback.forms">
+                {{form.title}}
+                <button class="button button-womencourage" ng-click="conferencefeedback.openURL(form.url)">
+                    <i class="icon ion-compose"></i>
+                </button>
+            </ion-item>
+        </div>
+
+        <button class="button button-block button-womencourage" ng-if="conferencefeedback.forms.length > 0" ng-repeat="form in conferencefeedback.forms" ng-click="conferencefeedback.openURL(form.url)">
+            {{form.title}}
+        </button>
+
+    </ion-content>
+</ion-view>

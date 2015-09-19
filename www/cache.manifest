@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#v 5.7
+#v 7.3
 CACHE:
 #main index
 index.html
@@ -116,6 +116,7 @@ templates/workshop.html
 templates/common-entry.html
 templates/emergency-contact.html
 templates/feedback.html
+templates/conference-feedback.html
 templates/industry-talks-session.html
 templates/info.html
 templates/keynote.html
