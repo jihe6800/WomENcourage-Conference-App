@@ -6,6 +6,10 @@
             </div>
             <div class="item item-text-wrap">
                 {{section.content}}
+
+                <button class="button button-block button-womencourage ion-compose" ng-if="section.title == 'Feedback'" ng-click="openURL(section.formurl)" style="margin-top: 20px">
+                    {{section.buttontext}}
+                </button>
             </div>
         </div>
     </ion-content>

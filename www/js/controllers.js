@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function($scope, database){
+.controller('AppCtrl', function($scope, $window, database){
         $scope.getEntryColor = function(entry) {
             switch(entry._id.substr(0, 4)) {
                 case 'sssn':
@@ -65,6 +65,11 @@ angular.module('starter.controllers', ['starter.services'])
                 console.log("isInMySchedule error in controller: " + error);
             });
         };
+
+        $scope.openURL = function(url) {
+            console.log('Opening URL: ' + url);
+            $window.open(url, '_system');
+        }
     })
 
     .controller('HomeCtrl', function($scope, $location) {
@@ -122,11 +127,6 @@ angular.module('starter.controllers', ['starter.services'])
             }];
             that.forms = [];
         });
-
-        this.openURL = function(url) {
-            console.log('Opening URL: ' + url);
-            window.open(url, '_system');
-        }
     })
 
     .controller('PapersCtrl', function(database, $q) {

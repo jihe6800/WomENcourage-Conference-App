@@ -1425,25 +1425,27 @@ odb.bulkDocs([{
     _id: 'feedback',
     sections: [{
         title: 'About the App',
-        content: 'This app was developed by three IT students at Uppsala University.'
+        content: 'This app was developed by three IT students at Uppsala University: Johan Gille, Jimmy Helmersson and Robert Källgren. You can contact us via email address robert.kallgren.9616@student.it.uu.se'
     }, {
         title: 'Device Support',
-        content: 'The app is supported on most devices with a modern web browser.'
+        content: 'The app is supported on most devices with a modern web browser. However, the export function is currently only supported in Google Chrome, Firefox and Opera. For an optimal experience, Google Chrome is recommended.'
     }, {
         title: 'Offline Capabilities',
-        content: 'The app is fully functional even if you lose your Internet connection. As long as you do not close or refresh your web browser window when without network access, everything should still be working.'
+        content: 'The app has full offline support. You simply just need to visit it once, and everything will still be available if you lose your internet connection. You can even close or refresh your browser when offline without losing access to the app. This is possible because all the data gets cached locally on your device. The cache will take up approximately 7MB in disk space space. If this is undesired, you can clear your browsing data when you no longer want to use the app.'
     }, {
         title: 'My Schedule',
-        content: 'Your personalized schedule is automatically saved locally in your web browser, so you can close or refresh the web page and still have your schedule available the next time you visit the website.'
+        content: 'Your personalized schedule is automatically saved locally in your web browser, so you can close or refresh the web page and still have your schedule available the next time you visit the app.'
     }, {
         title: 'Feedback',
-        content: 'Is some feature missing or not quite working in the way you would expect? We gladly appreciate all the feedback you can give us!'
+        content: 'Is some feature missing or not quite working in the way you would expect? We gladly appreciate all the feedback you can give us!',
+        buttontext: 'App Feedback Form',
+        formurl: 'http://www.google.com'
     }]
 }, {
     _id: 'conference-feedback',
     sections: [{
-        title: 'We want your input!',
-        content: 'Please let us know what you thought about the conference activities in the forms below. Your answers mean a lot to us as they help us improve, so thank you for your participation!'
+        title: 'Make your voice heard!',
+        content: 'Please let us know what you thought about the conference activities in the forms listed below. Your answers mean a lot to us as they help us improve. Thanks for your participation!'
     }],
     forms: [{
         title: 'Case studies Feedback',
