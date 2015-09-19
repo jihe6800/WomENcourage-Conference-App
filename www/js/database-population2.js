@@ -71,23 +71,28 @@ db.bulkDocs([{
 }, {
     _id: 'spkr0003',
     firstName: 'Dru',
-    lastName: 'Lavigne'
+    lastName: 'Lavigne',
+    affiliation: 'iXsystems, The FreeBSD Foundation'
 }, {
     _id: 'spkr0004',
     firstName: 'Deb',
-    lastName: 'Goodkin'
+    lastName: 'Goodkin',
+    affiliation: 'The FreeBSD Foundation'
 }, {
     _id: 'spkr0005',
     firstName: 'Allan',
-    lastName: 'Jude'
+    lastName: 'Jude',
+    affiliation: 'ScaleEngine Inc., The FreeBSD Foundation'
 }, {
     _id: 'spkr0006',
     firstName: 'Dan',
-    lastName: 'Langille'
+    lastName: 'Langille',
+    affiliation: 'The FreeBSD Foundation'
 }, {
     _id: 'spkr0007',
     firstName: 'Benedics',
-    lastName: 'Reuschling'
+    lastName: 'Reuschling',
+    affiliation: 'The FreeBSD Foundation'
 }, {
     _id: 'sssn0001',
     title: 'Papers Session 1: Computing to Assist Disabled Individuals or Older Adults',
@@ -287,7 +292,7 @@ db.bulkDocs([{
 }, {
     _id: 'spkr0028',
     firstName: 'Elin',
-    lastName: 'Khosrawi Enamrk',
+    lastName: 'Khosrawi Enmark',
     affiliation: 'Cisco'
 }, {
     _id: 'spkr0029',
@@ -474,17 +479,17 @@ db.bulkDocs([{
     _id: 'spkr0033',
     firstName: 'Anke',
     lastName: 'Brock',
-    affiliation: ''
+    affiliation: 'Human-Computer Interaction Inria Bordeaux France'
 }, {
     _id: 'spkr0034',
     firstName: 'Stéphanie',
     lastName: 'Fleck',
-    affiliation: ''
+    affiliation: 'University of Lorraine France'
 }, {
     _id: 'spkr0035',
     firstName: 'Jane',
     lastName: 'Richardson',
-    affiliation: ''
+    affiliation: 'Oracle Academy'
 }, {
     _id: 'sssn0003',
     title: 'Papers Session 3: Human-Computer Interaction',
@@ -507,7 +512,8 @@ db.bulkDocs([{
 }, {
     _id: 'spkr0037',
     firstName: 'Mario',
-    lastName: 'Romero'
+    lastName: 'Romero',
+    affiliation: 'Human-Computer Interaction KTH'
 }, {
     _id: 'talk0008',
     title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
@@ -620,11 +626,13 @@ db.bulkDocs([{
 }, {
     _id: 'spkr0045',
     firstName: 'Jessica',
-    lastName: 'Cauchard'
+    lastName: 'Cauchard',
+    affiliation: 'Human-Computer Interaction Stanford University'
 }, {
     _id: 'spkr0046',
     firstName: 'Monika',
-    lastName: 'Podsiadlo'
+    lastName: 'Podsiadlo',
+    affiliation: 'Google'
 }, {
     _id: 'sssn0004',
     title: 'Papers Session 4: Gender issues in Computing Education',
