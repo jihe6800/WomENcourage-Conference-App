@@ -605,7 +605,7 @@ db.bulkDocs([{
         '- install an IRC client software',
         '- have a working email address',
         '- have an ssh client installed'],
-    speakers: ['spkr0142'],
+    speakers: ['spkr0006'],
     startDate: new Date(2015, 8, 26, 11, 0),
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
@@ -722,7 +722,7 @@ db.bulkDocs([{
         '- We need to Be More Visible to Each Other',
         '- We need to Be More Visible to Others',
         '- We need to Get More Women and Lesbians in Technology'],
-    speakers: ['spkr0143'],
+    speakers: ['spkr0142'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 12, 0)
 }, {
@@ -1296,10 +1296,6 @@ db.bulkDocs([{
     lastName: 'Mannova'
 }, {
     _id: 'spkr0142',
-    firstName: 'Dan',
-    lastName: 'Lingille'
-}, {
-    _id: 'spkr0143',
     firstName: 'Nadia',
     lastName: 'Zabehi',
     affiliation: 'Huawei'
