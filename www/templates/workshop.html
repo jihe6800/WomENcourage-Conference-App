@@ -17,10 +17,12 @@
                     </label>
                 </div>
             </div>
-            <ion-item class="item-divider gray"><p>Description</p></ion-item>
-            <ion-item class="item-text-wrap entry-description">
-                <p ng-repeat="paragraph in entry.activeEntry.description">{{paragraph}}</p>
-            </ion-item>
+            <div ng-if="entry.activeEntry.description && entry.activeEntry.description.length > 0">
+                <ion-item class="item-divider gray"><p>Description</p></ion-item>
+                <ion-item class="item-text-wrap entry-description">
+                    <p ng-repeat="paragraph in entry.activeEntry.description">{{paragraph}}</p>
+                </ion-item>
+            </div>
         </div>
         <div class="card list" ng-if="entry.activeEntry.speakers.length > 0">
             <ion-item class="item-divider active">Organizers</ion-item>
