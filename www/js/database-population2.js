@@ -1439,7 +1439,7 @@ odb.bulkDocs([{
         title: 'Feedback',
         content: 'Is some feature missing or not quite working in the way you would expect? We gladly appreciate all the feedback you can give us!',
         buttontext: 'App Feedback Form',
-        formurl: 'http://www.google.com'
+        formurl: 'http://goo.gl/forms/p3czZK9ZSZ'
     }]
 }, {
     _id: 'conference-feedback',
