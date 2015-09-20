@@ -105,6 +105,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('app.schedule.general', {
+    url: "/general/:id",
+    templateUrl: "templates/general-entry.html",
+    controller: 'EntryCtrl as entry',
+    resolve: {
+      entry: function ($stateParams, database) {
+        return database.getGeneralEntry($stateParams.id);
+      }
+    }
+  })
+
   .state('app.schedule.workshop', {
     url: "/workshop/:id",
     templateUrl: "templates/workshop.html",

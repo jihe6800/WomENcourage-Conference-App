@@ -9,6 +9,8 @@ angular.module('starter.controllers', ['starter.services'])
                     return "#A5B1C0";
                 case 'cmmn':
                     return "#FFE4A3";
+                case 'gnrl':
+                    return "#0C435A";
                 case 'wksp':
                     return "#D3AA47";
                 case 'panl':
@@ -30,6 +32,8 @@ angular.module('starter.controllers', ['starter.services'])
                     return "#/app/schedule/keynote/" + entry.id;
                 case 'cmmn':
                     return "#/app/schedule/common/" + entry.id;
+                case 'gnrl':
+                    return "#/app/schedule/general/" + entry.id;
                 case 'wksp':
                     return "#/app/schedule/workshop/" + entry.id;
                 case 'panl':

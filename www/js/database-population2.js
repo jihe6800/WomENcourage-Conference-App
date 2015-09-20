@@ -28,7 +28,7 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 25, 8, 30),
     endDate: new Date(2015, 8, 25, 9, 0)
 }, {
-    _id: 'cmmn0005',
+    _id: 'gnrl0001',
     title: 'Opening/Announcements',
     location: 'Main Aula',
     description: [],
@@ -54,7 +54,7 @@ db.bulkDocs([{
     lastName: 'Hanson',
     affiliation: 'ACM'
 }, {
-    _id: 'cmmn0006',
+    _id: 'cmmn0005',
     title: 'Break',
     location: 'Downstairs Hallway',
     description: ['Coffee and tea will be served.'],
@@ -193,7 +193,7 @@ db.bulkDocs([{
     lastName: 'Tsereteli',
     affiliation: 'Bloomberg'
 }, {
-    _id: 'cmmn0008',
+    _id: 'cmmn0006',
     title: 'Break',
     location: 'Downstairs Hallway',
     description: ['Coffee and tea will be served.'],
@@ -364,7 +364,7 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 14, 30)
 }, {
-    _id: 'cmmn0009',
+    _id: 'cmmn0007',
     title: 'Break',
     location: 'Downstairs Hallway',
     description: ['Coffee and tea will be served.'],
@@ -428,14 +428,14 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 25, 15, 0),
     endDate: new Date(2015, 8, 25, 17, 0)
 }, {
-    _id: 'cmmn0010',
+    _id: 'cmmn0008',
     title: 'Registration',
     location: 'Downstairs Hallway',
     description: [],
     startDate: new Date(2015, 8, 26, 8, 30),
     endDate: new Date(2015, 8, 26, 9, 0)
 }, {
-    _id: 'cmmn0011',
+    _id: 'gnrl0002',
     title: 'Opening/Announcements',
     location: 'Main Aula',
     description: [],
@@ -461,7 +461,7 @@ db.bulkDocs([{
     lastName: 'Cajander',
     affiliation: 'Uppsala University'
 }, {
-    _id: 'cmmn0012',
+    _id: 'cmmn0009',
     title: 'Break',
     location: 'Downstairs Hallway',
     description: ['Coffee and tea will be served.'],
@@ -609,7 +609,7 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 26, 11, 0),
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
-    _id: 'cmmn0013',
+    _id: 'cmmn0010',
     title: 'Break',
     location: 'Downstairs Hallway',
     description: ['Coffee and tea will be served.'],
@@ -750,7 +750,7 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 26, 14, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
-    _id: 'cmmn0014',
+    _id: 'cmmn0011',
     title: 'Break',
     location: 'Downstairs Hallway',
     description: ['Coffee and tea will be served.'],
@@ -766,7 +766,7 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 26, 16, 0),
     endDate: new Date(2015, 8, 26, 17, 0)
 }, {
-    _id: 'cmmn0015',
+    _id: 'gnrl0003',
     title: 'Closing',
     location: 'TBA',
     description: [],
@@ -1435,6 +1435,9 @@ odb.bulkDocs([{
     }, {
         title: 'My Schedule',
         content: 'Your personalized schedule is automatically saved locally in your web browser, so you can close or refresh the web page and still have your schedule available the next time you visit the app.'
+    }, {
+        title: 'Cookies',
+        content: 'For the above functionalities to work properly, we need to (as almost all websites do) store cookies on your device. Cookies are small text files that are placed on your computer or mobile phone when you browse websites. The cookies are only needed for the offline support and to remember your personalized schedule. We do not use cookies to collect any personally identifiable or sensitive information, to pass data to advertising networks or third parties or to pay sales commissions. If your browser is set to accept cookies we take this, and your continued use of the app, to mean that you are fine with this.'
     }, {
         title: 'Feedback',
         content: 'Is some feature missing or not quite working in the way you would expect? We gladly appreciate all the feedback you can give us!',

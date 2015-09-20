@@ -37,6 +37,7 @@ angular.module('starter.services', [])
         var posters = [];
         var keynotes = [];
         var commonEntries = [];
+        var generalEntries = [];
         var panels = [];
         var workshops = [];
         var unconferences = [];
@@ -65,6 +66,7 @@ angular.module('starter.services', [])
                 posters = [];
                 keynotes = [];
                 commonEntries = [];
+                generalEntries = [];
                 panels = [];
                 workshops = [];
                 unconferences = [];
@@ -103,6 +105,9 @@ angular.module('starter.services', [])
                             break;
                         case 'cmmn':
                             commonEntries.push(item);
+                            break;
+                        case 'gnrl':
+                            generalEntries.push(item);
                             break;
                         case 'panl':
                             panels.push(item);
@@ -333,6 +338,19 @@ angular.module('starter.services', [])
                     fixDates(panel);
                 });
 
+                // Fix dates and add speakers to general entries
+                angular.forEach(generalEntries, function(generalEntry) {
+                    // Avoid errors if the general entry has no speakers
+                    if (generalEntry.speakers == null) {
+                        generalEntry.speakers = [];
+                    }
+
+                    generalEntry.speakers = replaceIdsWithObjectsFunc(generalEntry.speakers, speakers, function(speaker) {
+                        speaker.activities.push(generalEntry);
+                    });
+                    fixDates(generalEntry);
+                });
+
                 // Fix dates of common entries
                 for (var i = 0; i < commonEntries.length; i++) {
                     fixDates(commonEntries[i]);
@@ -347,6 +365,7 @@ angular.module('starter.services', [])
                 scheduleEntries.push(sessions);
                 scheduleEntries.push(keynotes);
                 scheduleEntries.push(commonEntries);
+                scheduleEntries.push(generalEntries);
                 scheduleEntries.push(workshops);
                 scheduleEntries.push(panels);
                 scheduleEntries.push(unconferences);
@@ -455,6 +474,11 @@ angular.module('starter.services', [])
             getCommonEntry: function(id) {
                 return constructPromise.then(function(result) {
                     return _.find(commonEntries, _.matchesProperty('id', id));
+                });
+            },
+            getGeneralEntry: function(id) {
+                return constructPromise.then(function(result) {
+                    return _.find(generalEntries, _.matchesProperty('id', id));
                 });
             },
             getWorkshop: function(id) {
