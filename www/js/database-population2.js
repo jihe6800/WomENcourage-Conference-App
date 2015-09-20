@@ -24,14 +24,12 @@ db.bulkDocs([{
     _id: 'cmmn0004',
     title: 'Registration',
     location: 'Downstairs Hallway',
-    description: [],
     startDate: new Date(2015, 8, 25, 8, 30),
     endDate: new Date(2015, 8, 25, 9, 0)
 }, {
     _id: 'gnrl0001',
     title: 'Opening/Announcements',
     location: 'Main Aula',
-    description: [],
     speakers: ['spkr0001'],
     startDate: new Date(2015, 8, 25, 9, 0),
     endDate: new Date(2015, 8, 25, 9, 30)
@@ -431,14 +429,12 @@ db.bulkDocs([{
     _id: 'cmmn0008',
     title: 'Registration',
     location: 'Downstairs Hallway',
-    description: [],
     startDate: new Date(2015, 8, 26, 8, 30),
     endDate: new Date(2015, 8, 26, 9, 0)
 }, {
     _id: 'gnrl0002',
     title: 'Opening/Announcements',
     location: 'Main Aula',
-    description: [],
     speakers: ['spkr0031'],
     startDate: new Date(2015, 8, 26, 9, 0),
     endDate: new Date(2015, 8, 26, 9, 30)
@@ -769,7 +765,6 @@ db.bulkDocs([{
     _id: 'gnrl0003',
     title: 'Closing',
     location: 'TBA',
-    description: [],
     startDate: new Date(2015, 8, 26, 17, 0),
     endDate: new Date(2015, 8, 26, 17, 15)
 }]);
