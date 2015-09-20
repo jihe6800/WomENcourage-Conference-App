@@ -28,10 +28,10 @@
         </div>
         <div class="card list" ng-if="entry.activeEntry.speakers.length > 0">
             <ion-item class="item-divider active">Panelists</ion-item>
-            <ion-item class="item-avatar" ng-repeat="speaker in entry.activeEntry.speakers | orderBy: 'lastName'" ng-href="#/app/speaker/{{speaker.id}}">
+            <ion-item class="item-avatar" ng-repeat="panelist in entry.activeEntry.panelists | orderBy: 'lastName'" ng-href="#/app/speaker/{{panelist.id}}">
                 <i class="ion-android-person"></i>
-                <h2>{{speaker.lastName}}, {{speaker.firstName}}</h2>
-                <p>{{speaker.affiliation}}</p>
+                <h2>{{panelist.lastName}}, {{panelist.firstName}}</h2>
+                <p>{{panelist.affiliation}}</p>
             </ion-item>
         </div>
     </ion-content>

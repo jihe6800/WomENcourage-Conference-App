@@ -317,14 +317,19 @@ angular.module('starter.services', [])
                     fixDates(workshop);
                 });
 
-                // Fix dates and add speakers/panelists and moderators to panels
+                // Fix dates and add panelists and moderators to panels
                 angular.forEach(panels, function(panel) {
-                    panel.speakers = replaceIdsWithObjectsFunc(panel.speakers, speakers, function(speaker) {
-                        speaker.activities.push(panel);
-                    });
                     panel.moderators = replaceIdsWithObjectsFunc(panel.moderators, speakers, function(moderator) {
                         moderator.activities.push(panel);
                     });
+
+                    panel.panelists = replaceIdsWithObjectsFunc(panel.panelists, speakers, function(panelist) {
+                        panelist.activities.push(panel);
+                    });
+
+                    // Create array that contains both moderators and panelists for easy printing in the schedule
+                    panel.speakers = panel.moderators.concat(panel.panelists);
+
                     fixDates(panel);
                 });
 

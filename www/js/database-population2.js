@@ -65,7 +65,7 @@ db.bulkDocs([{
     title: 'Panel: Open Source as a Career Path',
     location: 'Main Aula',
     moderators: ['spkr0003'],
-    speakers: ['spkr0004', 'spkr0005', 'spkr0006', 'spkr0007'],
+    panelists: ['spkr0004', 'spkr0005', 'spkr0006', 'spkr0007'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 12, 0)
 }, {
@@ -472,7 +472,7 @@ db.bulkDocs([{
     title: 'Panel: Teaching and Learning 3.0',
     location: 'Main Aula',
     moderators: ['spkr0033'],
-    speakers: ['spkr0034', 'spkr0035'],
+    panelists: ['spkr0034', 'spkr0035'],
     startDate: new Date(2015, 8, 26, 11, 0),
     endDate: new Date(2015, 8, 26, 12, 0)
 }, {
@@ -620,7 +620,7 @@ db.bulkDocs([{
     title: 'Panel: Out of the Ordinary Jobs',
     location: 'Main Aula',
     moderators: ['spkr0045'],
-    speakers: ['spkr0033', 'spkr0037', 'spkr0046'],
+    panelists: ['spkr0033', 'spkr0037', 'spkr0046'],
     startDate: new Date(2015, 8, 26, 13, 30),
     endDate: new Date(2015, 8, 26, 14, 30)
 }, {
@@ -766,9 +766,9 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 26, 16, 0),
     endDate: new Date(2015, 8, 26, 17, 0)
 }, {
-    _id: 'cmmn0001',
+    _id: 'cmmn0015',
     title: 'Closing',
-    location: '',
+    location: 'TBA',
     description: [],
     startDate: new Date(2015, 8, 26, 17, 0),
     endDate: new Date(2015, 8, 26, 17, 15)
