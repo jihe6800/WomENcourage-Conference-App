@@ -401,6 +401,43 @@ angular.module('starter.services', [])
             });
         }
 
+        function getMyScheduleEntries() {
+            return mydb.allDocs().then(function(result) {
+                return result.rows.map(function (row) {
+                    return row.id;
+                });
+            }).then(function(ids) {
+                var myScheduleEntries = [];
+                for (var i = 0; i < ids.length; i++) {
+                    var matchedEntry = _.find(scheduleEntries, _.matchesProperty('_id', ids[i]));
+
+                    if (matchedEntry === undefined) { // if(matchedEntry) ?
+                        console.log("ERROR: My schedule id '" + ids[i] + "' could not be found in schedule entries!")
+                    } else {
+                        myScheduleEntries.push(matchedEntry);
+                    }
+                }
+                return myScheduleEntries;
+            })
+        }
+
+        function forceAddToMySchedule(entry) {
+            console.log("Adding " + entry._id + " to My Schedule...");
+            $q.when(mydb.put({_id: entry._id})).then(function(result) {
+                console.log("put() result: " + JSON.stringify(result));
+                if(result.ok) {
+                    entry.isInMySchedule = true;
+                    notifyMyScheduleListeners();
+                }
+            }).catch(function(error) {
+                if (error.status == 409) {
+                    console.log("Entry is already in My Schedule, nothing to do here.")
+                } else {
+                    console.log("Error when adding entry to My Schedule: " + error);
+                }
+            });
+        }
+
         return {
             getScheduleEntries: function() {
                 return constructPromise.then(function(result) {
@@ -411,38 +448,50 @@ angular.module('starter.services', [])
             },
             getMyScheduleEntries: function() {
                 return constructPromise.then(function(result) {
-                    return mydb.allDocs().then(function(result) {
-                        return result.rows.map(function (row) {
-                            return row.id;
-                        });
-                    }).then(function(ids) {
-                        var myScheduleEntries = [];
-                        for (var i = 0; i < ids.length; i++) {
-                            var matchedEntry = _.find(scheduleEntries, _.matchesProperty('_id', ids[i]));
-
-                            if (matchedEntry === undefined) { // if(matchedEntry) ?
-                                console.log("ERROR: My schedule id '" + ids[i] + "' could not be found in schedule entries!")
-                            } else {
-                                myScheduleEntries.push(matchedEntry);
-                            }
-                        }
-                        return myScheduleEntries;
-                    })
+                    return getMyScheduleEntries();
                 }).catch(function(error) {
                     console.log("getMyScheduleEntries error: " + error);
                 });
             },
-            addToMySchedule: function(entry){
-                console.log("Adding " + entry._id + " to My Schedule...");
-                $q.when(mydb.put({_id: entry._id})).then(function(result) {
-                    console.log("put() result: " + JSON.stringify(result));
-                    if(result.ok) {
-                        entry.isInMySchedule = true;
-                        notifyMyScheduleListeners();
-                    }
+            addToMySchedule: function(entry){ // Checks for collisions and adds entry to My Schedule if none were found
+                // Check if entry collides with other entries in my schedule
+                return constructPromise.then(function(result) {
+                    return getMyScheduleEntries().then(function(result) {
+                        var collisions = [];
+
+                        for (var i = 0; i < result.length; i++) {
+                            // If entry startdate is later than the other entry's startdate
+                            if(entry.startDate > result[i].startDate) {
+                                // If entry startdate is later than the other entry's startdate and also earlier than it's enddate
+                                if (entry.startDate < result[i].endDate) {
+                                    collisions.push(result[i]);
+                                }
+                            } else {
+                                // If entry startdate is realier than the other entry's startdate and the entry's endDate is later than the other entry's startdate
+                                if (entry.endDate > result[i].startDate) {
+                                    collisions.push(result[i]);
+                                }
+                            }
+                        }
+
+                        // Macho one line collision detection.
+                        // var col = (entry.startDate > result[i].startDate && entry.startDate < result[i].endDate) || (entry.startDate < result[i].startDate && entry.endDate > result[i].startDate);
+
+                        if (collisions.length > 0) {
+                            console.log('Collision detected!');
+                            entry.isInMySchedule = false;
+                        } else {
+                            forceAddToMySchedule(entry);
+                        }
+
+                        return collisions;
+                    });
                 }).catch(function(error) {
                     console.log("addToMySchedule error: " + error);
                 });
+            },
+            forceAddToMySchedule: function(entry) { // Adds entry to My Schedule without checking for collisions
+                forceAddToMySchedule(entry);
             },
             removeFromMySchedule: function(entry){
                 console.log("Removing " + entry._id + " from My Schedule...");

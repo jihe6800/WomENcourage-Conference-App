@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function($scope, $window, database){
+.controller('AppCtrl', function($scope, $q, $ionicPopup, $window, database){
         $scope.getEntryColor = function(entry) {
             switch(entry._id.substr(0, 4)) {
                 case 'sssn':
@@ -47,9 +47,41 @@ angular.module('starter.controllers', ['starter.services'])
             }
         };
 
+        // Used to join the titles of colliding schedule entries
+        function joinStrings(array) {
+            if (array.length == 0) {
+                return '';
+            } else if (array.length > 1) {
+                firstElements = _.dropRight(array);
+                firstStrings = firstElements.join(', ');
+                lastString = _.last(array);
+                return firstStrings + ' and ' + lastString;
+            } else {
+                return array[0];
+            }
+        }
+
         $scope.addToMySchedule = function(entry) {
             console.log("addToMySchedule called!");
-            database.addToMySchedule(entry);
+            database.addToMySchedule(entry).then(function(collisions) {
+                if (collisions.length > 0) {
+                    var entryTitles = _.map(collisions, 'title');
+                    var entryTitlesWithQuotation = _.map(entryTitles, function(entry) {return '"' + entry + '"'});
+                    var joinedTitles = joinStrings(entryTitlesWithQuotation);
+
+                    $ionicPopup.confirm({
+                        title: 'Schedule Collision Warning',
+                        okType: 'button-womencourage',
+                        template: 'This entry collides with ' + joinedTitles + '. Add it anyway?'
+                    }).then(function(response) {
+                        if(response) {
+                            database.forceAddToMySchedule(entry);
+                        } else {
+                            console.log('Cancelled schedule add.');
+                        }
+                    });
+                }
+            });
         };
 
         $scope.removeFromMySchedule = function(entry) {
@@ -59,14 +91,14 @@ angular.module('starter.controllers', ['starter.services'])
 
         $scope.toggleInMySchedule = function(entry) {
             database.isInMySchedule(entry).then(function(isInMySchedule) {
-                console.log("isInMySchedule return value in controller: " + JSON.stringify(isInMySchedule));
+                console.log("isInMySchedule return value in toggleInMySchedule: " + JSON.stringify(isInMySchedule));
                 if(isInMySchedule) {
                     $scope.removeFromMySchedule(entry);
                 } else {
                     $scope.addToMySchedule(entry);
                 }
             }).catch(function (error) {
-                console.log("isInMySchedule error in controller: " + error);
+                console.log("isInMySchedule error in toggleInMySchedule: " + error);
             });
         };
 
