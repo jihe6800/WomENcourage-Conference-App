@@ -3,7 +3,7 @@
         <ion-list>
             <ion-item class="item-text-wrap" ng-repeat="poster in posters.posters | orderBy: 'title'">
                 <h2>{{poster.title}}</h2>
-                <p><span ng-repeat="author in poster.authors">{{author.firstName}} {{author.lastName}}<span ng-if="!$last">, </span></span></p>
+                <p><span ng-repeat="author in poster.authors | orderBy: 'lastName'">{{author.firstName}} {{author.lastName}}<span ng-if="!$last">, </span></span></p>
             </ion-item>
         </ion-list>
     </ion-content>
