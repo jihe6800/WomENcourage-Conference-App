@@ -111,7 +111,6 @@ templates/speaker.html
 templates/speakers.html
 templates/sponsors.html
 templates/start.html
-templates/todo.html
 templates/unconference.html
 templates/workshop.html
 templates/common-entry.html
