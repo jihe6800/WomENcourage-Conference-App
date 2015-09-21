@@ -1437,7 +1437,7 @@ odb.bulkDocs([{
     _id: 'feedback',
     sections: [{
         title: 'About the App',
-        content: 'This app was developed by three IT students at Uppsala University: Johan Gille, Jimmy Helmersson and Robert Källgren. You can contact us via email address robert.kallgren.9616@student.it.uu.se'
+        content: 'This app was developed by three IT students at Uppsala University: Johan Gille, Jimmy Helmersson and Robert Källgren. You can contact us via email address robert.kallgren.9616@student.uu.se'
     }, {
         title: 'Device Support',
         content: 'The app is supported on most devices with a modern web browser. However, the export function is currently only supported in Google Chrome, Firefox and Opera. For an optimal experience, Google Chrome is recommended.'
