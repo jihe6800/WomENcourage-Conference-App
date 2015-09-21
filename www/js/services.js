@@ -6,6 +6,10 @@ angular.module('starter.services', [])
         var odb = new PouchDB('other');
         var mydb = new PouchDB('my-schedule');
 
+        var remoteServer = 'http://130.238.15.131:5984';
+        var remoteSchedule = remoteServer + '/schedule';
+        var remoteOther = remoteServer + '/other';
+
         var myScheduleListeners = []; // Used to notify when My Schedule has changed
 
         function notifyMyScheduleListeners() {
@@ -15,7 +19,7 @@ angular.module('starter.services', [])
         }
 
         // Used to verify that everything is downloaded and constructed before returning data from the service
-        var constructPromise = db.replicate.from('http://130.238.15.131:5984/schedule').then(function(result) {
+        var constructPromise = db.replicate.from(remoteSchedule).then(function(result) {
             console.log("Everything loaded from server database! Now constructing schedule...");
             return constructFromDB();
         }).catch(function(error) { // Network error, hopefully...
@@ -24,7 +28,7 @@ angular.module('starter.services', [])
         });
 
         // Used to verify that everything is downloaded before returning data from the service
-        var replicationHandlerODB = odb.replicate.from('http://130.238.15.131:5984/other').catch(function(error) {
+        var replicationHandlerODB = odb.replicate.from(remoteOther).catch(function(error) {
             // Network error, hopefully...
             console.log("Other database download error, using local cache instead. Error message: " + error);
         });
