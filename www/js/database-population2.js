@@ -739,13 +739,6 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
     _id: 'uncf0004',
-    title: 'Case Studies',
-    description: ['Case studies are extensively used in social sciences, life sciences and medicine to perform a thorough analysis of a specific question or topic. They are a forum for lively discussion, and the meeting of minds to solve a challenging issue as a team. The Case Studies sessions of womENcourage will present participants with a number of challenging scenarios that a junior researcher may find themselves in during the course of their undergraduate, doctoral and postdoctoral training, and facilitate guided discussion of how to constructively solve each challenge. Participation in the Case Studies session will provide participants with insight into problems they themselves may face (or may already have faced), and food for thought on how to streamline their own career experiences.'],
-    location: 'TBA',
-    startDate: new Date(2015, 8, 26, 13, 30),
-    endDate: new Date(2015, 8, 26, 15, 30)
-}, {
-    _id: 'uncf0005',
     title: 'Unconference',
     location: 'Main Aula',
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
@@ -754,7 +747,7 @@ db.bulkDocs([{
     startDate: new Date(2015, 8, 26, 14, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
-    _id: 'uncf0006',
+    _id: 'uncf0005',
     title: 'Unconference',
     location: 'TBA',
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
@@ -1124,14 +1117,6 @@ db.bulkDocs([{
     firstName: 'Viktor',
     lastName: 'Fischer'
 }, {
-    _id: 'pstr0029',
-    title: 'Understanding Human Behavior within a Device Ecology',
-    authors: ['spkr0110']
-}, {
-    _id: 'spkr0110',
-    firstName: 'Christina',
-    lastName: 'Vasiliou'
-}, {
     _id: 'pstr0030',
     title: 'Annotation of an interative tactile map for visually impaired people',
     authors: ['spkr0111', 'spkr0112', 'spkr0113']
@@ -1239,14 +1224,6 @@ db.bulkDocs([{
     _id: 'spkr0129',
     firstName: 'Amparo Eliza',
     lastName: 'Cano'
-}, {
-    _id: 'pstr0038',
-    title: 'Radio Control System for a Hovercraft',
-    authors: ['spkr0130']
-}, {
-    _id: 'spkr0130',
-    firstName: 'Oishi',
-    lastName: 'Dep'
 }, {
     _id: 'pstr0039',
     title: 'Computerised Measurement of Voice Abnormality',
