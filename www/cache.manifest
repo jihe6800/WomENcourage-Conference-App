@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#v 16.6
+#v 16.7
 CACHE:
 #main index
 index.html
@@ -15,7 +15,7 @@ img/iar-systems.png
 img/the-freebsd-foundation.png
 img/intel.png
 img/ionic.png
-img/map.png
+img/map-overview.png
 img/map-first-floor.png
 img/map-ground-floor.png
 img/microsoft-research-connections.png
