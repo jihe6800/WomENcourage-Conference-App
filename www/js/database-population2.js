@@ -29,7 +29,7 @@ db.bulkDocs([{
 }, {
     _id: 'gnrl0001',
     title: 'Opening/Announcements',
-    location: 'Main Aula',
+    location: 'Main Hall',
     speakers: ['spkr0001'],
     startDate: new Date(2015, 8, 25, 9, 0),
     endDate: new Date(2015, 8, 25, 9, 30)
@@ -41,7 +41,7 @@ db.bulkDocs([{
 }, {
     _id: 'note0001',
     title: 'Keynote: Computing for Humans',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['Historically, computing has been envisioned as a way to enhance what we, as humans, are able to do. Nowhere is such a computing goal more evident than in the field of accessibility where we seek to create devices and software to address needs of people who have disabilities. In creating accessible technology and novel accessibility tools, research has not only facilitated digital interactions and quality of life needs for many, but also has served to advance the field of computing more generally. The needs of users can and should inform the agenda for emerging research in areas such as augmented memory, physical interactions, and human communication.'],
     speakers: ['spkr0002'],
     startDate: new Date(2015, 8, 25, 9, 30),
@@ -61,7 +61,7 @@ db.bulkDocs([{
 }, {
     _id: 'panl0001',
     title: 'Panel: Open Source as a Career Path',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['This panel consists of panelists who have first-hand experience in the positive benefits of open source involvement as part of one\'s career path. While they are all engaged in the same open source project, their careers vary: management, entrepreneurship, development, documentation, and academia. Participants will have the opportunity to learn how one gets started with an open source community, what benefits they can gain, how to apply those benefits to their own career path, and the advantages of continued involvement even after one\'s career is well underway.'],
     moderators: ['spkr0003'],
     panelists: ['spkr0004', 'spkr0005', 'spkr0006', 'spkr0007'],
@@ -99,7 +99,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0001',
     title: 'Predicting Mental-Imagery Based Brain-Computer Interface Performance from Psychometric Questionnaires',
-    location: '',
+    location: 'Hall IV',
     papers: ['papr0001'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 11, 20)
@@ -126,7 +126,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0002',
     title: 'Perceived Needs for Assistive Technologies in older adults and their caregivers',
-    location: '',
+    location: 'Hall IV',
     papers: ['papr0002'],
     startDate: new Date(2015, 8, 25, 11, 20),
     endDate: new Date(2015, 8, 25, 11, 40)
@@ -149,7 +149,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0003',
     title: 'Window to the Outside World: Bringing the outside in to housebound older adults in remote and rural areas',
-    location: '',
+    location: 'Hall IV',
     papers: ['papr0003'],
     startDate: new Date(2015, 8, 25, 11, 40),
     endDate: new Date(2015, 8, 25, 12, 0)
@@ -168,7 +168,7 @@ db.bulkDocs([{
 }, {
     _id: 'indt0001',
     title: 'Google',
-    location: 'Room IV',
+    location: 'Hall X',
     speakers: ['spkr0016'],
     company: 'Google',
     startDate: new Date(2015, 8, 25, 11, 0),
@@ -181,7 +181,7 @@ db.bulkDocs([{
 }, {
     _id: 'indt0002',
     title: 'Natural Language Processing and Question Answering',
-    location: 'Room IV',
+    location: 'Hall X',
     speakers: ['spkr0017'],
     company: 'Bloomberg',
     startDate: new Date(2015, 8, 25, 11, 30),
@@ -205,7 +205,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0004',
     title: 'Evolution of Coordinated Behaviour in Artificial Life Simulations',
-    location: '',
+    location: 'Hall IV',
     papers: ['papr0004'],
     startDate: new Date(2015, 8, 25, 13, 30),
     endDate: new Date(2015, 8, 25, 13, 50)
@@ -228,7 +228,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0005',
     title: 'An R-Based Framework for Implementing Large-Scale Spatial Models of Infectious Diseases',
-    location: '',
+    location: 'Hall IV',
     papers: ['papr0005'],
     startDate: new Date(2015, 8, 25, 13, 50),
     endDate: new Date(2015, 8, 25, 14, 10)
@@ -251,7 +251,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0006',
     title: 'Interactively animating crumpling paper',
-    location: '',
+    location: 'Hall IV',
     papers: ['papr0006'],
     startDate: new Date(2015, 8, 25, 14, 10),
     endDate: new Date(2015, 8, 25, 14, 30)
@@ -283,7 +283,7 @@ db.bulkDocs([{
 }, {
     _id: 'indt0003',
     title: 'Cisco Collaboration - Be Inspired!',
-    location: 'Room X',
+    location: 'Hall X',
     speakers: ['spkr0028', 'spkr0029'],
     company: 'Cisco',
     startDate: new Date(2015, 8, 25, 13, 30),
@@ -301,7 +301,7 @@ db.bulkDocs([{
 }, {
     _id: 'indt0004',
     title: 'Move Fast, Learn Things',
-    location: 'Room X',
+    location: 'Hall X',
     speakers: ['spkr0030'],
     company: 'Facebook',
     startDate: new Date(2015, 8, 25, 14, 0),
@@ -314,7 +314,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0001',
     title: 'Workshop: Making your ideas into reality',
-    location: '',
+    location: 'Hall I',
     description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.',
         'Come to this workshop and learn how to create a working prototype of your idea! You will learn:',
         '- Basic understanding of Galileo or Edison boards.',
@@ -329,7 +329,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0002',
     title: 'Workshop: Coding for all: Family friendly endition',
-    location: '',
+    location: 'Hall II',
     description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.',
         'To participate you need no prior knowledge. Please bring your laptop with Windows, Linux or Mac OS, and is WiFi enabled.'],
     speakers: ['spkr0057'],
@@ -338,7 +338,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0003',
     title: 'Workshop: Prototyping wearable electronics workshop',
-    location: '',
+    location: 'Hall VIII',
     description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try!',
         'This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people.',
         'All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.',
@@ -349,7 +349,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0004',
     title: 'Workshop: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
-    location: '',
+    location: 'Hall XI',
     description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
         'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.',
         'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:',
@@ -379,7 +379,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0005',
     title: 'Workshop (cont.): Making your ideas into reality',
-    location: '',
+    location: 'Hall I',
     description: ['This workshop is designed to inspire students by introducing them to the basics of creating something new. The students will be introduced to programming, basic electronics, circuits and how to enable/disable LEDS programmatically. The students will be hands on to learn the basics of a Galileo computer board and the steps for programming the board using Arduino and ArduBlock. The students work in teams of 2 to execute the hands on exercises for the workshop. Students aged 9 to 13 are ideal participants.',
         'Come to this workshop and learn how to create a working prototype of your idea! You will learn:',
         '- Basic understanding of Galileo or Edison boards.',
@@ -394,7 +394,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0006',
     title: 'Workshop (cont.): Coding for all: Family friendly endition',
-    location: '',
+    location: 'Hall II',
     description: ['The workshop is designed for children from 13 to 16 of any gender. The goal is to allow children to learn and understand that computer programming is not a boring and complex task but a valuable skill. It teaches basic computational skills and computational thinking through storytelling and virtual world games. The workshop uses a hands on approach. Participants are going to use a software robot that lives in 2D worlds in order to offer a solution to a story.',
         'To participate you need no prior knowledge. Please bring your laptop with Windows, Linux or Mac OS, and is WiFi enabled.'],
     speakers: ['spkr0057'],
@@ -403,7 +403,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0007',
     title: 'Workshop (cont.): Prototyping wearable electronics workshop',
-    location: '',
+    location: 'Hall VIII',
     description: ['Do you want intelligent clothes? Like a jacket that changes color with the intensity of your heart rate or a scarf whose color changes with the color of your shoes? Do you like microcontrollers and programming language? Have you heard about Adafruit and Neopixels? Give them a try!',
         'This workshop will introduce you into the world of interactive electronic circuits. They can be attached on clothing and can intelligently communicate with the human body. Do not hesitate! Everyone can participate: students, researchers, fashion designers, developers, or just curious people.',
         'All the materials and toolkits for making your first prototype are provided by the organizer! Moreover, the best projects can win some wearable electronics materials and toolkits! If you are interested, hurry up! We have only 20 places! We encourage the participants to bring their personal laptop.',
@@ -414,7 +414,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0008',
     title: 'Workshop (cont.): ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
-    location: '',
+    location: 'Hall XI',
     description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
         'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.',
         'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:',
@@ -436,7 +436,7 @@ db.bulkDocs([{
 }, {
     _id: 'gnrl0002',
     title: 'Opening/Announcements',
-    location: 'Main Aula',
+    location: 'Main Hall',
     speakers: ['spkr0031'],
     startDate: new Date(2015, 8, 26, 9, 0),
     endDate: new Date(2015, 8, 26, 9, 30)
@@ -448,7 +448,7 @@ db.bulkDocs([{
 }, {
     _id: 'note0002',
     title: 'Keynote: On Grit and Being the Token Figure',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['How do you succeed in the area of computer science? My research has shown that having grit is more important than IQ or any other personality trait, and that grit together with the student\'s overall view of success matters the most. If you work hard, and do not give up when it is really tough, then you are likely to have a good career in any subject, including computer science. However, if you are a woman in computer science success also correlates to you handling the male dominated field, and being the token figure. This can be seen as another kind of grit. The norm of the field is connected to the computer science nerd who has no interests but technology, and that this personality trait is required to be a part of the community. In this keynote I will tell some of my stories about how it is to be a woman in the field, and give some insights into the kind of grit that it requires to be a successful token figure.'],
     speakers: ['spkr0032'],
     startDate: new Date(2015, 8, 26, 9, 30),
@@ -468,7 +468,7 @@ db.bulkDocs([{
 }, {
     _id: 'panl0002',
     title: 'Panel: Teaching and Learning 3.0',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['The classical image of education - a teacher writing on a blackboard in front of a class - has become outdated. Innovative technologies, such as augmented reality, tangible interaction, and tabletops, promise richer interactions and more engagement in education and learning. Technology has also led to the creation of online learning and massive open online courses (MOOCs), which allow people everywhere in the world to access any courses taught from anywhere. In this panel, experts working on different interactive educational systems will present their approach and discuss the possibilities and the risks associated to these new learning opportunities. This panel will also provide a space to discuss challenges and future avenues for such interactive educational systems.'],
     moderators: ['spkr0033'],
     panelists: ['spkr0034', 'spkr0035'],
@@ -496,7 +496,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0007',
     title: 'A real-time dance visualization framework for the design of mappings that favor user appropriation',
-    location: '',
+    location: 'Hall IX',
     papers: ['papr0007'],
     startDate: new Date(2015, 8, 26, 11, 0),
     endDate: new Date(2015, 8, 26, 11, 20)
@@ -516,7 +516,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0008',
     title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
-    location: '',
+    location: 'Hall IX',
     papers: ['papr0008'],
     startDate: new Date(2015, 8, 26, 11, 20),
     endDate: new Date(2015, 8, 26, 11, 40)
@@ -543,7 +543,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0009',
     title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
-    location: '',
+    location: 'Hall IX',
     papers: ['papr0009'],
     startDate: new Date(2015, 8, 26, 11, 40),
     endDate: new Date(2015, 8, 26, 12, 0)
@@ -566,7 +566,7 @@ db.bulkDocs([{
 },{
     _id: 'uncf0002',
     title: 'Unconference',
-    location: 'TBA',
+    location: 'Halls I & II',
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
         'During womENcourage 2015 we will be open to any subjects that may be of an interest to our participants.',
         'Join us, and get involved in lively discussions with other participants!'],
@@ -579,7 +579,7 @@ db.bulkDocs([{
 }, {
     _id: 'indt0005',
     title: 'Real-time audio processing and user driven development',
-    location: 'Room IV',
+    location: 'Hall X',
     speakers: ['spkr0144'],
     company: 'Skype/MS',
     startDate: new Date(2015, 8, 26, 11, 0),
@@ -587,7 +587,7 @@ db.bulkDocs([{
 }, {
     _id: 'indt0006',
     title: 'Google Anita Borg Memorial Scholarship, Engage Program and Community',
-    location: 'Room IV',
+    location: 'Hall X',
     speakers: ['spkr0145'],
     company: 'Google',
     startDate: new Date(2015, 8, 26, 11, 30),
@@ -595,7 +595,7 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0009',
     title: 'Workshop: Contributing to Open Source',
-    location: '',
+    location: 'Hall IV',
     description: ['Open Source software has become widespread and forms a vital part of the Internet. Open Source projects can be very rewarding, both for the people who use the products and for the people involved in the project. Many people have careers using open source software and developing skills with such projects can greatly widen your opportunities for employment. Fortunately, with open source software, you can gain experience during your spare time with freely available tools and resources.',
         'For those who have never worked with open source software, it can be bewildering as to how all of this works. How do you get involved with a project? How do you propose changes? How do you test them?',
         'More importantly, you might be a open source user, and you love the tools you use. How can you contribute back to the projects you love? You don\'t have to be a coder with developer skills. There is more to open source than coding.',
@@ -620,7 +620,7 @@ db.bulkDocs([{
 }, {
     _id: 'panl0003',
     title: 'Panel: Out of the Ordinary Jobs',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['This panel is designed to inspire womENcourage attendees by showing them the broad range of career options that they have with a computer science (CS) degree. We expect to broaden the attendees\' horizons when thinking about future jobs by having a panel composed of successful and inspiring panelists, who have either chosen an unusual career path or who have found a very interesting field to focus on. The panelists will be coming both from academia and industry to bring different perspectives to the panel. Students often think that a degree in computer science opens the door to programming and other IT jobs, but rarely know about the whole range of options that is available to them. We expect that this panel will inspire students and other attendees to seek their own path in the career, keeping in mind the exciting opportunities that exist and that they can work toward.'],
     moderators: ['spkr0045'],
     panelists: ['spkr0033', 'spkr0037', 'spkr0046'],
@@ -643,7 +643,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0010',
     title: 'EnGendering Design: Implementing Interdisciplinarity',
-    location: '',
+    location: 'Hall IX',
     papers: ['papr0010'],
     startDate: new Date(2015, 8, 26, 13, 30),
     endDate: new Date(2015, 8, 26, 13, 50)
@@ -662,7 +662,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0011',
     title: 'Conceptions and Stereotypes About Computer Science and Women: The Uppsala University Case',
-    location: '',
+    location: 'Hall IX',
     papers: ['papr0011'],
     startDate: new Date(2015, 8, 26, 13, 50),
     endDate: new Date(2015, 8, 26, 14, 10)
@@ -685,7 +685,7 @@ db.bulkDocs([{
 }, {
     _id: 'talk0012',
     title: 'GenderTime: Evaluation of Measures for Women Encouragement in Science Organisations',
-    location: '',
+    location: 'Hall IX',
     papers: ['papr0012'],
     startDate: new Date(2015, 8, 26, 14, 10),
     endDate: new Date(2015, 8, 26, 14, 30)
@@ -704,23 +704,41 @@ db.bulkDocs([{
 }, {
     _id: 'wksp0010',
     title: 'Workshop: Oracle Workshop - Introducing Alice',
-    location: '',
+    location: 'Hall X',
     description: ['A 2 hour workshop where participants will have a hands on introduction to the features of Carnegie Mellon’s Alice 3.1 platform and learn how it can be used as a tool to introduce programming in the classroom by developing 3D Animations.'],
     speakers: [],
     startDate: new Date(2015, 8, 26, 13, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
     _id: 'wksp0011',
+    title: 'Workshop (cont.): Contributing to Open Source',
+    location: 'Hall IV',
+    description: ['Open Source software has become widespread and forms a vital part of the Internet. Open Source projects can be very rewarding, both for the people who use the products and for the people involved in the project. Many people have careers using open source software and developing skills with such projects can greatly widen your opportunities for employment. Fortunately, with open source software, you can gain experience during your spare time with freely available tools and resources.',
+        'For those who have never worked with open source software, it can be bewildering as to how all of this works. How do you get involved with a project? How do you propose changes? How do you test them?',
+        'More importantly, you might be a open source user, and you love the tools you use. How can you contribute back to the projects you love? You don\'t have to be a coder with developer skills. There is more to open source than coding.',
+        'The organizers will provide a small open source project for you. You can join the project and start contributing in a tightly controlled environment. You\'ll learn how to submit bug reports, contribute improvements, and get involved with a project.',
+        'All of this will be done within our own project with just the workshop attendees involved. We will work over IRC (Internet Relay Chat) & Mailing Lists to resolve bugs and contribute to the project.',
+        'The skills you learn in the workshop will be form a good starting point for your future contributions to open source.',
+        'Participants should:',
+        '- bring a laptop and wifi',
+        '- install an IRC client software',
+        '- have a working email address',
+        '- have an ssh client installed'],
+    speakers: ['spkr0006'],
+    startDate: new Date(2015, 8, 26, 13, 30),
+    endDate: new Date(2015, 8, 26, 15, 30)
+}, {
+    _id: 'wksp0012',
     title: 'Workshop: ACM-W volunteers',
-    location: '',
+    location: 'Hall IX',
     description: ['The ACM is the world\'s largest educational and scientific computing society, helping advance computing as a science and a profession. ACM-W supports, celebrates, and advocates internationally for the full engagement of women in all aspects of the computing field. Enthusiastic volunteers represent ACM and ACM-W in their local communities through the chartering of Chapters, both by students and professionals. This session brings together ACM and ACM-W Chapter representatives, as well as anyone (regardless of gender!) interested in starting/joining their local chapter. George Eleftherakis, with years of experience in bringing together Chapters around Europe, will facilitate a session where networking opportunities will be plenty and meaningful. Come learn more about Chapters!'],
     speakers: ['spkr0057'],
     startDate: new Date(2015, 8, 25, 11, 0),
     endDate: new Date(2015, 8, 25, 12, 0)
 }, {
-    _id: 'wksp0012',
+    _id: 'wksp0013',
     title: 'Workshop: Queer Women in Tech',
-    location: '',
+    location: 'Hall VIII',
     description: ['A seminar focused on raising awareness around the issue of gender gap and diversity in tech, with a focus on gender identity and sexual orientation. This seminar is about challenges that queer women face in STEM fields, discussing why:',
         '- We need to Be More Visible to Each Other',
         '- We need to Be More Visible to Others',
@@ -731,7 +749,7 @@ db.bulkDocs([{
 }, {
     _id: 'uncf0003',
     title: 'Unconference',
-    location: 'TBA',
+    location: 'Halls I & II',
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
         'During womENcourage 2015 we will be open to any subjects that may be of an interest to our participants.',
         'Join us, and get involved in lively discussions with other participants!'],
@@ -740,7 +758,7 @@ db.bulkDocs([{
 }, {
     _id: 'uncf0004',
     title: 'Unconference',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
         'During womENcourage 2015 we will be open to any subjects that may be of an interest to our participants.',
         'Join us, and get involved in lively discussions with other participants!'],
@@ -749,7 +767,7 @@ db.bulkDocs([{
 }, {
     _id: 'uncf0005',
     title: 'Unconference',
-    location: 'TBA',
+    location: 'Hall XI',
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
         'During womENcourage 2015 we will be open to any subjects that may be of an interest to our participants.',
         'Join us, and get involved in lively discussions with other participants!'],
@@ -765,7 +783,7 @@ db.bulkDocs([{
 }, {
     _id: 'note0003',
     title: 'Keynote: Towards Expressive 3D Modelling: New challenges in Computer Graphics',
-    location: 'Main Aula',
+    location: 'Main Hall',
     description: ['Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
         'Could digital media be turned into a tool, even more expressive and simpler to use than a pen, to convey and refine both static and dynamic 3D shapes? This would make shape design directly possible in virtual form, from early drafting to progressive refinement and finalization of an idea. To this end, models for shape and motion need to be redefined from a user-centered perspective. This talk will present our recent work towards "responsive shapes", namely high level models that take form, refine, move and deform based on user intent, expressed through intuitive interaction gestures.'],
     speakers: ['spkr0027'],
@@ -774,7 +792,7 @@ db.bulkDocs([{
 }, {
     _id: 'gnrl0003',
     title: 'Closing',
-    location: 'TBA',
+    location: 'Main Hall',
     startDate: new Date(2015, 8, 26, 17, 0),
     endDate: new Date(2015, 8, 26, 17, 15)
 }]);
