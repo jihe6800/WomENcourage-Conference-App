@@ -7,6 +7,10 @@
             <div class="item item-text-wrap">
                 {{section.content}}
 
+                <button class="button button-block button-womencourage ion-email" ng-if="section.title == 'About the App'" ng-click="openURL(section.mailurl)" style="margin-top: 20px">
+                    {{section.buttontext}}
+                </button>
+
                 <button class="button button-block button-womencourage ion-compose" ng-if="section.title == 'Feedback'" ng-click="openURL(section.formurl)" style="margin-top: 20px">
                     {{section.buttontext}}
                 </button>

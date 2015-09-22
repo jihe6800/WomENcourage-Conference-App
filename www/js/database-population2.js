@@ -1413,7 +1413,9 @@ odb.bulkDocs([{
         content: "The conference will take place at Uppsala University, founded in 1477, making it the oldest university in Sweden. Uppsala is the fourth largest city in Sweden, with a lively atmosphere and rich student life, as the university's 40,000 students comprise fully a fifth of the city's population. The primary venue will be the historic Main University Building (Universitetshuset), dating from the 1880s. It is located in central Uppsala, near the cathedral, and in easy walking distance to many hotels and restaurants."
     }, {
         title: "News",
-        content: "Updates and news will be posted at the womENcourage Twitter @acmwomencourage"
+        content: "Updates and news will be posted on the womENcourage Twitter.",
+        buttontext: '@acmwomencourage',
+        twitterurl: 'https://twitter.com/acmwomencourage'
     }, {
         title: "Smoking",
         content: "Smoking is prohibited in any public indoor establishment. This includes restaurants and bars as well as the conference venue."
@@ -1438,7 +1440,9 @@ odb.bulkDocs([{
     _id: 'feedback',
     sections: [{
         title: 'About the App',
-        content: 'This app was developed by three IT students at Uppsala University: Johan Gille, Jimmy Helmersson and Robert Källgren. You can contact us via email address robert.kallgren.9616@student.uu.se'
+        content: 'This app was developed by three IT students at Uppsala University: Johan Gille, Jimmy Helmersson and Robert Källgren. You can contact us on the email address below.',
+        buttontext: 'robert.kallgren.9616@student.uu.se',
+        mailurl: 'mailto:robert.kallgren.9616@student.uu.se'
     }, {
         title: 'Device Support',
         content: 'The app is supported on most devices with a modern web browser. However, the export function is currently only supported in Google Chrome, Firefox and Opera. For an optimal experience, Google Chrome is recommended.'
@@ -1460,7 +1464,7 @@ odb.bulkDocs([{
 }, {
     _id: 'conference-feedback',
     sections: [{
-        title: 'Make your voice heard!',
+        title: 'Make Your Voice Heard!',
         content: 'Please let us know what you thought about the conference activities in the forms listed below. Your answers mean a lot to us as they help us improve. Thanks for your participation!'
     }],
     forms: [{

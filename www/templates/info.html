@@ -9,6 +9,10 @@
             </div>
             <div class="item item-text-wrap">
                 {{section.content}}
+
+                <button class="button button-block button-calm ion-social-twitter" ng-if="section.title == 'News'" ng-click="openURL(section.twitterurl)" style="margin-top: 20px">
+                    {{section.buttontext}}
+                </button>
             </div>
         </div>
     </ion-content>
