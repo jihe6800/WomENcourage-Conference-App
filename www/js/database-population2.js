@@ -169,6 +169,7 @@ db.bulkDocs([{
     _id: 'indt0001',
     title: 'Google',
     location: 'Hall X',
+    description: ['Hanna will discuss the issues involved in identifying matching video footage rapidly and at large scale. YouTube receives hundreds of hours of user-uploaded video every minute — and all of these uploads need to be compared against a huge library of copyrighted and abusive content. To do so quickly and accurately, we need to solve complex and interesting problems in video representation, index retrieval, and matching, all the while drawing on recent research and on Google\'s impressive computational resources. This talk will present some of our recent advances.'],
     speakers: ['spkr0016'],
     company: 'Google',
     startDate: new Date(2015, 8, 25, 11, 0),
@@ -182,6 +183,7 @@ db.bulkDocs([{
     _id: 'indt0002',
     title: 'Natural Language Processing and Question Answering',
     location: 'Hall X',
+    description: ['Bloomberg\'s Knowledge Engineering group works with unstructured news, market, and economic data. Automatically processing documents and uncovering insights is extremely valuable in the low latency environment of the finance industry. But sensitive, multi-lingual, and high impact information supplies a number of unique challenges. This talk will focus on Named Entity Recognition and Event Extraction, highlighting the underlying Knowledge Bases for these tasks. We will also dive into the semantic technologies behind Bloomberg\'s Knowledge Platform and its role in Question Answering.'],
     speakers: ['spkr0017'],
     company: 'Bloomberg',
     startDate: new Date(2015, 8, 25, 11, 30),
@@ -284,6 +286,7 @@ db.bulkDocs([{
     _id: 'indt0003',
     title: 'Cisco Collaboration - Be Inspired!',
     location: 'Hall X',
+    description: ['What will Collaboration look like in the future? What kind of demands will future generation have on their Employer and the businesses they interact with? Cisco has a clear vision on how we will meet the demands of the future and change the way we work, live, play and learn with Cisco Collaboration technology.'],
     speakers: ['spkr0028', 'spkr0029'],
     company: 'Cisco',
     startDate: new Date(2015, 8, 25, 13, 30),
@@ -302,6 +305,7 @@ db.bulkDocs([{
     _id: 'indt0004',
     title: 'Move Fast, Learn Things',
     location: 'Hall X',
+    description: ['Nishita will cover the much talked about \'hacker culture\' at Facebook. She will speak about how she\'s seen diversity play out in different situations at work, her attempts at failing, and a few tricks she\'s learnt to handle situations better. Nishita will also talk about how Facebookers can borrow some interesting design philosophies from the products we build and instead apply them to ourselves in our day-to-day work.'],
     speakers: ['spkr0030'],
     company: 'Facebook',
     startDate: new Date(2015, 8, 25, 14, 0),
@@ -350,7 +354,7 @@ db.bulkDocs([{
     _id: 'wksp0004',
     title: 'Workshop: ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
     location: 'Hall XI',
-    description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
+    description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world\'s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
         'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.',
         'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:',
         '1. Presentation of ACM ICPC organization',
@@ -415,7 +419,7 @@ db.bulkDocs([{
     _id: 'wksp0008',
     title: 'Workshop (cont.): ACM International Collegiate Programming Contest as good programming practice and activity not only for boys',
     location: 'Hall XI',
-    description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world’s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
+    description: ['In the workshop we will show how is possible to bring the spirit of programming competitions into the teaching of programming and also attract girls into such competitions. The ACM International Collegiate Programming Contest (ICPC) is the premiere global programming competition conducted by and for the world\'s universities. ICPC is growing but number of girls in competition is very small and it is not growing at all. It is very difficult to find main reason of this situation, but it is not because girls are not as good as boys.',
         'We would like to show in our workshop to teachers and students that programming contest is competition, but also fun and it give to participants flavour of problem solving, programming and also experience with organizing such contest.',
         'All are always impressed by efficiency of automated judging systems used in programming competitions, validating and grading thousands of student submissions. Using a kind of automated judging system inspired by programming competitions in the classroom scenario is also goal of this workshop. The workshop program will have 4 parts:',
         '1. Presentation of ACM ICPC organization',
@@ -580,6 +584,7 @@ db.bulkDocs([{
     _id: 'indt0005',
     title: 'Real-time audio processing and user driven development',
     location: 'Hall X',
+    description: ['Jon will present a typical VoIP audio pipeline and discuss some of the main difficulties each audio processing module is facing. He will spend the second half of the presentation on how Skype is leveraging its user base to drive and validate audio quality improvements.'],
     speakers: ['spkr0144'],
     company: 'Skype/MS',
     startDate: new Date(2015, 8, 26, 11, 0),
@@ -588,6 +593,7 @@ db.bulkDocs([{
     _id: 'indt0006',
     title: 'Google Anita Borg Memorial Scholarship, Engage Program and Community',
     location: 'Hall X',
+    description: ['Anita Borg was one of the first female computer scientists and her vision was that 50% of the computer science graduates would be women by 2020. Google is supporting her vision through the Google Anita Borg Memorial Scholarship, Engage Program and Community. This talk outlines the details on the Anita Borg programs, provides information on how to apply for the scholarship and highlights the engagement opportunities for scholars. Moreover, it gives an insider’s view of how it feels to be a Google scholar and showcases some of the achievements of the 2014-2015 community.'],
     speakers: ['spkr0145'],
     company: 'Google',
     startDate: new Date(2015, 8, 26, 11, 30),
@@ -705,7 +711,7 @@ db.bulkDocs([{
     _id: 'wksp0010',
     title: 'Workshop: Oracle Workshop - Introducing Alice',
     location: 'Hall X',
-    description: ['A 2 hour workshop where participants will have a hands on introduction to the features of Carnegie Mellon’s Alice 3.1 platform and learn how it can be used as a tool to introduce programming in the classroom by developing 3D Animations.'],
+    description: ['A 2 hour workshop where participants will have a hands on introduction to the features of Carnegie Mellon\'s Alice 3.1 platform and learn how it can be used as a tool to introduce programming in the classroom by developing 3D Animations.'],
     speakers: [],
     startDate: new Date(2015, 8, 26, 13, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
@@ -753,7 +759,7 @@ db.bulkDocs([{
     description: ['An unconference is a conference organized, structured and led by the people attending it. Instead of passive listening, all attendees and organizers are encouraged to become participants, with discussion leaders providing moderation and structure for attendees.',
         'During womENcourage 2015 we will be open to any subjects that may be of an interest to our participants.',
         'Join us, and get involved in lively discussions with other participants!'],
-    startDate: new Date(2015, 8, 26, 13, 30),
+    startDate: new Date(2015, 8, 26, 14, 30),
     endDate: new Date(2015, 8, 26, 15, 30)
 }, {
     _id: 'uncf0004',
@@ -1100,7 +1106,7 @@ db.bulkDocs([{
     lastName: 'Esnard'
 }, {
     _id: 'pstr0027',
-    title: 'Increasing Women’s Participation in Computing by Increasing Relevance',
+    title: 'Increasing Women\'s Participation in Computing by Increasing Relevance',
     authors: ['spkr0103', 'spkr0104', 'spkr0105', 'spkr0106']
 }, {
     _id: 'spkr0103',
