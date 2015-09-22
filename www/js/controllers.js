@@ -226,7 +226,7 @@ angular.module('starter.controllers', ['starter.services'])
     })
 
     
-.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, $state, database, mySchedule) {
+.controller('ScheduleCtrl', function($ionicSlideBoxDelegate, $ionicScrollDelegate, $scope, $q, $timeout, $location, $ionicPopup, $ionicLoading, $state, database, mySchedule) {
     /*
      * 1. Sorts arr by sortAttr.
      * 2. Groups subsequent element that get the same output from groupFunc(element[sortAttr]).
@@ -329,6 +329,11 @@ angular.module('starter.controllers', ['starter.services'])
 
     this.changeSlide = function(index) {
         $scope.myActiveSlide = index;
+
+        // Hardcoded for womEncourage, scrolling to the top when switching to the first day.
+        if (index == 0) {
+            $ionicScrollDelegate.scrollTop(true);
+        }
     };
 
     $scope.myActiveSlide = 0;
