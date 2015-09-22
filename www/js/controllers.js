@@ -62,7 +62,7 @@ angular.module('starter.controllers', ['starter.services'])
         }
 
         $scope.addToMySchedule = function(entry) {
-            console.log("addToMySchedule called!");
+            // console.log("addToMySchedule called!");
             database.addToMySchedule(entry).then(function(collisions) {
                 if (collisions.length > 0) {
                     var entryTitles = _.map(collisions, 'title');
@@ -77,7 +77,7 @@ angular.module('starter.controllers', ['starter.services'])
                         if(response) {
                             database.forceAddToMySchedule(entry);
                         } else {
-                            console.log('Cancelled schedule add.');
+                            // console.log('Cancelled schedule add.');
                         }
                     });
                 }
@@ -85,20 +85,20 @@ angular.module('starter.controllers', ['starter.services'])
         };
 
         $scope.removeFromMySchedule = function(entry) {
-            console.log("removeFromMySchedule called!");
+            // console.log("removeFromMySchedule called!");
             database.removeFromMySchedule(entry);
         };
 
         $scope.toggleInMySchedule = function(entry) {
             database.isInMySchedule(entry).then(function(isInMySchedule) {
-                console.log("isInMySchedule return value in toggleInMySchedule: " + JSON.stringify(isInMySchedule));
+                // console.log("isInMySchedule return value in toggleInMySchedule: " + JSON.stringify(isInMySchedule));
                 if(isInMySchedule) {
                     $scope.removeFromMySchedule(entry);
                 } else {
                     $scope.addToMySchedule(entry);
                 }
             }).catch(function (error) {
-                console.log("isInMySchedule error in toggleInMySchedule: " + error);
+                // console.log("isInMySchedule error in toggleInMySchedule: " + error);
             });
         };
 
@@ -172,7 +172,7 @@ angular.module('starter.controllers', ['starter.services'])
             $q.when(database.getPapers()).then(function(result) {
                 that.papers = result;
             }).catch(function (error) {
-                console.log("Error when reading from database: " + error);
+                // console.log("Error when reading from database: " + error);
             });
         };
 
@@ -186,7 +186,7 @@ angular.module('starter.controllers', ['starter.services'])
             $q.when(database.getPosters()).then(function(result) {
                 that.posters = result;
             }).catch(function (error) {
-                console.log("Error when reading from database: " + error);
+                // console.log("Error when reading from database: " + error);
             });
         };
 
@@ -204,7 +204,7 @@ angular.module('starter.controllers', ['starter.services'])
             $q.when(database.getSpeakers()).then(function(result) {
                 that.speakers = result;
             }).catch(function (error) {
-                console.log("Error when reading from database: " + error);
+                // console.log("Error when reading from database: " + error);
             });
         };
 
@@ -323,7 +323,7 @@ angular.module('starter.controllers', ['starter.services'])
                 $ionicLoading.hide();
                 }, 1000);
         }).catch(function (error) {
-            console.log("Error when reading from database: " + error);
+            // console.log("Error when reading from database: " + error);
         });
     };
 

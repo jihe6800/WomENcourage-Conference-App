@@ -23,14 +23,14 @@ angular.module('starter.services', [])
             console.log("Everything loaded from server database! Now constructing schedule...");
             return constructFromDB();
         }).catch(function(error) { // Network error, hopefully...
-            console.log("Schedule database download error, using local cache instead. Error message: " + error);
+            console.log("Schedule database download failed, using local cache instead");
             return constructFromDB();
         });
 
         // Used to verify that everything is downloaded before returning data from the service
         var replicationHandlerODB = odb.replicate.from(remoteOther).catch(function(error) {
             // Network error, hopefully...
-            console.log("Other database download error, using local cache instead. Error message: " + error);
+            console.log("Other database download failed, using local cache instead.");
         });
 
         // Declare arrays to store data types
@@ -146,14 +146,14 @@ angular.module('starter.services', [])
                                     supporters.additional.push(item);
                                     break;
                                 default:
-                                    console.log("Unkown supporter tier for " + item.name + ": " + item.tier);
+                                    // console.log("Unkown supporter tier for " + item.name + ": " + item.tier);
                             }
                             break;
                         case 'spsr':
                             sponsors.push(item);
                             break;
                         default:
-                            console.log("Unknown ID: " + item._id);
+                            // console.log("Unknown ID: " + item._id);
                     }
                 }
 
@@ -171,9 +171,9 @@ angular.module('starter.services', [])
                         var matchedObject = _.find(objects, _.matchesProperty('_id', id));
 
                         if(matchedObject === undefined) {
-                            console.log("ERROR: Failed to find id " + id + "!");
+                            // console.log("Failed to find id " + id + "!");
                         } else {
-                            console.log("Found id " + id + "!");
+                            // console.log("Found id " + id + "!");
                             objFunc(matchedObject);
                             matchedObjects.push(matchedObject);
                         }
@@ -231,9 +231,9 @@ angular.module('starter.services', [])
                         var talkObject = _.find(talks, _.matchesProperty('_id', session.talks[j]));
 
                         if (talkObject === undefined) {
-                            console.log("ERROR: Failed to find id " + session.talks[j] + "!");
+                            // console.log("Failed to find id " + session.talks[j] + "!");
                         } else {
-                            console.log("Found id " + session.talks[j] + "!");
+                            // console.log("Found id " + session.talks[j] + "!");
                             talkObjects.push(talkObject);
                             talkObject.startDate = new Date(Date.parse(talkObject.startDate));
                             talkObject.endDate = new Date(Date.parse(talkObject.endDate));
@@ -282,9 +282,9 @@ angular.module('starter.services', [])
                         var industryTalkObject = _.find(industryTalks, _.matchesProperty('_id', industryTalksSession.talks[j]));
 
                         if (industryTalkObject === undefined) {
-                            console.log("ERROR: Failed to find id " + industryTalksSession.talks[j] + "!");
+                            // console.log("Failed to find id " + industryTalksSession.talks[j] + "!");
                         } else {
-                            console.log("Found id " + industryTalksSession.talks[j] + "!");
+                            // console.log("Found id " + industryTalksSession.talks[j] + "!");
                             industryTalkObjects.push(industryTalkObject);
                             industryTalkObject.startDate = new Date(Date.parse(industryTalkObject.startDate));
                             industryTalkObject.endDate = new Date(Date.parse(industryTalkObject.endDate));
@@ -416,7 +416,7 @@ angular.module('starter.services', [])
                     var matchedEntry = _.find(scheduleEntries, _.matchesProperty('_id', ids[i]));
 
                     if (matchedEntry === undefined) { // if(matchedEntry) ?
-                        console.log("ERROR: My schedule id '" + ids[i] + "' could not be found in schedule entries!")
+                        // console.log("My schedule id '" + ids[i] + "' could not be found in schedule entries!")
                     } else {
                         myScheduleEntries.push(matchedEntry);
                     }
@@ -426,18 +426,18 @@ angular.module('starter.services', [])
         }
 
         function forceAddToMySchedule(entry) {
-            console.log("Adding " + entry._id + " to My Schedule...");
+            // console.log("Adding " + entry._id + " to My Schedule...");
             $q.when(mydb.put({_id: entry._id})).then(function(result) {
-                console.log("put() result: " + JSON.stringify(result));
+                // console.log("put() result: " + JSON.stringify(result));
                 if(result.ok) {
                     entry.isInMySchedule = true;
                     notifyMyScheduleListeners();
                 }
             }).catch(function(error) {
                 if (error.status == 409) {
-                    console.log("Entry is already in My Schedule, nothing to do here.")
+                    // console.log("Entry is already in My Schedule, nothing to do here.")
                 } else {
-                    console.log("Error when adding entry to My Schedule: " + error);
+                    // console.log("Failed to add entry to My Schedule. Error message: " + error);
                 }
             });
         }
@@ -447,14 +447,14 @@ angular.module('starter.services', [])
                 return constructPromise.then(function(result) {
                     return scheduleEntries;
                 }).catch(function(error) {
-                    console.log("getScheduleEntries error: " + error);
+                    // console.log("getScheduleEntries error: " + error);
                 });
             },
             getMyScheduleEntries: function() {
                 return constructPromise.then(function(result) {
                     return getMyScheduleEntries();
                 }).catch(function(error) {
-                    console.log("getMyScheduleEntries error: " + error);
+                    // console.log("getMyScheduleEntries error: " + error);
                 });
             },
             addToMySchedule: function(entry){ // Checks for collisions and adds entry to My Schedule if none were found
@@ -482,7 +482,7 @@ angular.module('starter.services', [])
                         // var col = (entry.startDate > result[i].startDate && entry.startDate < result[i].endDate) || (entry.startDate < result[i].startDate && entry.endDate > result[i].startDate);
 
                         if (collisions.length > 0) {
-                            console.log('Collision detected!');
+                            // console.log('Collision detected!');
                             entry.isInMySchedule = false;
                         } else {
                             forceAddToMySchedule(entry);
@@ -491,24 +491,24 @@ angular.module('starter.services', [])
                         return collisions;
                     });
                 }).catch(function(error) {
-                    console.log("addToMySchedule error: " + error);
+                    // console.log("addToMySchedule error: " + error);
                 });
             },
             forceAddToMySchedule: function(entry) { // Adds entry to My Schedule without checking for collisions
                 forceAddToMySchedule(entry);
             },
             removeFromMySchedule: function(entry){
-                console.log("Removing " + entry._id + " from My Schedule...");
+                // console.log("Removing " + entry._id + " from My Schedule...");
                 $q.when(mydb.get(entry._id)).then(function(doc) {
                     return mydb.remove(doc);
                 }).then(function (result) {
-                    console.log("remove() result: " + JSON.stringify(result));
+                    // console.log("remove() result: " + JSON.stringify(result));
                     if(result.ok) {
                         entry.isInMySchedule = false;
                         notifyMyScheduleListeners();
                     }
                 }).catch(function (error) {
-                    console.log("removeFromMySchedule error: " + error);
+                    // console.log("removeFromMySchedule error: " + error);
                 });
             },
             isInMySchedule: function(entry) {
