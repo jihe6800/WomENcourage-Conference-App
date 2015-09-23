@@ -10,7 +10,7 @@ db.bulkDocs([{
     _id: 'cmmn0002',
     title: 'Career fair',
     location: 'Norrlands Nation',
-    description: ['Please see the "Supporters" page.'],
+    description: ['Please see the "Supporters" page. You can find a floor plan under the "Map" page.'],
     startDate: new Date(2015, 8, 24, 16, 15),
     endDate: new Date(2015, 8, 24, 20, 0)
 }, {
@@ -788,7 +788,7 @@ db.bulkDocs([{
     endDate: new Date(2015, 8, 26, 16, 0)
 }, {
     _id: 'note0003',
-    title: 'Keynote: Towards Expressive 3D Modelling: New challenges in Computer Graphics',
+    title: 'Keynote: Towards Expressive 3D Modelling: An example of a career in Computer Graphics',
     location: 'Main Hall',
     description: ['Despite our great expressive skills, we humans lack an easy way of conveying the 3D shapes we imagine, even more so for dynamic shapes that change over time. Over centuries we relied on drawing and sculpture to convey shapes. However, these tools require significant expertise and time investment, especially when one aims to describe complex or dynamic shapes. With the advent of virtual environments one would expect digital modeling to replace these traditional tools. Unfortunately, conventional techniques in the area have failed, since even trained computer artists still create with traditional media and only use the computer to reproduce already designed content.',
         'Could digital media be turned into a tool, even more expressive and simpler to use than a pen, to convey and refine both static and dynamic 3D shapes? This would make shape design directly possible in virtual form, from early drafting to progressive refinement and finalization of an idea. To this end, models for shape and motion need to be redefined from a user-centered perspective. This talk will present our recent work towards "responsive shapes", namely high level models that take form, refine, move and deform based on user intent, expressed through intuitive interaction gestures.'],
