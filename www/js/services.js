@@ -23,7 +23,7 @@ angular.module('starter.services', [])
             console.log("Everything loaded from server database! Now constructing schedule...");
             return constructFromDB();
         }).catch(function(error) { // Network error, hopefully...
-            console.log("Schedule database download failed, using local cache instead");
+            console.log("Schedule database download failed, using local cache instead.");
             return constructFromDB();
         });
 
