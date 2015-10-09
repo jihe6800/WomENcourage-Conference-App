@@ -546,7 +546,7 @@ db.bulkDocs([{
     lastName: 'Oulasvirta'
 }, {
     _id: 'talk0009',
-    title: 'Text is in the Air... Investigating Multi-Finger Gestures for Mid-Air Text Entry',
+    title: 'Beyond the Limits of Digital Interaction: Should Animals Play with Interactive Environments?',
     location: 'Hall IX',
     papers: ['papr0009'],
     startDate: new Date(2015, 8, 26, 11, 40),
